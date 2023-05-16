@@ -43,7 +43,7 @@ if (empty($_GET["data10"])) {
 			<div class=" col-lg-12 " style="background-color: #A9C7FF;   margin-top: 20px;  " align="left">
 				<font color="#000000" size="4px" class="serif2">
 					<div style="margin-top: 10px;">
-						<b> ตรวจสอบสถานะการสมัคร &nbsp; ( <?php echo (empty($_SESSION["subject"]) ? 'ทุกระดับการศึกษา' : 'เฉพาะ' . $_SESSION["subject"]) ?> ) </b>
+						<b> ตรวจสอบสถานะการสมัครทุกระดับการศึกษา </b>
 					</div>
 				</font>
 			</div>
@@ -248,7 +248,7 @@ if (empty($_GET["data10"])) {
 							Inner Join member b
 							On a.student = b.pk
 							where b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
-							$subject
+							
 							order by a.pk desc ";
 
 								// and b.subject = '$_SESSION[subject]'
