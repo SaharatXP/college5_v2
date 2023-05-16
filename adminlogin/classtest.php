@@ -504,7 +504,7 @@ if (isset($_GET["Action"])) {
 																</select>
 
 															</td>
-															<td rowspan="2" class="text-center"><a href="<?php echo '/college5/adminlogin/classtest.php?classdata=' . $_GET['classdata'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
+															<td rowspan="2" class="text-center"><a href="<?php echo './classtest.php?classdata=' . $_GET['classdata'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
 
 															</td>
 
@@ -539,7 +539,7 @@ if (isset($_GET["Action"])) {
 											?>
 											<tr class="text-center">
 
-												<td colspan="4"> <a style="color: green;" href="<?php echo "/college5/adminlogin/classtest.php?classdata=" . $_GET['classdata'] ?>">ดูเวลาของทุกกลุ่มการเรียน </a> </td>
+												<td colspan="4"> <a style="color: green;" href="<?php echo "./classtest.php?classdata=" . $_GET['classdata'] ?>">ดูเวลาของทุกกลุ่มการเรียน </a> </td>
 
 											</tr>
 

@@ -520,6 +520,29 @@ if (empty($_GET["searchname"])) {
 
 
 													}
+													function calcu2() {
+														var datachk30 = document.getElementById("datachk30").value;
+														var datachk4 = document.getElementById("datachk4").value;
+														var datachk5 = document.getElementById("datachk5").value;
+														var datachk6 = document.getElementById("datachk6").value;
+
+														var tt = document.getElementById("datachk3")
+														var sum = Number(!datachk30 ? 0 : datachk30) + Number(!datachk4 ? 0 : datachk4) + Number(!datachk5 ? 0 : datachk5) + Number(!datachk6 ? 0 : datachk6);
+
+
+														document.getElementById("datachk3").value = sum;
+
+
+
+														var x = document.getElementById("myd1");
+														if (sum > 12) {
+															x.style.display = "block";
+														} else {
+															x.style.display = "none";
+														}
+
+
+													}
 												</script>
 
 												<tr>
