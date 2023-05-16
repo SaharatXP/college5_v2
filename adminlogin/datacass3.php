@@ -559,7 +559,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="number" name="datachk30" id="datachk30" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
+															<input type="number" name="datachk30" id="datachk30" min="0" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -600,7 +600,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="number" name="datachk4" id="datachk4" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
+															<input type="number" name="datachk4" id="datachk4" min="0" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -645,7 +645,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="number" name="datachk5" id="datachk5" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
+															<input type="number" name="datachk5" id="datachk5" min="0" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -684,7 +684,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="number" name="datachk6" id="datachk6" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
+															<input type="number" name="datachk6" id="datachk6" min="0" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -793,7 +793,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="number" name="b1" id="b1" placeholder="  "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
+													<input type="number" name="b1" id="b1" min="0" placeholder="  "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -821,7 +821,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="number" name="b2" id="b2" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
+													<input type="number" name="b2" id="b2" min="0" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -846,7 +846,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="number" name="b3" id="b3" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
+													<input type="number" name="b3" id="b3" min="0" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -885,7 +885,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="number" name="b4" id="b4" placeholder=" "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
+													<input type="number" name="b4" id="b4" min="0" placeholder=" "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
