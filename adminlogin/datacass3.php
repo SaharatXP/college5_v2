@@ -521,20 +521,18 @@ if (empty($_GET["searchname"])) {
 
 													}
 													function calcu2() {
-														var datachk30 = document.getElementById("datachk30").value;
-														var datachk4 = document.getElementById("datachk4").value;
-														var datachk5 = document.getElementById("datachk5").value;
-														var datachk6 = document.getElementById("datachk6").value;
+														var datachk30 = document.getElementById("b1").value;
+														var datachk4 = document.getElementById("b2").value;
+														var datachk5 = document.getElementById("b3").value;
+														var datachk6 = document.getElementById("b4").value;
 
-														var tt = document.getElementById("datachk3")
+														var tt = document.getElementById("a5")
 														var sum = Number(!datachk30 ? 0 : datachk30) + Number(!datachk4 ? 0 : datachk4) + Number(!datachk5 ? 0 : datachk5) + Number(!datachk6 ? 0 : datachk6);
 
 
-														document.getElementById("datachk3").value = sum;
+														document.getElementById("a5").value = sum;
 
-
-
-														var x = document.getElementById("myd1");
+														var x = document.getElementById("myd2");
 														if (sum > 12) {
 															x.style.display = "block";
 														} else {
@@ -795,7 +793,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="b1" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+													<input type="number" name="b1" id="b1" placeholder="  "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -823,7 +821,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="b2" id="b2" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+													<input type="number" name="b2" id="b2" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -848,7 +846,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="b3" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+													<input type="number" name="b3" id="b3" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -887,7 +885,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="b4" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+													<input type="text" name="b4" id="b4" placeholder=" "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>
@@ -916,7 +914,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="a5" placeholder="   " value="<?php echo $a5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " readonly>
+													<input type="text" name="a5" id="a5" placeholder="   " value="<?php echo $a5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " readonly>
 												</div>
 											</td>
 											<td>
