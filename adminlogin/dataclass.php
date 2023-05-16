@@ -1451,7 +1451,53 @@ if (isset($_GET["Action"])) {
 
 											</div>
 										</div>
+										
+										<script>
+													function calcu1() {
+														var datachk30 = document.getElementById("datachk30").value;
+														var datachk4 = document.getElementById("datachk4").value;
+														var datachk5 = document.getElementById("datachk5").value;
+														var datachk6 = document.getElementById("datachk6").value;
 
+														var tt = document.getElementById("datachk3")
+														var sum = Number(!datachk30 ? 0 : datachk30) + Number(!datachk4 ? 0 : datachk4) + Number(!datachk5 ? 0 : datachk5) + Number(!datachk6 ? 0 : datachk6);
+
+
+														document.getElementById("datachk3").value = sum;
+
+
+
+														var x = document.getElementById("myd1");
+														if (sum > 12) {
+															x.style.display = "block";
+														} else {
+															x.style.display = "none";
+														}
+
+
+													}
+													function calcu2() {
+														var datachk30 = document.getElementById("b1").value;
+														var datachk4 = document.getElementById("b2").value;
+														var datachk5 = document.getElementById("b3").value;
+														var datachk6 = document.getElementById("b4").value;
+
+														var tt = document.getElementById("a5")
+														var sum = Number(!datachk30 ? 0 : datachk30) + Number(!datachk4 ? 0 : datachk4) + Number(!datachk5 ? 0 : datachk5) + Number(!datachk6 ? 0 : datachk6);
+
+
+														document.getElementById("a5").value = sum;
+
+														var x = document.getElementById("myd2");
+														if (sum > 12) {
+															x.style.display = "block";
+														} else {
+															x.style.display = "none";
+														}
+
+
+													}
+												</script>
 										<!-- ------------------------------------------------------------------------- -->
 										<!-- ----------------------------- ป.โท - เอก -------------------------------- -->
 										<!-- ------------------------------------------------------------------------- -->
@@ -1469,7 +1515,7 @@ if (isset($_GET["Action"])) {
 												</style>
 												<div class="col-lg-5">
 													<table width="100%" border="0">
-
+													
 														<tr>
 															<td>
 																<div>
@@ -1486,7 +1532,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1527,7 +1573,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1572,7 +1618,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1611,7 +1657,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk6" id="datachk6" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk6" id="datachk6" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1650,7 +1696,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk3" id="datachk3" placeholder=" " value="<?php echo number_format(0 + (!$datachk30 ? 0 :  $datachk30) + (!$datachk4 ? 0 : $datachk4)  + (!$datachk5 ? 0 : $datachk5) + (!$datachk6 ? 0 : $datachk6)); ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " disabled>
+																	<input type="text" name="datachk3" id="datachk3" placeholder=" " class="form-control " style=" border-radius: 10px; " readonly>
 																</div>
 															</td>
 															<td>
@@ -1717,7 +1763,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="b1" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b1" id="b1" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1745,7 +1791,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="b2" id="b2" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b2" id="b2" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1770,7 +1816,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="b3" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b3" id="b3" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
@@ -1809,7 +1855,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="b4" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b4" id="b4" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
 																</div>
 															</td>
 															<td>
