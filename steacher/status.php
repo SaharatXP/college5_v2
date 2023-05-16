@@ -113,7 +113,19 @@ include('header.php');
 			<td><div align="center"><font size="3px" class="serif2"><?php echo substr($secg, 0, -1);?></font></div></td>  				 
 			<td><div align="center"><font size="3px" class="serif2"><?php echo DateThai($objResult["create_date"])." ".DateThai2($objResult["create_date"]);?></font></div></td>  				 
 							 
-			<td><div align="center"><font size="3px" class="serif2"><?php echo $namedrop_status;?> </font></div></td>  	
+			<td><div align="center"><font size="3px" color="Black">  
+						<?php 
+								 
+							if($objResult["status"] == "0"){
+								echo " <font color = '#FF8C00' > กำลังตรวจสอบ </fonnt> "; 
+							}else if($objResult["status"] == "1"){ 
+								echo " <font color = '#006400' > อนุมัติ </fonnt> "; 
+							}else if($objResult["status"] == "2"){ 
+								echo " <font color = 'red' > ไม่อนุมัติ </fonnt> "; 
+								
+							}
+							?>
+						</font></div></td>   	
 			<td><div align="center"><font size="3px" class="serif2"><?php echo ($objResult["note_data"]);?> </font></div></td>  	
 							 
 					

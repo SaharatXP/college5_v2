@@ -108,7 +108,7 @@ include('header.php');
 			<td><div align="center"><font size="3px" class="serif2"><?php echo substr($secg, 0, -1);?></font></div></td>  				 
 			<td><div align="center"><font size="3px" class="serif2"><?php echo DateThai($objResult["create_date"])." ".DateThai2($objResult["create_date"]);?></font></div></td>  				 
 							 
-			<td><div align="center"><font size="2px" color="Black">  
+			<td><div align="center"><font size="3px" color="Black">  
 						<?php 
 								 
 							if($objResult["status"] == "0"){
