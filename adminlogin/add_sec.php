@@ -193,7 +193,9 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td width="25%" align="center">
                                             <font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
                                             <input hidden type="number" value="<?php echo $_GET['CusID'] ?>" name="classdata_pk" id="classdata_pk" class="form-control " autocomplete="off" style=" border-radius: 0px; ">
-
+                                        </td>
+                                        <td width="25" align="center">
+                                            <font color="black" size="3px" class="serif"> โครงการ </font>
                                         </td>
                                         <td width="25%" align="center">
                                             <font color="black" size="3px" class="serif"> ระดับ </font>
@@ -201,9 +203,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td width="25%" align="center">
                                             <font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอน </font>
                                         </td>
-                                        <td width="25" align="center">
-                                            <font color="black" size="3px" class="serif"> โครงการ </font>
-                                        </td>
+                                        
 
 
                                     </tr>
