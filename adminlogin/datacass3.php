@@ -885,7 +885,7 @@ if (empty($_GET["searchname"])) {
 											</td>
 											<td>
 												<div>
-													<input type="text" name="b4" id="b4" placeholder=" "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
+													<input type="number" name="b4" id="b4" placeholder=" "  class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 												</div>
 											</td>
 											<td>

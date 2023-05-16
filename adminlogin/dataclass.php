@@ -904,7 +904,7 @@ if (isset($_GET["Action"])) {
 								$sql = "SELECT * FROM classdata where  
 								data2 like '%" . $searchname . "%' 
 								$addcode $addcode3 $addcode2
-								$subject 
+								
 								
 								order by pk desc ";
 
@@ -1455,7 +1455,8 @@ if (isset($_GET["Action"])) {
 										<!-- ------------------------------------------------------------------------- -->
 										<!-- ----------------------------- ป.โท - เอก -------------------------------- -->
 										<!-- ------------------------------------------------------------------------- -->
-										<?php if (empty($_SESSION["subject"]) || $_SESSION["subject"] == 'ปริญญาโท-เอก ') { ?>
+										<?php echo $_SESSION["subject"];
+										if (empty($_SESSION["subject"]) || $_SESSION["subject"] == 'ปริญญาโท-เอก ') { ?>
 											<div class="h2"> เฉพาะผู้ช่วยอาจารย์ระดับปริญญาโท-เอก </div>
 											<div class="row" style="margin-top: 10px;">
 												<style>
