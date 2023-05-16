@@ -496,6 +496,32 @@ if (empty($_GET["searchname"])) {
 										<div class="col-lg-5">
 											<table width="100%" border="0">
 
+												<script>
+													function calcu1() {
+														var datachk30 = document.getElementById("datachk30").value;
+														var datachk4 = document.getElementById("datachk4").value;
+														var datachk5 = document.getElementById("datachk5").value;
+														var datachk6 = document.getElementById("datachk6").value;
+
+														var tt = document.getElementById("datachk3")
+														var sum = Number(!datachk30 ? 0 : datachk30) + Number(!datachk4 ? 0 : datachk4) + Number(!datachk5 ? 0 : datachk5) + Number(!datachk6 ? 0 : datachk6);
+
+
+														document.getElementById("datachk3").value = sum;
+
+
+
+														var x = document.getElementById("myd1");
+														if (sum > 12) {
+															x.style.display = "block";
+														} else {
+															x.style.display = "none";
+														}
+
+
+													}
+												</script>
+
 												<tr>
 													<td>
 														<div>
@@ -512,7 +538,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="text" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+															<input type="number" name="datachk30" id="datachk30" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -531,7 +557,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td colspan="1">
 														<div>
-															<input type="text" name="datachk31" id="datachk31" placeholder="  " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+															<input type="number" name="datachk31" id="datachk31" placeholder="  " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 												</tr>
@@ -553,7 +579,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="text" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+															<input type="number" name="datachk4" id="datachk4" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -598,7 +624,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="text" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+															<input type="number" name="datachk5" id="datachk5" placeholder="   " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -637,7 +663,7 @@ if (empty($_GET["searchname"])) {
 													</td>
 													<td>
 														<div>
-															<input type="text" name="datachk6" id="datachk6" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+															<input type="number" name="datachk6" id="datachk6" placeholder=" " class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 														</div>
 													</td>
 													<td>
@@ -670,13 +696,16 @@ if (empty($_GET["searchname"])) {
 											<table width="100%" border="0">
 												<tr>
 													<td width="40%">
+														<div id="myd1" style="display: none;">
+															<code style="font-size: 24;"> <b>** ชั่วโมงรวมห้ามเกิน 12 ** </b></code>
+														</div>
 														<div>
 															<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
 														</div>
 													</td>
 													<td>
 														<div>
-															<input type="text" name="datachk3" id="datachk3" placeholder=" " value="<?php echo $datachk3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " readonly>
+															<input type="text" name="datachk3" id="datachk3" placeholder=" " class="form-control " style=" border-radius: 10px; " readonly>
 														</div>
 													</td>
 													<td>
@@ -857,6 +886,9 @@ if (empty($_GET["searchname"])) {
 											<td width="40%">
 												<div>
 													<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
+												</div>
+												<div id="myd2" style="display: none;">
+													<code style="font-size: 24;">ชั่วโมงห้ามเกิน 12</code>
 												</div>
 											</td>
 											<td>
