@@ -248,7 +248,7 @@ if (empty($_GET["data10"])) {
 							Inner Join member b
 							On a.student = b.pk
 							where b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
-							$subject
+							
 							order by a.pk desc ";
 
 								// and b.subject = '$_SESSION[subject]'
