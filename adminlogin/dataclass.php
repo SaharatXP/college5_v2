@@ -1532,7 +1532,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk30" id="datachk30" min="0" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1551,7 +1551,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td colspan="1">
 																<div>
-																	<input type="text" name="datachk31" id="datachk31" placeholder="  " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="text" name="datachk31" id="datachk31" placeholder="  " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 														</tr>
@@ -1573,7 +1573,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk4" id="datachk4" min="0" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1592,7 +1592,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td colspan="1">
 																<div>
-																	<input type="text" name="datachk41" id="datachk41" placeholder="   " value="<?php echo $datachk41; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="text" name="datachk41" id="datachk41" placeholder="   " value="<?php echo $datachk41; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 														</tr>
@@ -1618,7 +1618,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk5" id="datachk5" min="0" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1637,7 +1637,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td colspan="1">
 																<div>
-																	<input type="text" name="datachk51" id="datachk51" placeholder="   " value="<?php echo $datachk51; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="text" name="datachk51" id="datachk51" placeholder="   " value="<?php echo $datachk51; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 														</tr>
@@ -1657,7 +1657,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="datachk6" id="datachk6" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="datachk6" id="datachk6" min="0" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1676,7 +1676,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td colspan="1">
 																<div>
-																	<input type="text" name="datachk61" id="datachk61" placeholder="   " value="<?php echo $datachk61; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="text" name="datachk61" id="datachk61"  placeholder="   " value="<?php echo $datachk61; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 														</tr>
@@ -1763,7 +1763,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b1" id="b1" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b1" id="b1" min="0" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1791,7 +1791,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b2" id="b2" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b2" id="b2" min="0" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1816,7 +1816,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b3" id="b3" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b3" id="b3" min="0" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1855,7 +1855,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b4" id="b4" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
+																	<input type="number" name="b4" id="b4" min="0" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
 																</div>
 															</td>
 															<td>
@@ -1873,30 +1873,33 @@ if (isset($_GET["Action"])) {
 
 												<div class="col-lg-6" style="margin-top: 10px; margin-bottom: 10px; ">
 													<table width="100%" border="0">
-														<tr>
-															<td width="40%">
-																<div>
-																	<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
-																</div>
-															</td>
-															<td>
-																<div>
-																	<input type="text" name="a5" placeholder="   " value="<?php echo number_format(0 + (!$b1 ? 0 : $b1) + (!$b2 ? 0 : $b2) + (!$b3 ? 0 : $b3) + (!$b4 ? 0 : $b4)); ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " disabled>
-																</div>
-															</td>
-															<td>
-																<div>
-																	<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td colspan="3">
-																<div>
-																	<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
-																</div>
-															</td>
-														</tr>
+													<tr>
+											<td width="40%">
+												<div>
+													<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
+												</div>
+												<div id="myd2" style="display: none;">
+													<code style="font-size: 24;">ชั่วโมงห้ามเกิน 12</code>
+												</div>
+											</td>
+											<td>
+												<div>
+													<input type="text" name="a5" id="a5" placeholder="   " value="<?php echo $a5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " readonly>
+												</div>
+											</td>
+											<td>
+												<div>
+													<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+												<div>
+													<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
+												</div>
+											</td>
+										</tr>
 
 
 
