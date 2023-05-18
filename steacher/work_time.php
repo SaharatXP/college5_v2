@@ -142,7 +142,7 @@ if (isset($_GET["Action"])) {
 												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> อาจารย์ประจำวิชา </font>
-														<select class="form-control" id="data11" name="data11" style=" border-radius: 10px; margin-top: 10px; ">
+														<select class="form-control" id="data11" name="data11" style=" border-radius: 10px; margin-top: 10px; " readonly>
 															<?php
 															$sql = "SELECT * FROM member where status = 'AJ' and pk = '" . $data11 . "'  order by pk asc  ";
 															$query = mysqli_query($objCon, $sql);

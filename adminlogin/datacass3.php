@@ -718,7 +718,7 @@ if (empty($_GET["searchname"])) {
 												<tr>
 													<td width="40%">
 														<div id="myd1" style="display: none;">
-															<code style="font-size: 24;"> <b>** ชั่วโมงรวมห้ามเกิน 12 ** </b></code>
+															<code style="font-size: 20px;"> <b>** ชั่วโมงรวมห้ามเกิน 12 กรุณาลดชั่วโมง ** </b></code>
 														</div>
 														<div>
 															<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
@@ -908,9 +908,7 @@ if (empty($_GET["searchname"])) {
 												<div>
 													<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
 												</div>
-												<div id="myd2" style="display: none;">
-													<code style="font-size: 24;">ชั่วโมงห้ามเกิน 12</code>
-												</div>
+												
 											</td>
 											<td>
 												<div>
@@ -923,30 +921,7 @@ if (empty($_GET["searchname"])) {
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td colspan="3">
-												<div>
-													<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
-												</div>
-											</td>
-										</tr>
-										<!-- <tr>
-											<td width="40%" >
-												<div class="mt-3">
-													<font size="3px" color="black" > &nbsp; คุณสมบัติอื่นๆ : GPA ของรายวิชาต้องมากกว่า </font>
-												</div>
-											</td>
-											<td>
-												<div class="mt-3">
-													<input type="text" placeholder="" value="" name="grade" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-												</div>
-											</td>
-											<td>
-												<div>
-
-												</div>
-											</td>
-										</tr> -->
+										
 
 									</table>
 								</div>

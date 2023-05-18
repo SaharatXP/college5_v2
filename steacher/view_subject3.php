@@ -726,13 +726,13 @@ if (empty($_GET["CusID"])) {
 															</div>
 														</td>
 													</tr>
-													<tr>
+													<!-- <tr>
 														<td colspan="3">
 															<div>
 																<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
 															</div>
 														</td>
-													</tr>
+													</tr> -->
 
 												</table>
 											</div>
