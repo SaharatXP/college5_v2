@@ -908,7 +908,9 @@ if (empty($_GET["searchname"])) {
 												<div>
 													<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
 												</div>
-												
+												<!-- <div id="myd2" style="display: none;">
+													<code style="font-size: 24;">ชั่วโมงห้ามเกิน 12</code>
+												</div> -->
 											</td>
 											<td>
 												<div>
