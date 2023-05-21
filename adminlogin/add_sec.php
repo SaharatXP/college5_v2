@@ -117,7 +117,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                     </div>
                     <div class="row">
                         <div class="col-lg-12 ">
-                            <table width="50%" border="1">
+                            <table width="80%" border="1">
                                 <?php
                                 $sql_sec = "SELECT * FROM classdata_section
                                 LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
@@ -126,18 +126,19 @@ while ($objResult = mysqli_fetch_array($query)) {
                                 while ($objResult_sec = mysqli_fetch_array($query_sec)) {
                                 ?>
                                     <tr></tr>
-                                    <td width="25%" align="center">
+                                    <td width="20%" align="center">
                                         <font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
                                     </td>
-                                    <td width="25%" align="center">
+                                    <td width="20%" align="center">
                                         <font color="black" size="3px" class="serif"> โครงการ </font>
                                     </td>
-                                    <td width="25%" align="center">
+                                    <td width="20%" align="center">
 
                                         <font color="black" size="3px" class="serif"> ระดับ </font>
                                     </td>
-                                    <td width="25%" align="center">
+                                    <td width="20%" align="center">
                                         <font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอน </font>
+                                    </td width="20%">
                                     </td>
 
 
@@ -164,6 +165,9 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td>
                                             <input disabled type="text" name="data15" id="data15" class="form-control " value="<?php echo $objResult_sec['data15']; ?>" autocomplete="off" style=" border-radius: 0px; ">
                                         </td>
+                                        <td rowspan="2">
+                                            <a class="btn btn-danger mx-3" href="./delete_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>"> ลบ</a>
+                                        </td>
                                         
 
                                     </tr>
@@ -176,8 +180,6 @@ while ($objResult = mysqli_fetch_array($query)) {
                                             <input disabled type="text" name="data16" id="data16" class="form-control " value="<?php echo $objResult_sec['data16'];; ?>" autocomplete="off" style=" border-radius: 0px; ">
 
                                         </td>
-
-
                                     </tr>
                                 <?php
                                 }
@@ -236,6 +238,8 @@ while ($objResult = mysqli_fetch_array($query)) {
                                             <input required type="number" name="data15s" id="data15s" class="form-control " autocomplete="off" style=" border-radius: 0px; " min="0">
                                         </td>
                                         
+                                        
+                                        
 
                                     </tr>
                                     <tr>
@@ -244,15 +248,15 @@ while ($objResult = mysqli_fetch_array($query)) {
                                             <font color="black" size="3px" class="serif"> &nbsp; ปริญญาโท-เอก </font>
                                         </td>
                                         <td>
-
                                             <input required type="number" name="data16s" id="data16s" class="form-control " autocomplete="off" style=" border-radius: 0px; " min="0">
 
                                         </td>
+                                        
 
 
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="text-center"><button type="submit" class="btn btn-outline-secondary mx-3 mt-3">+ เพิ่มข้อมูล</button></td>
+                                        <td colspan="4" class="text-center"><button type="submit" class="btn btn-outline-success mx-3 mt-3">+ เพิ่มข้อมูล</button></td>
                                     </tr>
                                 </form>
 

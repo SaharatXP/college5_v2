@@ -32,6 +32,8 @@ include('header.php');
 			<font size="2px" color="white"> สถานะ </font></div></th>  
 			<th width="5%" bgcolor="#FFF"><div align="center">
 			<font size="2px" color="white"> หมายเหตุ </font></div></th>  
+			<th width="5%" bgcolor="#FFF"><div align="center">
+			<font size="2px" color="white">  </font></div></th>  
 		</tr>
 		</thead>
 			<?php 
@@ -121,7 +123,9 @@ include('header.php');
 							}
 							?>
 						</font></div></td>  			 
-			<td><div align="center"><font size="3px" class="serif2"><?php echo $objResult["note_data"];?></font></div></td>  
+			<td><div align="center"><font size="3px" class="serif2"><?php echo $objResult["note_data"];?></font></div></td> 
+			
+			<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk'];?>" class="btn btn-danger mx-3">ลบ</a></td>
 							 
 					
 			</tr>		 

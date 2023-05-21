@@ -1691,6 +1691,9 @@ if (isset($_GET["Action"])) {
 												<div class="col-lg-6" style="margin-top: 10px; margin-bottom: 10px; ">
 													<table width="100%" border="0">
 														<tr>
+														<div id="myd1" style="display: none;">
+													<code style="font-size: 24;">ชั่วโมงห้ามเกิน 12</code>
+												</div>
 															<td width="40%">
 																<div>
 																	<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
@@ -1765,7 +1768,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b1" id="b1" min="0" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
+																	<input type="number" name="b1" id="b1" min="0" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu2()">
 																</div>
 															</td>
 															<td>
@@ -1793,7 +1796,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b2" id="b2" min="0" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
+																	<input type="number" name="b2" id="b2" min="0" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu2()">
 																</div>
 															</td>
 															<td>
@@ -1818,7 +1821,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b3" id="b3" min="0" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu1()">
+																	<input type="number" name="b3" id="b3" min="0" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; "onchange="calcu2()">
 																</div>
 															</td>
 															<td>
@@ -1857,7 +1860,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="number" name="b4" id="b4" min="0" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu1()">
+																	<input type="number" name="b4" id="b4" min="0" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; " onchange="calcu2()">
 																</div>
 															</td>
 															<td>
