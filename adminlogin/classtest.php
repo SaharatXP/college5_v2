@@ -138,7 +138,7 @@ if (isset($_GET["Action"])) {
 										$query2 = mysqli_query($objCon, $sql2);
 										while ($objResult2 = mysqli_fetch_array($query2)) {
 										?>
-											<option value="<?php echo $objResult2["pk"]; ?>"> <?php echo $objResult2["data3"]; ?> </option>
+											<option value="<?php echo $objResult2["pk"]; ?>"> <?php echo $objResult2["data3"]; ?> [ <?php echo $objResult2["data7"]; ?> ]</option>
 										<?php
 										}
 										?>

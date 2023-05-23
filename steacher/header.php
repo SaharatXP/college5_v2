@@ -41,7 +41,7 @@ include("../db_config.php");
 					$strSeconds= date("s",strtotime($strDate));
 					$strMonthCut = Array("","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
 					$strMonthThai=$strMonthCut[$strMonth];
-					return "$strMonthThai $strYear";
+					return "$strDay $strMonthThai $strYear";
 				}   
 				function DateThai3($strDate)
 				{

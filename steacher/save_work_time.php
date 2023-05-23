@@ -23,7 +23,7 @@ include('../db_config.php');
 		( member, student_paper, subject, 
 		savedata1, savedata2, savedata3, savedata4,
 		savedata5, savedata6, savedata7, 
-		create_date, create_date2, create_time, newdate, newdate2  ,section) 
+		create_date, create_date2, create_time, newdate, newdate2  ,section, type) 
 		VALUES ( 
 		'".$_SESSION["UserID3"]."', '".$_POST["CusID"]."',  '".$_POST["subject"]."',     
 		'".$_POST["savedata1"]."', '".$_POST["savedata2"]."',  '".$_POST["savedata3"]."',     
@@ -31,7 +31,7 @@ include('../db_config.php');
 		'".$_POST["savedata7"]."', 
 		
 		'".date('d-m-Y')."', '".date('Y-m-d')."', '".date('H:i')."',  
-		'".$daystart."', '".$dayend."' , $_POST[section]  
+		'".$daystart."', '".$dayend."' , $_POST[section]  , '$_POST[type]'
 		)"; 
 
 		if ($objCon->query($strSQL) === TRUE) {

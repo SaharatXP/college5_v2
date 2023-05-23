@@ -61,7 +61,7 @@ if (isset($_GET["Action"])) {
 	if ($_GET["Action"] == "Del2") {
 		$strSQL = "Delete From work_time  ";
 		$strSQL .= "WHERE pk = '" . $_GET["Idel"] . "'  ";
-		
+
 		$objQuery = mysqli_query($objCon, $strSQL);
 
 		//echo("<script>alert('ทำการลบเรียบร้อย!!')</script>");
@@ -156,7 +156,7 @@ if (isset($_GET["Action"])) {
 													</div>
 												</div>
 
-												
+
 
 												<div class="col-lg-12 ">
 													<hr>
@@ -169,13 +169,13 @@ if (isset($_GET["Action"])) {
 													</div>
 												</div>
 												<div class="col-lg-12 "> </div>
-												<div class="col-lg-2 ">
+												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> ลงเวลาปฎิบัติงาน เริ่มต้น </font>
 														<input type="time" name="savedata2" id="savedata2" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " required>
 													</div>
 												</div>
-												<div class="col-lg-2 ">
+												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> ลงเวลาปฎิบัติงาน สิ้นสุด </font>
 														<input type="time" name="savedata3" id="savedata3" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " required>
@@ -194,13 +194,13 @@ if (isset($_GET["Action"])) {
 															<?php
 															}
 															?> <?php
-						$sql = "SELECT * FROM drop_type where name != '" . $savedata4 . "'  order by pk asc  ";
-						$query = mysqli_query($objCon, $sql);
-						while ($objResult = mysqli_fetch_array($query)) {
-						?>
+																$sql = "SELECT * FROM drop_type where name != '" . $savedata4 . "'  order by pk asc  ";
+																$query = mysqli_query($objCon, $sql);
+																while ($objResult = mysqli_fetch_array($query)) {
+																?>
 																<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
 															<?php
-														}
+																}
 															?>
 														</select>
 													</div>
@@ -209,20 +209,39 @@ if (isset($_GET["Action"])) {
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> Section </font>
 														<select class="form-control" id="section" name="section" style=" border-radius: 10px; margin-top: 10px; ">
-														<?php
-												$sql_sec = "SELECT * FROM classdata_section
+															<?php
+															$sql_sec = "SELECT * FROM classdata_section
 												LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
 												where classdata_pk = $subject_save AND data14 IN ($secg)";
-												// echo $sql_sec;
-												$query_sec = mysqli_query($objCon, $sql_sec);
-												while ($objResult_sec = mysqli_fetch_array($query_sec)) {
-												?>
+															// echo $sql_sec;
+															$query_sec = mysqli_query($objCon, $sql_sec);
+															while ($objResult_sec = mysqli_fetch_array($query_sec)) {
+															?>
 																<option value="<?php echo $objResult_sec["data14"]; ?>"><?php echo $objResult_sec["data14"]; ?></option>
 
-												<?php 
-												}?>
+															<?php
+															} ?>
 														</select>
 													</div>
+												</div>
+												
+												
+												<div class="col-lg-12">
+												<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน </font>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="type" id="type1" value="Lec">
+														<label class="form-check-label" for="type1">
+															บรรยาย
+														</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="type" id="type2" value="lab">
+														<label class="form-check-label" for="type2">
+														ปฎิบัติงาน
+														</label>
+													
+												</div>
+
 												</div>
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>
