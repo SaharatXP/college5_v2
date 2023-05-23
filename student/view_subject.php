@@ -285,14 +285,39 @@ if (empty($_GET["CusID"])) {
 												<!-- <div class="col-lg-5"></div> -->
 
 												<div class="col-lg-8">
-													
+
 													<div class="form-group"> <br>
 
-													
 
 
-														
+
+
 														<table width="100%" border="1">
+															<tr>
+																<td width="10%" align="center">
+																	<font color="black" size="3px" class="serif"> เลือก </font>
+																</td>
+
+																<td width="20%" align="center">
+																	<font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
+																</td>
+																<td width="25%" align="center">
+																	<font color="black" size="3px" class="serif"> โครงการ </font>
+
+																</td>
+																<td width="20%" align="center">
+																	<font color="black" size="3px" class="serif"> ระดับ </font>
+																</td>
+																<td width="30%" align="center">
+																	<font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอนที่เปิดรับสมัคร </font>
+																</td>
+
+
+
+
+																<!-- <td rowspan="3" class="text-center"><a href="del_section.php?" class="btn btn-outline-danger ml-2">ลบ</a></td> -->
+
+															</tr>
 
 
 															<?php
@@ -306,31 +331,7 @@ if (empty($_GET["CusID"])) {
 
 																while ($objResult_sec = mysqli_fetch_array($query_sec)) {
 															?>
-																	<tr>
-																	<td width="10%" align="center">
-																		<font color="black" size="3px" class="serif"> เลือก </font>
-																	</td>
-																	
-																	<td width="20%" align="center">
-																		<font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
-																	</td>
-																	<td width="25%" align="center">
-																		<font color="black" size="3px" class="serif"> โครงการ </font>
 
-																	</td>
-																	<td width="20%" align="center">
-																		<font color="black" size="3px" class="serif"> ระดับ </font>
-																	</td>
-																	<td width="30%" align="center">
-																		<font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอนที่เปิดรับสมัคร </font>
-																	</td>
-																	
-
-
-
-																	<!-- <td rowspan="3" class="text-center"><a href="del_section.php?" class="btn btn-outline-danger ml-2">ลบ</a></td> -->
-
-																	</tr>
 																	<tr>
 																		<td rowspan="2">
 																			&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control mb-3" name="sections[]" value="<?php echo $objResult_sec['data14'] ?>" />
@@ -343,8 +344,8 @@ if (empty($_GET["CusID"])) {
 																			<input disabled type="text" name="" id="" class="form-control " value="<?php echo $objResult_sec['section_type_name']; ?>" autocomplete="off" style=" border-radius: 0px; ">
 
 																		</td>
-																	
-																		
+
+
 
 																	</tr>
 																	<tr>
@@ -357,8 +358,8 @@ if (empty($_GET["CusID"])) {
 
 																		</td>
 																		<td class="text-center">
-																		<a href="<?php echo './view_subject.php?CusID=' . $_GET['CusID'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
-																	</td>
+																			<a href="<?php echo './view_subject.php?CusID=' . $_GET['CusID'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
+																		</td>
 
 																	</tr>
 																<?php
@@ -524,261 +525,261 @@ if (empty($_GET["CusID"])) {
 												</div>
 
 												<div class="col-lg-12 ">
-														<div class="form-group"> <br>
-															<font color="black" size="3px" class="serif"> ภาระงานผู้ช่วยสอน | <a class="btn btn-danger" data-toggle="modal" data-target="#myEodal1" data-id="">
-																	<font color="White" size="2px" class="serif2"> ! หมายเหตุ : อัพตราค่าจ้าง </font>
-																</a> </font>
+													<div class="form-group"> <br>
+														<font color="black" size="3px" class="serif"> ภาระงานผู้ช่วยสอน | <a class="btn btn-danger" data-toggle="modal" data-target="#myEodal1" data-id="">
+																<font color="White" size="2px" class="serif2"> ! หมายเหตุ : อัพตราค่าจ้าง </font>
+															</a> </font>
 
 
-															<!-- Modal -->
-															<div class="modal fade" id="myEodal1<?php echo $objResult["bill_no"]; ?>" role="dialog">
-																<div class="modal-dialog modal-md ">
-																	<!-- Modal content-->
-																	<div class="modal-content">
-																		<div class="modal-header">
-																			<font size="2px" color="black" class="serif2"> หมายเหตุ : อัพตราค่าจ้าง </font>
-																			<button type="button" id="closepop" class="close" data-dismiss="modal">&times;</button>
+														<!-- Modal -->
+														<div class="modal fade" id="myEodal1<?php echo $objResult["bill_no"]; ?>" role="dialog">
+															<div class="modal-dialog modal-md ">
+																<!-- Modal content-->
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<font size="2px" color="black" class="serif2"> หมายเหตุ : อัพตราค่าจ้าง </font>
+																		<button type="button" id="closepop" class="close" data-dismiss="modal">&times;</button>
+																	</div> <br>
+																	<center>
+
+																		<div class="row">
+																			<div class="col-lg-12">
+																				<div align="center">
+																					<font size="4px"> <b> ! หมายเหตุ : อัพตราค่าจ้าง </b> </font>
+																				</div>
+																			</div>
+																			<div class="col-lg-12" style="margin-left: 10px; margin-right: 10px; margin-top: 15px; ">
+																				<div align="left" style="margin-left: 10px; margin-right: 10px; margin-top: 15px; ">
+																					1. นักศึกษาผู้ช่วยสอนและผู้ช่วยปฎิบัติงาน อยู่ระดับปริญญาโท เอก (ภาคปกติ) เหมาจ่ายไม่เกินเดือนละ 3,000 บาท/คน/เดือน
+																					<br>
+																					2. นักศึกษาผู้ช่วยสอนและผู้ช่วยปฎิบัติงาน อยู่ระดับปริญญาโท เอก (โครงการพิเศษ) เหมาจ่ายไม่เกินเดือนละ 4,000 บาท/คน/เดือน
+																					<br>
+																					3. นักศึกษาสามารถเป็น TA ได้ไม่เกิน 3 วิชา
+																					<br>
+																				</div>
+																			</div>
 																		</div> <br>
-																		<center>
-
-																			<div class="row">
-																				<div class="col-lg-12">
-																					<div align="center">
-																						<font size="4px"> <b> ! หมายเหตุ : อัพตราค่าจ้าง </b> </font>
-																					</div>
-																				</div>
-																				<div class="col-lg-12" style="margin-left: 10px; margin-right: 10px; margin-top: 15px; ">
-																					<div align="left" style="margin-left: 10px; margin-right: 10px; margin-top: 15px; ">
-																						1. นักศึกษาผู้ช่วยสอนและผู้ช่วยปฎิบัติงาน อยู่ระดับปริญญาโท เอก (ภาคปกติ) เหมาจ่ายไม่เกินเดือนละ 3,000 บาท/คน/เดือน
-																						<br>
-																						2. นักศึกษาผู้ช่วยสอนและผู้ช่วยปฎิบัติงาน อยู่ระดับปริญญาโท เอก (โครงการพิเศษ) เหมาจ่ายไม่เกินเดือนละ 4,000 บาท/คน/เดือน
-																						<br>
-																						3. นักศึกษาสามารถเป็น TA ได้ไม่เกิน 3 วิชา
-																						<br>
-																					</div>
-																				</div>
-																			</div> <br>
 
 
-																			<br>
-																		</center>
-																	</div>
+																		<br>
+																	</center>
 																</div>
 															</div>
+														</div>
 
 
-															<div class="row" style="margin-top: 15px;">
-																<style>
-																	input.larger {
-																		width: 17px;
-																		height: 17px;
-																		vertical-align: middle;
-																		margin-top: -3px;
-																	}
-																</style>
-																<div class="col-lg-6">
-																	<table width="100%" border="0">
+														<div class="row" style="margin-top: 15px;">
+															<style>
+																input.larger {
+																	width: 17px;
+																	height: 17px;
+																	vertical-align: middle;
+																	margin-top: -3px;
+																}
+															</style>
+															<div class="col-lg-6">
+																<table width="100%" border="0">
 
-																		<tr>
-																			<td>
-																				<div>
-
-																					<label class="container2" style="margin-top: 10px;">
-																						<font color="black" size="3px" class="serif"> ช่วยสอน </font>
-																						<input type="checkbox" disabled name="chk3" id="chk3" value="ช่วยสอน" <?php if ($chk3 == "ช่วยสอน") {
-																																									echo "checked";
-																																								} ?>>
-																						<span class="checkmark"></span>
-																					</label>
-
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<input type="text" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div>
-
-																					<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-																				</div>
-																			</td>
-																			<td colspan="1">
-																				<div>
-																					<textarea type="text" name="datachk31" id="datachk31" placeholder="   " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk31; ?></textarea>
-																				</div>
-																			</td>
-																		</tr>
-
-
-																		<tr>
-																			<td>
-																				<div>
-
-																					<label class="container2" style="margin-top: 10px;">
-																						<font color="black" size="3px" class="serif"> ช่วยเตรียมการสอน </font>
-																						<input type="checkbox" disabled name="chk4" id="chk4" value="ช่วยเตรียมการสอน" <?php if ($chk4 == "ช่วยเตรียมการสอน") {
-																																											echo "checked";
-																																										} ?>>
-																						<span class="checkmark"></span>
-																					</label>
-
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<input type="text" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div>
-
-																					<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-																				</div>
-																			</td>
-																			<td colspan="1">
-																				<div>
-																					<textarea type="text" name="datachk41" id="datachk41" placeholder="   " value="<?php echo $datachk41; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk41; ?></textarea>
-																				</div>
-																			</td>
-																		</tr>
-
-																	</table>
-																</div>
-																<div class="col-lg-6">
-																	<table width="100%" border="0">
-																		<tr>
-																			<td class="w-100">
-
+																	<tr>
+																		<td>
+																			<div>
 
 																				<label class="container2" style="margin-top: 10px;">
-																					ตรวจแบบทดสอบ
-																					<input type="checkbox" disabled name="chk5" id="chk5" value="ตรวจแบบทดสอบ " <?php if ($chk5 == "ตรวจแบบทดสอบ ") {
-																																									echo "checked";
-																																								} ?>>
+																					<font color="black" size="3px" class="serif"> ช่วยสอน </font>
+																					<input type="checkbox" disabled name="chk3" id="chk3" value="ช่วยสอน" <?php if ($chk3 == "ช่วยสอน") {
+																																								echo "checked";
+																																							} ?>>
 																					<span class="checkmark"></span>
 																				</label>
 
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<input type="text" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div>
 
-																			</td>
-																			<td>
-																				<div>
-																					<input type="text" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div>
+																				<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
 
-																					<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
+																			</div>
+																		</td>
+																		<td colspan="1">
+																			<div>
+																				<textarea type="text" name="datachk31" id="datachk31" placeholder="   " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk31; ?></textarea>
+																			</div>
+																		</td>
+																	</tr>
 
-																				</div>
-																			</td>
-																			<td colspan="1">
-																				<div>
-																					<textarea type="text" name="datachk51" id="datachk51" placeholder="   " value="<?php echo $datachk51; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk51; ?></textarea>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div>
 
-																					<label class="container2" style="margin-top: 10px;">
-																						<font color="black" size="3px" class="serif"> อื่นๆระบุ </font>
-																						<input type="checkbox" disabled name="chk6" id="chk6" value="อื่นๆระบุ" <?php if ($chk6 == "อื่นๆระบุ") {
-																																									echo "checked";
-																																								} ?>>
-																						<span class="checkmark"></span>
-																					</label>
+																	<tr>
+																		<td>
+																			<div>
 
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<input type="text" name="datachk6" id="datachk6" placeholder="   " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
-																				</div>
-																			</td>
-																			<td>
-																				<div>
-																					<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<div>
+																				<label class="container2" style="margin-top: 10px;">
+																					<font color="black" size="3px" class="serif"> ช่วยเตรียมการสอน </font>
+																					<input type="checkbox" disabled name="chk4" id="chk4" value="ช่วยเตรียมการสอน" <?php if ($chk4 == "ช่วยเตรียมการสอน") {
+																																										echo "checked";
+																																									} ?>>
+																					<span class="checkmark"></span>
+																				</label>
 
-																					<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<input type="text" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div>
 
-																				</div>
-																			</td>
-																			<td colspan="1">
-																				<div>
-																					<textarea type="text" name="datachk61" id="datachk61" placeholder="   " value="<?php echo $datachk61; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk61; ?></textarea>
-																				</div>
-																			</td>
-																		</tr>
-																	</table>
-																</div>
+																				<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
+
+																			</div>
+																		</td>
+																		<td colspan="1">
+																			<div>
+																				<textarea type="text" name="datachk41" id="datachk41" placeholder="   " value="<?php echo $datachk41; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk41; ?></textarea>
+																			</div>
+																		</td>
+																	</tr>
+
+																</table>
 															</div>
+															<div class="col-lg-6">
+																<table width="100%" border="0">
+																	<tr>
+																		<td class="w-100">
 
+
+																			<label class="container2" style="margin-top: 10px;">
+																				ตรวจแบบทดสอบ
+																				<input type="checkbox" disabled name="chk5" id="chk5" value="ตรวจแบบทดสอบ " <?php if ($chk5 == "ตรวจแบบทดสอบ ") {
+																																								echo "checked";
+																																							} ?>>
+																				<span class="checkmark"></span>
+																			</label>
+
+
+																		</td>
+																		<td>
+																			<div>
+																				<input type="text" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div>
+
+																				<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
+
+																			</div>
+																		</td>
+																		<td colspan="1">
+																			<div>
+																				<textarea type="text" name="datachk51" id="datachk51" placeholder="   " value="<?php echo $datachk51; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk51; ?></textarea>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div>
+
+																				<label class="container2" style="margin-top: 10px;">
+																					<font color="black" size="3px" class="serif"> อื่นๆระบุ </font>
+																					<input type="checkbox" disabled name="chk6" id="chk6" value="อื่นๆระบุ" <?php if ($chk6 == "อื่นๆระบุ") {
+																																								echo "checked";
+																																							} ?>>
+																					<span class="checkmark"></span>
+																				</label>
+
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<input type="text" name="datachk6" id="datachk6" placeholder="   " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
+																			</div>
+																		</td>
+																		<td>
+																			<div>
+																				<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div>
+
+																				<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
+
+																			</div>
+																		</td>
+																		<td colspan="1">
+																			<div>
+																				<textarea type="text" name="datachk61" id="datachk61" placeholder="   " value="<?php echo $datachk61; ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly><?php echo $datachk61; ?></textarea>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</div>
 														</div>
-													</div>
 
-													<div class="col-lg-7" style="margin-top: 10px; margin-bottom: 10px; ">
-														<table width="100%" border="0">
-															<tr>
-																<td width="40%">
-																	<div>
-																		<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
-																	</div>
-																</td>
-																<td>
-																	<div>
-																		<input type="text" name="datachk30" id="datachk30" placeholder="   " value="<?php echo number_format(0 + $datachk30 + $datachk4 + $datachk5 + $datachk6); ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
-																	</div>
-																</td>
-																<td>
-																	<div>
-																		<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-																	</div>
-																</td>
-															</tr>
-															<tr>
-																<td colspan="3">
-																	<div>
-																		<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
-																	</div>
-																</td>
-															</tr>
-
-															
-														</table>
 													</div>
+												</div>
+
+												<div class="col-lg-7" style="margin-top: 10px; margin-bottom: 10px; ">
+													<table width="100%" border="0">
+														<tr>
+															<td width="40%">
+																<div>
+																	<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
+																</div>
+															</td>
+															<td>
+																<div>
+																	<input type="text" name="datachk30" id="datachk30" placeholder="   " value="<?php echo number_format(0 + $datachk30 + $datachk4 + $datachk5 + $datachk6); ?>" class="form-control " autocomplete="off" style=" border-radius: 5px; " readonly>
+																</div>
+															</td>
+															<td>
+																<div>
+																	<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td colspan="3">
+																<div>
+																	<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
+																</div>
+															</td>
+														</tr>
+
+
+													</table>
+												</div>
 
 												<div class="col-lg-12 " align="right">
 													<div class="form-group">
