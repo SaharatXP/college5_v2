@@ -93,7 +93,7 @@ include('header.php');
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="username"> รหัสเจ้าหน้าที่ : </label> <!--- User เก็บ User ในการล็อกอิน --->
+                    <label for="username"> รหัสนักศึกษา : </label> <!--- User เก็บ User ในการล็อกอิน --->
                     <input type="text" class="form-control" id="codestudent" name="codestudent" required="" value="<?php echo $codestudent; ?>"     style="border-radius: 5px;"  >
                 </div>
             </div>

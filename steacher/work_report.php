@@ -51,7 +51,7 @@ if (empty($_GET["searchname2"])) {
 
 
 								<!--- Action =  ไปยังไฟล์ที่ทำการเช็ค  --->
-								<form role="form" name="frmMain" method="get" action="work_report.php" enctype="multipart/form-data">
+								<!-- <form role="form" name="frmMain" method="get" action="work_report.php" enctype="multipart/form-data">
 									<div class="row" style="margin-top: 10px; ">
 										<div class="col-lg-12">
 											<div class="col-lg-3 ">
@@ -104,7 +104,7 @@ if (empty($_GET["searchname2"])) {
 											</div>
 										</div>
 									</div>
-								</form>
+								</form> -->
 
 
 
@@ -153,7 +153,7 @@ if (empty($_GET["searchname2"])) {
 										}
 									</style>
 
-									<?php
+									<!-- <?php
 									$perpage = 20;
 									if (isset($_GET['page2'])) {
 										$page = $_GET['page2'];
@@ -217,7 +217,7 @@ if (empty($_GET["searchname2"])) {
 												<li class="next"><a href="work_report.php?page2=<?php echo $page + 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>">Next</a></li>
 											<?php endif; ?>
 										</ul>
-									<?php endif; ?>
+									<?php endif; ?> -->
 
 								</div>
 
@@ -329,14 +329,14 @@ if (empty($_GET["searchname2"])) {
 														<td style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
 																<font size="3px" color="Black" style=" font-size: 13px; ">
-																	<a data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>" style="cursor: pointer; "> ดูรายละเอียด </a>
+																	<a data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>" style="cursor: pointer; "> บันทึกการทำงาน คลิก </a>
 																</font>
 															</div>
 														</td>
 
 
 														<!-- modal small -->
-														<div class="modal fade" id="smallmodal<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+														<!-- <div class="modal fade" id="smallmodal<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
 															<div class="modal-dialog modal-md" role="document">
 																<div class="modal-content">
 																	<div class="modal-header">
@@ -358,7 +358,7 @@ if (empty($_GET["searchname2"])) {
 																	</div>
 																</div>
 															</div>
-														</div>
+														</div> -->
 														<!-- end modal small -->
 
 

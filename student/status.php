@@ -33,6 +33,7 @@ include('header.php');
 			<th width="5%" bgcolor="#FFF"><div align="center">
 			<font size="2px" color="white"> หมายเหตุ </font></div></th>  
 			<th width="5%" bgcolor="#FFF"><div align="center">
+			<font size="2px" color="white"> ลบใบสมัคร </font></div></th>  
 			<font size="2px" color="white">  </font></div></th>  
 		</tr>
 		</thead>

@@ -245,7 +245,7 @@ if (isset($_GET["Action"])) {
 												</div>
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>
-														<font color="black" size="3px" class="serif"> จำนวนขั่วโมงปฎิบัติงาน </font>
+														<font color="black" size="3px" class="serif"> กรอกชั่วโมง "เฉพาะ" ในช่องที่ปฎิบัติงาน </font>
 													</div>
 												</div>
 												<div class="col-lg-2 ">
@@ -581,18 +581,20 @@ if (isset($_GET["Action"])) {
 
 																			วันเดือนปี : <?php echo DateThai($objResult2["savedata1"]) . " " . DateThai2($objResult2["savedata1"]); ?> <br>
 
+																			ประเภทการปฎิบัติงาน : <br>
+
 																			ลงเวลาปฎิบัติงาน เริ่มต้น : <?php echo $objResult2["savedata2"]; ?> น.<br>
 
 																			ลงเวลาปฎิบัติงาน สิ้นสุด : <?php echo $objResult2["savedata3"]; ?> น.<br>
 
 																			โครงการ (ปกติ/พิเศษ) : <?php echo $objResult2["savedata4"]; ?> <br>
+													
+																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br> <br>
 
 																			จำนวนขั่วโมงปฎิบัติงาน <br>
-																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br>
+																			บรรยาย(ชั่วโมง) : <?php echo $objResult2["savedata5"]; ?> <br>
 
-																			บรรยาย : <?php echo $objResult2["savedata5"]; ?> ชั่วโมง<br>
-
-																			ปฎิบัติงาน : <?php echo $objResult2["savedata6"]; ?> ชั่วโมง<br>
+																			ปฎิบัติงาน(ชั่วโมง) : <?php echo $objResult2["savedata6"]; ?> <br>
 
 																			งานที่ปฎิบัติ : <?php echo $objResult2["savedata7"]; ?> <br>
 

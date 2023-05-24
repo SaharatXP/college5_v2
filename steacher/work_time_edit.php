@@ -139,7 +139,7 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> อาจารย์ประจำวิชา </font>
-														<select class="form-control" id="data11" name="data11" style=" border-radius: 10px; margin-top: 10px; ">
+														<select class="form-control" id="data11" name="data11" style=" border-radius: 10px; margin-top: 10px; " readonly>
 															<?php
 															$sql = "SELECT * FROM member where status = 'AJ' and pk = '" . $data11 . "'  order by pk asc  ";
 															$query = mysqli_query($objCon, $sql);
@@ -227,7 +227,7 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 												</div>
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>
-														<font color="black" size="3px" class="serif"> จำนวนขั่วโมงปฎิบัติงาน </font>
+														<font color="black" size="3px" class="serif"> กรอกชั่วโมง "เฉพาะ" ในช่องที่ปฎิบัติงาน </font>
 													</div>
 												</div>
 												<div class="col-lg-2 ">
@@ -255,7 +255,7 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 														<div class="form-group">
 
 															<button type="submit" class="btn btn-primary" style="background-color: #56BFB4; border-radius: 5px; width: 130px; height: 40px; border-color: #56BFB4; margin-top: 15px; " data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>">
-																<font color="#000000" size="3px" class="serif1"> เพิ่มข้อมูล </font>
+																<font color="#000000" size="3px" class="serif1"> แก้ไขข้อมูล </font>
 															</button>
 
 															<a href="work_time.php?CusID=<?php echo $_GET["CusID"]; ?>">

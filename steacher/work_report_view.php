@@ -63,7 +63,7 @@ if (empty($_GET["searchname2"])) {
                         <div class="col-lg-12 ">
                             <a href="./work_report.php" class="btn btn-secondary">
                                 < กลับ</a>
-                                    <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" />
+                                    <!-- <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" /> -->
                                     <div class="form-group " id="printableArea">
 
 

@@ -65,7 +65,7 @@ if (empty($_GET["searchname3"])) {
 							<div class="col-lg-12">
 								<div class="col-lg-2 ">
 									<div class="form-group">
-										<font color="black" size="3px" class="serif"> วันเดือนปี </font>
+										<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
 										<input type="date" name="searchname3" id="searchname3" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
 									</div>
 								</div>
@@ -99,9 +99,9 @@ if (empty($_GET["searchname3"])) {
 								</div>
 								<div class="col-lg-2 ">
 									<div class="form-group">
-										<font color="black" size="3px" class="serif"> โครงการ </font>
+										<font color="black" size="3px" class="serif"> เทอม </font>
 										<select class="form-control" id="searchname2" name="searchname2" style=" border-radius: 10px;  ">
-											<?php if (empty($searchname2)) { ?>
+											<!-- <?php if (empty($searchname2)) { ?>
 												<option value=""> โครงการ </option>
 											<?php } ?>
 											<?php
@@ -121,16 +121,16 @@ if (empty($_GET["searchname3"])) {
 												<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
 											<?php
 											}
-											?>
+											?> -->
 										</select> <br>
 									</div>
 								</div>
-								<div class="col-lg-2 ">
+								<!-- <div class="col-lg-2 ">
 									<div class="form-group">
 										<font color="black" size="3px" class="serif"> section </font>
 										<input type="number" name="secsearch" style=" border-radius: 10px; " class="form-control" min="1">
 									</div>
-								</div>
+								</div> -->
 								<div class="col-lg-3 ">
 									<div class="form-group">
 										<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>

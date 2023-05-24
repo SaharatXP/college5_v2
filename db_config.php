@@ -20,7 +20,7 @@ error_reporting (E_ALL ^ E_NOTICE);
 	//! for dev
 	$serverName = "localhost";
 	$userName = "root"; //root //teachera_ssistant
-	$userPassword = "root";
+	$userPassword = "12345678";
 	$dbName = "college5"; //ablbotco_college //teachera_ssistant
  
 	$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
