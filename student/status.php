@@ -1,9 +1,9 @@
 <?php
 session_start();
 $_SESSION["load"] = "3";
-include('header.php'); 
+include('header.php');
 ?>
-  
+
 <div id="wrapper" class="container">
   <h1 id="page-title"> ตรวจสอบสถานะของการสมัครเป็นผู้ช่วยอาจารย์  </h1>
   <div class="row">
@@ -123,25 +123,77 @@ include('header.php');
 								
 							}
 							?>
-						</font></div></td>  			 
-			<td><div align="center"><font size="3px" class="serif2"><?php echo $objResult["note_data"];?></font></div></td> 
-			
-			<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk'];?>" class="btn btn-danger mx-3">ลบ</a></td>
-							 
-					
-			</tr>		 
-			<?php $i++; } ?>					 
-		</table> 
+								<tr onMouseover="this.style.backgroundColor='yellow';" onMouseout="this.style.backgroundColor='white';">
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo $i; ?></font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo $data1; ?></font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo $data2; ?></font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo $namedrop_term; ?></font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo substr($secg, 0, -1); ?></font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo DateThai($objResult["create_date"]) . " " . DateThai2($objResult["create_date"]); ?></font>
+										</div>
+									</td>
+
+									<td>
+										<div align="center">
+											<font size="3px" color="Black">
+												<?php
+
+												if ($objResult["status"] == "0") {
+													echo " <font color = '#FF8C00' > กำลังตรวจสอบ </fonnt> ";
+												} else if ($objResult["status"] == "1") {
+													echo " <font color = '#006400' > อนุมัติ </fonnt> ";
+												} else if ($objResult["status"] == "2") {
+													echo " <font color = 'red' > ไม่อนุมัติ </fonnt> ";
+												}
+												?>
+											</font>
+										</div>
+									</td>
+									<td>
+										<div align="center">
+											<font size="3px" class="serif2"><?php echo $objResult["note_data"]; ?></font>
+										</div>
+									</td>
+
+									<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการลบ ?')">ลบ</a></td>
+
+
+								</tr>
+							<?php $i++;
+							} ?>
+						</table>
+					</div>
+
+
+					<br><br><bR><br>
+				</div>
+			</div>
 		</div>
-		
-		
-		<br><br><bR><br>
-	</div> 
+
+
 	</div>
-	</div>
-     
-     
-  </div>
 </div>
 
 <?php

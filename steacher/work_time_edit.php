@@ -70,6 +70,8 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 	$savedata5 = $objResult2["savedata5"];
 	$savedata6 = $objResult2["savedata6"];
 	$savedata7 = $objResult2["savedata7"];
+	$type =
+		$objResult2["type"];
 }
 
 ?>
@@ -224,6 +226,24 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 															} ?>
 														</select>
 													</div>
+												</div>
+
+												<div class="col-lg-12">
+													<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน</font>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="type" id="type1" value="Lec" <?php echo ($type == 'Lec' ? ' checked=checked' : ''); ?>>
+														<label class="form-check-label" for="type1">
+															บรรยาย
+														</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" type="radio" name="type" id="type2" value="lab" <?php echo ($type == 'Lab' ? ' checked=checked' : ''); ?>>
+														<label class="form-check-label" for="type2">
+															ปฎิบัติงาน
+														</label>
+
+													</div>
+
 												</div>
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>

@@ -224,10 +224,10 @@ if (isset($_GET["Action"])) {
 														</select>
 													</div>
 												</div>
-												
-												
+
+
 												<div class="col-lg-12">
-												<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน </font>
+													<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน </font>
 													<div class="form-check">
 														<input class="form-check-input" type="radio" name="type" id="type1" value="Lec">
 														<label class="form-check-label" for="type1">
@@ -237,10 +237,10 @@ if (isset($_GET["Action"])) {
 													<div class="form-check">
 														<input class="form-check-input" type="radio" name="type" id="type2" value="lab">
 														<label class="form-check-label" for="type2">
-														ปฎิบัติงาน
+															ปฎิบัติงาน
 														</label>
-													
-												</div>
+
+													</div>
 
 												</div>
 												<div class="col-lg-12 ">
@@ -411,7 +411,7 @@ if (isset($_GET["Action"])) {
 													</th>
 													<th width="8%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 														<div align="center">
-															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา </font>
+															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> เวลาเริ่มปฎิบัติงาน-สิ้นสุดงาน </font>
 														</div>
 													</th>
 													<th width="2%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
@@ -529,13 +529,13 @@ if (isset($_GET["Action"])) {
 														<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
 																<font size="3px" color="Black" style=" font-size: 13px; "> <?php
-																															echo DateThai($objResult2["newdate"]) . " " . DateThai2($objResult2["newdate"]); ?> </font>
+																															echo  DateThai2($objResult2["newdate"]); ?> </font>
 															</div>
 														</td>
 
 														<td style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $data1 . " " . $data2; ?> </font>
+																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2["savedata2"] . "-" . $objResult2["savedata3"]; ?> </font>
 															</div>
 														</td>
 														<td style=" border-left: 0px solid #F2F2F2; ">
@@ -579,7 +579,7 @@ if (isset($_GET["Action"])) {
 																	<div class="modal-body">
 																		<font size="3px" color="black">
 
-																			วันเดือนปี : <?php echo DateThai($objResult2["savedata1"]) . " " . DateThai2($objResult2["savedata1"]); ?> <br>
+																			วันเดือนปี : <?php echo  DateThai2($objResult2["savedata1"]); ?> <br>
 
 																			ประเภทการปฎิบัติงาน : <br>
 
@@ -592,9 +592,18 @@ if (isset($_GET["Action"])) {
 																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br> <br>
 
 																			จำนวนขั่วโมงปฎิบัติงาน <br>
+<<<<<<< HEAD
 																			บรรยาย(ชั่วโมง) : <?php echo $objResult2["savedata5"]; ?> <br>
 
 																			ปฎิบัติงาน(ชั่วโมง) : <?php echo $objResult2["savedata6"]; ?> <br>
+=======
+																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br>
+
+																			บรรยาย : <?php echo $objResult2["savedata5"] == 0 ? '-' : $objResult2["savedata5"] . "ชั่วโมง"; ?> <br>
+
+																			ปฎิบัติงาน : <?php echo $objResult2["savedata6"] ==
+																								0 ? '-' : $objResult2["savedata6"] . "ชั่วโมง"; ?> <br>
+>>>>>>> 2ea2f79 (Bank | update req)
 
 																			งานที่ปฎิบัติ : <?php echo $objResult2["savedata7"]; ?> <br>
 

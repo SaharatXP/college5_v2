@@ -117,27 +117,31 @@ if (empty($_GET["searchname"])) {
 						<div class="row" style="margin-top: 10px; margin-bottom: 5px;">
 							<?php
 							// echo 'DATA=>'.$_SESSION["UserID2"];
-							$result=mysqli_query($objCon, "SELECT count(*) as total from student_paper 
+							$result = mysqli_query($objCon, "SELECT count(*) as total from student_paper 
 							where subject = $objResult[pk] and student = $_SESSION[UserID2]");
-							$data=mysqli_fetch_assoc($result);
+							$data = mysqli_fetch_assoc($result);
 							$ttc = $data['total'];
 
-							$result_t=mysqli_query($objCon, "SELECT count(*) as total from student_paper 
+							$result_t = mysqli_query($objCon, "SELECT count(*) as total from student_paper 
 							where student = $_SESSION[UserID2]");
-							$data_t =mysqli_fetch_assoc($result_t);
+							$data_t = mysqli_fetch_assoc($result_t);
 							$ttc_t = $data['total'];
 
 							// echo $ttc;
 							$startDate = strtotime(date('Y-m-d', strtotime($objResult["enddate"])));
 							$currentDate = strtotime(date('Y-m-d'));
-							if ($startDate < $currentDate || $ttc > 0 || $ttc_t > 2) {
+							if ($startDate < $currentDate) {
 							?>
+								<b style="color:red;">วิชานี้ปิดนรับสมัครแล้ว</b><br>
+
 								<a class="btn btn-primary btn-minwidth" style="width: 100%;  margin-top: 10px; " disabled> สมัคร <br>
 								</a>
 							<?php
-							} else {
-
+							} else if ($ttc > 0 || $ttc_t > 2) {
 							?>
+								<b style="color:red;">คุณสมัครวิชานี้ไปแล้ว <br> หากต้องการสมัครใหม่ให้ลบใบสมัครออก</b><br>
+							<?php } else { ?>
+
 								<?php if ($objResult["chk1"] == $studentsubject) { ?>
 									<div class="col-lg-12">
 										<a href="view_subject3.php?CusID=<?php echo $objResult["pk"]; ?>" class="btn btn-primary btn-minwidth" style="width: 100%;  margin-top: 10px; "> สมัคร <br>
@@ -150,7 +154,9 @@ if (empty($_GET["searchname"])) {
 											(ปริญญาโท-เอก) </a>
 									</div>
 							<?php }
-							} ?>
+							}
+
+							?>
 
 							<!-- <?php if ($objResult["chk1"] == $studentsubject) { ?> 
 				<div class="col-lg-12"  style="margin-top: 10px; margin-bottom: 5px;  "  >
