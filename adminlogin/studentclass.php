@@ -2,7 +2,8 @@
 session_start();
 $_SESSION["load"] = "7";
 include('header.php');
-
+$whereId = "and c.data11 = $_SESSION[UserID3]";
+$whereIdOption = "and data11 = '$_SESSION[UserID3]'";
 
 $searchname = "";
 if (empty($_GET["searchname"])) {
@@ -16,21 +17,21 @@ if (empty($_GET["searchname2"])) {
 	$searchname2 = $_GET["searchname2"];
 }
 
-$searchname3 = date('d-m-Y');
-if (empty($_GET["searchname3"])) {
 
-	$cut = explode("-", $searchname3);
-	$date_income = $cut[0] . "-" . $cut[1] . "-" . ($cut[2]);
-	$daystart_load = date("d-m-Y", strtotime($date_income));
-	$daystart_load1 = date("Y-m-d", strtotime($date_income));
-} else {
-	$searchname3 = $_GET["searchname3"];
+// if (empty($_GET["searchname3"])) {
 
-	$cut = explode("/", $searchname3);
-	$date_income = $cut[0] . "-" . $cut[1] . "-" . ($cut[2]);
-	$daystart_load = date("d-m-Y", strtotime($date_income));
-	$daystart_load1 = date("Y-m-d", strtotime($date_income));
-}
+// 	$cut = explode("-", $searchname3);
+// 	$date_income = $cut[0] . "-" . $cut[1] . "-" . ($cut[2]);
+// 	$daystart_load = date("d-m-Y", strtotime($date_income));
+// 	$daystart_load1 = date("Y-m-d", strtotime($date_income));
+// } else {
+// 	$searchname3 = $_GET["searchname3"];
+
+// 	$cut = explode("/", $searchname3);
+// 	$date_income = $cut[0] . "-" . $cut[1] . "-" . ($cut[2]);
+// 	$daystart_load = date("d-m-Y", strtotime($date_income));
+// 	$daystart_load1 = date("Y-m-d", strtotime($date_income));
+// }
 ?>
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
@@ -66,7 +67,7 @@ if (empty($_GET["searchname3"])) {
 								<div class="col-lg-2 ">
 									<div class="form-group">
 										<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
-										<input type="date" name="searchname3" id="searchname3" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
+										<input type="text" name="searchname3" id="searchname3" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
 									</div>
 								</div>
 								<div class="col-lg-3 ">
@@ -77,7 +78,8 @@ if (empty($_GET["searchname3"])) {
 												<option value=""> รหัสวิชา-ชื่อวิชา </option>
 											<?php } ?>
 											<?php
-											$sql = "SELECT * FROM classdata where  pk = '" . $searchname4 . "'  order by pk asc  ";
+											$sql = "SELECT * FROM classdata where pk = '" . $searchname4 . "'" . $whereIdOption  . "  order by pk asc  ";
+
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
@@ -86,7 +88,8 @@ if (empty($_GET["searchname3"])) {
 											}
 											?>
 											<?php
-											$sql = "SELECT * FROM classdata where  pk != '" . $searchname4 . "'  order by pk asc  ";
+											$sql = "SELECT * FROM classdata where  pk != '" . $searchname4 . "'" . $whereIdOption  . "  order by pk asc  ";
+
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
@@ -256,7 +259,8 @@ if (empty($_GET["searchname3"])) {
 							$secsearch = "and a.section = '$_GET[secsearch]'";
 						} else {
 							$secsearch = '';
-						}
+						};
+
 
 
 						// $sql2 = " SELECT a.*, b.data1, b.data2 FROM work_time a 
@@ -265,8 +269,9 @@ if (empty($_GET["searchname3"])) {
 						// and a.member = '".$_SESSION["UserID3"]."'   
 						// ".$addcode.$addcode2.$addcode3."  
 						// order by a.pk asc    "; 
-						$sql2 = " SELECT * FROM work_time as a where a.student_paper != '' 
-											$savedata1 $subject $savedata4 $secsearch
+						$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject 
+						where a.student_paper != '' 
+											$savedata1 $subject $savedata4 $secsearch $whereId
 											";
 
 						$query2 = mysqli_query($objCon, $sql2);
@@ -315,32 +320,17 @@ if (empty($_GET["searchname3"])) {
 									<tr>
 										<th width="3%" bgcolor="#A8DADC" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> วัน เดือน ปี </font>
+												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา - ชื่อวิชา </font>
 											</div>
 										</th>
 										<th width="8%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา </font>
+												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ปีการศึกษา </font>
 											</div>
 										</th>
 										<th width="2%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> โครงการ </font>
-											</div>
-										</th>
-										<th width="2%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
-											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> กลุ่มที่ </font>
-											</div>
-										</th>
-										<th width="6%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  ">
-											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> อาจารย์ประจำวิชา </font>
-											</div>
-										</th>
-										<th width="3%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  ">
-											<div align="center">
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ข้อมูลการทำงาน </font>
+												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> เทอม </font>
 											</div>
 										</th>
 										<th width="3%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
@@ -372,10 +362,10 @@ if (empty($_GET["searchname3"])) {
 
 									// 	".$addcode.$addcode2.$addcode3."  
 									// 	order by a.pk asc   limit {$start} , {$perpage}   ";  
-									$sql2 = " SELECT * FROM work_time as a where a.student_paper != '' 
-											$savedata1 $subject $savedata4 $secsearch
+									$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject where a.student_paper != '' 
+											 $subject $savedata4 $secsearch $whereId GROUP BY a.subject
 											";
-
+									// echo $sql2;
 									$query2 = mysqli_query($con, $sql2);
 									$bg = "#FFF";
 									while ($objResult2 = mysqli_fetch_array($query2)) {
@@ -444,20 +434,28 @@ if (empty($_GET["searchname3"])) {
 
 									?>
 										<tr style="background-color: <?php echo $bg; ?>; ">
-
-											<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
-												<div align="center">
-													<font size="3px" color="Black" style=" font-size: 13px; "> <?php
-																												echo DateThai($objResult2["newdate"]) . " " . DateThai2($objResult2["newdate"]); ?> </font>
-												</div>
-											</td>
-
 											<td style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $data1 . " " . $data2; ?> </font>
 												</div>
 											</td>
-											<td style=" border-left: 0px solid #F2F2F2; ">
+
+											<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
+												<div align="center">
+													<font size="3px" color="Black" style=" font-size: 13px; "> <?php
+																												echo  $objResult2["data7"]; ?> </font>
+												</div>
+											</td>
+
+											<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
+												<div align="center">
+													<font size="3px" color="Black" style=" font-size: 13px; "> <?php
+																												echo  $objResult2["data8"]; ?> </font>
+												</div>
+											</td>
+
+
+											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2["savedata4"]; ?> </font>
 												</div>
@@ -466,23 +464,23 @@ if (empty($_GET["searchname3"])) {
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $seco; ?> </font>
 												</div>
-											</td>
+											</td> -->
 
 
-											<td style=" border-left: 0px solid #F2F2F2; ">
+											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $name_teacher; ?> </font>
 												</div>
-											</td>
+											</td> -->
 
 
-											<td style=" border-left: 0px solid #F2F2F2; ">
+											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; ">
 														<a data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>" style="cursor: pointer; "> ดูรายละเอียด </a>
 													</font>
 												</div>
-											</td>
+											</td> -->
 
 
 											<!-- modal small -->
@@ -528,7 +526,7 @@ if (empty($_GET["searchname3"])) {
 
 													<a href="work_time_edit2.php?CusID=<?php echo $objResult2["student_paper"]; ?>&Idel=<?php echo $objResult2["pk"]; ?>&page=2">
 														<button type="button" class="btn btn-sm btn-primary" style="background-color: #FFD45F; border-radius: 5px;   border: 1px solid  #FFD45F;   ">
-															<font color="#000000" size="2px" class="serif1"> คลิก </font>
+															<font color="#000000" size="2px" class="serif1"> ดูข้อมูล คลิก </font>
 														</button>
 													</a>
 
