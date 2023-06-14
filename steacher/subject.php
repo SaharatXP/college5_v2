@@ -128,7 +128,7 @@ if (empty($_GET["searchname"])) {
 							$currentDate = strtotime(date('Y-m-d'));
 							if ($startDate < $currentDate) {
 							?>
-								<b style="color:red;">วิชานี้ปิดนรับสมัครแล้ว</b><br>
+								<b style="color:red;">วิชานี้ได้ปิดรับสมัครแล้ว</b><br>
 								<a class="btn btn-primary btn-minwidth" style="width: 100%;  margin-top: 10px; " disabled> สมัคร <br>
 								</a>
 							<?php
