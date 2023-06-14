@@ -229,15 +229,15 @@ if (isset($_GET["Action"])) {
 												<div class="col-lg-12">
 													<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน </font>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type1" value="Lec">
+														<input class="form-check-input" type="radio" name="type" id="type1" value="บรรยาย">
 														<label class="form-check-label" for="type1">
 															บรรยาย
 														</label>
 													</div>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type2" value="lab">
+														<input class="form-check-input" type="radio" name="type" id="type2" value="ปฎิบัติการ">
 														<label class="form-check-label" for="type2">
-															ปฎิบัติงาน
+															ปฎิบัติการ
 														</label>
 
 													</div>
@@ -256,7 +256,7 @@ if (isset($_GET["Action"])) {
 												</div>
 												<div class="col-lg-2 ">
 													<div class="form-group">
-														<font color="black" size="3px" class="serif"> ปฎิบัติงาน (ชั่วโมง) </font>
+														<font color="black" size="3px" class="serif"> ปฎิบัติการ (ชั่วโมง) </font>
 														<input type="text" name="savedata6" id="savedata6" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 													</div>
 												</div>
@@ -581,7 +581,7 @@ if (isset($_GET["Action"])) {
 
 																			วันเดือนปี : <?php echo  DateThai2($objResult2["savedata1"]); ?> <br>
 
-																			ประเภทการปฎิบัติงาน : <br>
+																			ประเภทการปฎิบัติงาน :  <br>
 
 																			ลงเวลาปฎิบัติงาน เริ่มต้น : <?php echo $objResult2["savedata2"]; ?> น.<br>
 
@@ -592,20 +592,22 @@ if (isset($_GET["Action"])) {
 																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br> <br>
 
 																			จำนวนขั่วโมงปฎิบัติงาน <br>
-<<<<<<< HEAD
-																			บรรยาย(ชั่วโมง) : <?php echo $objResult2["savedata5"]; ?> <br>
 
-																			ปฎิบัติงาน(ชั่วโมง) : <?php echo $objResult2["savedata6"]; ?> <br>
-=======
+																			<!-- บรรยาย(ชั่วโมง) : <?php echo $objResult2["savedata5"]; ?> <br>
+
+																			ปฎิบัติงาน(ชั่วโมง) : <?php echo $objResult2["savedata6"]; ?> <br> -->
+
 																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br>
 
 																			บรรยาย : <?php echo $objResult2["savedata5"] == 0 ? '-' : $objResult2["savedata5"] . "ชั่วโมง"; ?> <br>
 
 																			ปฎิบัติงาน : <?php echo $objResult2["savedata6"] ==
 																								0 ? '-' : $objResult2["savedata6"] . "ชั่วโมง"; ?> <br>
->>>>>>> 2ea2f79 (Bank | update req)
+
 
 																			งานที่ปฎิบัติ : <?php echo $objResult2["savedata7"]; ?> <br>
+
+																			หมายเหตุ(ถ้ามี) :  <br>
 
 																		</font>
 																	</div>
