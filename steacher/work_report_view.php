@@ -62,16 +62,16 @@ if (empty($_GET["searchname2"])) {
                     <div class="row">
                         <div class="col-lg-12 ">
                             <a href="./work_report.php" class="btn btn-secondary">
-<<<<<<< HEAD
+
                                 < กลับ</a>
                                     <!-- <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" /> -->
                                     <div class="form-group " id="printableArea">
-=======
+
                                 <b><u>
-                                        < กลับ</u></b></a>
+                                        <!-- < กลับ</u></b></a>
                             <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" />
-                            <div class="form-group " id="printableArea">
->>>>>>> 2ea2f79 (Bank | update req)
+                            <div class="form-group " id="printableArea"> -->
+
 
 
                                 <div class="col-lg-12 ">
@@ -116,7 +116,7 @@ if (empty($_GET["searchname2"])) {
                                         ?>
                                             <div class="col-lg-12 text-center">ภาคการศึกษา <?php echo chkTerm1($objResult['data8']) ?> <?php echo chkTerm2($objResult['data8']) ?> ปีการศึกษา <?php echo $objResult['data7'] ?> </div><br><br>
                                             <div class="col-lg-8 mt-3">
-                                                <b>วิชา : </b> <?php echo $objResult['data1'] ?> <?php echo $objResult['data2'] ?> <br>
+                                                <b>วิชา</b> : </b> <?php echo $objResult['data1'] ?> <?php echo $objResult['data2'] ?> <br>
                                                 <b> อาจารย์ประจำวิชา :</b> <?php echo $objResult['name'] ?> <br>
                                                 <?php
                                                 $sqlu = "SELECT *  FROM member 
@@ -133,7 +133,7 @@ if (empty($_GET["searchname2"])) {
 
                                             </div>
                                             <div class="col-lg-4">
-                                                <b>หน่วยกิต : </b> <?php echo $objResult['data6'] ?> <br>
+                                                <b>หน่วยกิต</b> : </b> <?php echo $objResult['data6'] ?> <br>
 
                                                 <b>รหัสประจำตัว : </b> <?php echo $objResult['codestudent'] ?> <br>
 
