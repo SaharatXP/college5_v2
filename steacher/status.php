@@ -33,7 +33,7 @@ include('header.php');
 			<th width="5%" bgcolor="#FFF"><div align="center">
 			<font size="2px" color="white"> หมายเหตุ </font></div></th>  
 			<th width="5%" bgcolor="#FFF"><div align="center">
-			<font size="2px" color="white"> ลบใบสมัคร </font></div></th>
+			<font size="2px" color="white"> ยกเลิกใบสมัคร </font></div></th>
 			<font size="2px" color="white">  </font></div></th>  
 
 		</tr>
@@ -182,7 +182,7 @@ include('header.php');
 											<font size="3px" class="serif2"><?php echo ($objResult["note_data"]); ?> </font>
 										</div>
 									</td>
-									<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการลบ ?')">ลบ</a></td>
+									<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการยกเลิก ?')">ยกเลิก</a></td>
 
 
 								</tr>

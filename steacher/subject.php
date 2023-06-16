@@ -134,7 +134,7 @@ if (empty($_GET["searchname"])) {
 							<?php
 							} else if ($ttc > 0 || $ttc_t > 2) {
 							?>
-								<b style="color:red;">คุณสมัครวิชานี้ไปแล้ว <br> หากต้องการสมัครใหม่ให้ลบใบสมัครออก</b><br>
+								<b style="color:red;">คุณสมัครวิชานี้ไปแล้ว <br> หากต้องการสมัครใหม่ ให้ยกเลิกใบสมัครก่อน</b><br>
 							<?php } else { ?>
 								<?php if ($objResult["chk1"] == $studentsubject) { ?>
 									<div class="col-lg-12">
