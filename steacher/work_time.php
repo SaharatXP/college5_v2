@@ -226,23 +226,17 @@ if (isset($_GET["Action"])) {
 												</div>
 
 
-												<div class="col-lg-12">
+												<!-- <div class="col-lg-12">
 													<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน </font>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type1" value="บรรยาย">
-														<label class="form-check-label" for="type1">
-															บรรยาย
-														</label>
+
 													</div>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type2" value="ปฎิบัติการ">
-														<label class="form-check-label" for="type2">
-															ปฎิบัติการ
-														</label>
+
 
 													</div>
 
-												</div>
+												</div> -->
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> กรอกชั่วโมง "เฉพาะ" ในช่องที่ปฎิบัติงาน </font>
@@ -250,12 +244,24 @@ if (isset($_GET["Action"])) {
 												</div>
 												<div class="col-lg-2 ">
 													<div class="form-group">
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="type" id="type1" value="Lec">
+															<label class="form-check-label" for="type1">
+																บรรยาย
+															</label>
+														</div>
 														<font color="black" size="3px" class="serif"> บรรยาย (ชั่วโมง) </font>
 														<input type="text" name="savedata5" id="savedata5" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 													</div>
 												</div>
 												<div class="col-lg-2 ">
 													<div class="form-group">
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="type" id="type2" value="Lab">
+															<label class="form-check-label" for="type2">
+																ปฎิบัติการ
+															</label>
+														</div>
 														<font color="black" size="3px" class="serif"> ปฎิบัติการ (ชั่วโมง) </font>
 														<input type="text" name="savedata6" id="savedata6" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 													</div>
@@ -265,6 +271,13 @@ if (isset($_GET["Action"])) {
 													<div class="form-group">
 														<font color="black" size="3px" class="serif"> งานที่ปฎิบัติ </font>
 														<textarea type="text" name="savedata7" id="savedata7" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " rows="5"></textarea>
+													</div>
+												</div>
+
+												<div class="col-lg-6 ">
+													<div class="form-group">
+														<font color="black" size="3px" class="serif"> หมายเหตุ </font>
+														<textarea type="text" name="description" id="description" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " rows="5"></textarea>
 													</div>
 												</div>
 
@@ -581,14 +594,14 @@ if (isset($_GET["Action"])) {
 
 																			วันเดือนปี : <?php echo  DateThai2($objResult2["savedata1"]); ?> <br>
 
-																			ประเภทการปฎิบัติงาน :  <br>
+																			ประเภทการปฎิบัติงาน : <?php echo $objResult2["type"] == 'Lec' ? 'บรรยาย' : 'ปฎิบัติการ'; ?><br>
 
 																			ลงเวลาปฎิบัติงาน เริ่มต้น : <?php echo $objResult2["savedata2"]; ?> น.<br>
 
 																			ลงเวลาปฎิบัติงาน สิ้นสุด : <?php echo $objResult2["savedata3"]; ?> น.<br>
 
 																			โครงการ (ปกติ/พิเศษ) : <?php echo $objResult2["savedata4"]; ?> <br>
-													
+
 																			กลุ่มที่ (section): <?php echo $objResult2["section"]; ?> <br> <br>
 
 																			จำนวนขั่วโมงปฎิบัติงาน <br>
@@ -607,7 +620,7 @@ if (isset($_GET["Action"])) {
 
 																			งานที่ปฎิบัติ : <?php echo $objResult2["savedata7"]; ?> <br>
 
-																			หมายเหตุ(ถ้ามี) :  <br>
+																			หมายเหตุ(ถ้ามี) : <?php echo $objResult2["description"]; ?><br>
 
 																		</font>
 																	</div>

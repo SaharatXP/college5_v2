@@ -29,6 +29,12 @@ if (empty($_GET["searchname2"])) {
 } else {
     $searchname2 = $_GET["searchname2"];
 }
+$smonth = '';
+if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
+    $smonth = "and MONTH(a.savedata1) =" . $_GET['monthx'];
+} else {
+    $smonth = '';
+}
 ?>
 <style>
     @media print {
@@ -77,11 +83,40 @@ if (empty($_GET["searchname2"])) {
 
                                 <div class="row">
                                     <div class="col-lg-12 ">
-                                        <a href="./work_time_edit2.php?Idel=<?php echo $_GET['classdata'] ?>&page=2" class="btn btn-secondary">
-                                            < กลับ</a>
+                                        <form action="work_repoer_view.php" class="row">
+                                            <div class="col-lg-1">
+                                                <label for="monthx">&nbsp;</label><br>
+                                                <a href="./work_time_edit2.php?Idel=<?php echo $_GET['classdata'] ?>&page=2" class="btn btn-secondary">
+                                                    < กลับ</a>
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <label for="monthx">เดืือน</label>
+                                                <input type="text" hidden name="classdata" value="<?php echo $_GET['classdata'] ?>">
+                                                <input type="text" hidden name="memberId" value="<?php echo $_GET['memberId'] ?>">
+                                                <input type="text" hidden name="page" value="<?php echo $_GET['page'] ?>">
 
-                                        </a>
+
+                                                <select name="monthx" id="monthx" class="form-control">
+                                                    <option value="">ทั้งหมด</option>
+                                                    <?php
+                                                    $sqlm = "SELECT * from month";
+                                                    $querym = mysqli_query($con, $sqlm);
+                                                    while ($objResultm = mysqli_fetch_array($querym)) {
+                                                    ?>
+                                                        <option value="<?php echo $objResultm['month']; ?>"><?php echo $objResultm['month_name']; ?></option>
+                                                    <?php } ?>
+
+                                                </select>
+
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <label for="monthx">&nbsp;</label><br>
+                                                <button type="submit" class="btn btn-outline-success">ค้นหา</button>
+                                            </div>
+                                        </form>
                                         <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" />
+
                                         <div class="form-group " id="printableArea">
 
 
@@ -168,6 +203,7 @@ if (empty($_GET["searchname2"])) {
                                         where a.student_paper != ''
                                         and a.member = $_GET[memberId]
                                         and b.pk = $_GET[classdata]
+                                        $smonth
                                         group by MONTH(a.savedata1)
                                         order by a.pk asc ";
                                                 // echo $sql_month;

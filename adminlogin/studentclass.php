@@ -18,6 +18,7 @@ if (empty($_GET["searchname2"])) {
 }
 
 
+
 // if (empty($_GET["searchname3"])) {
 
 // 	$cut = explode("-", $searchname3);
@@ -64,12 +65,6 @@ if (empty($_GET["searchname2"])) {
 					<form role="form" name="frmMain" method="get" action="studentclass.php" enctype="multipart/form-data">
 						<div class="row" style="margin-top: 10px; ">
 							<div class="col-lg-12">
-								<div class="col-lg-2 ">
-									<div class="form-group">
-										<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
-										<input type="text" name="searchname3" id="searchname3" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
-									</div>
-								</div>
 								<div class="col-lg-3 ">
 									<div class="form-group">
 										<font color="black" size="3px" class="serif"> รหัสวิชา-ชื่อวิชา </font>
@@ -102,13 +97,20 @@ if (empty($_GET["searchname2"])) {
 								</div>
 								<div class="col-lg-2 ">
 									<div class="form-group">
+										<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
+										<input type="text" name="searchname3" id="searchname3" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
+									</div>
+								</div>
+
+								<div class="col-lg-2 ">
+									<div class="form-group">
 										<font color="black" size="3px" class="serif"> เทอม </font>
 										<select class="form-control" id="searchname2" name="searchname2" style=" border-radius: 10px;  ">
-											<!-- <?php if (empty($searchname2)) { ?>
-												<option value=""> โครงการ </option>
-											<?php } ?>
+
+											<option value=""> เลือกเทอม </option>
+
 											<?php
-											$sql = "SELECT * FROM drop_type where name = '" . $searchname2 . "'  order by pk asc  ";
+											$sql = "SELECT * FROM drop_term where name = '" . $searchname2 . "'  order by pk asc  ";
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
@@ -117,14 +119,14 @@ if (empty($_GET["searchname2"])) {
 											}
 											?>
 											<?php
-											$sql = "SELECT * FROM drop_type where  name != '" . $searchname2 . "'  order by pk asc  ";
+											$sql = "SELECT * FROM drop_term where  name != '" . $searchname2 . "'  order by pk asc  ";
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
 												<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
 											<?php
 											}
-											?> -->
+											?>
 										</select> <br>
 									</div>
 								</div>
@@ -222,13 +224,13 @@ if (empty($_GET["searchname2"])) {
 						$addcode2 = "";
 						if (empty($_GET["searchname2"])) {
 						} else {
-							$addcode2 = " and  a.savedata4 = '" . $searchname2 . "' ";
+							$addcode2 = " and  c.data8 = '" . $searchname2 . "' ";
 						}
 						$addcode3 = "";
 						if (empty($_GET["searchname3"])) {
-							$addcode3 = " and  a.savedata1 = '' ";
+							$addcode3 = " and  c.data7 = '' ";
 						} else {
-							$addcode3 = " and  a.savedata1 = '" . $daystart_load1 . "' ";
+							$addcode3 = " and  c.data7 = '" . $_GET['searchname3'] . "' ";
 						}
 
 
@@ -240,7 +242,7 @@ if (empty($_GET["searchname2"])) {
 
 
 						if (isset($_GET['searchname3']) && !empty($_GET['searchname3'])) {
-							$savedata1 = "and  a.savedata1 = '$_GET[searchname3]'";
+							$savedata1 = "and c.data7 = '$_GET[searchname3]'";
 						} else {
 							$savedata1 = '';
 						}
@@ -251,7 +253,7 @@ if (empty($_GET["searchname2"])) {
 						}
 
 						if (isset($_GET['searchname2']) && !empty($_GET['searchname2'])) {
-							$savedata4 = "and a.savedata4 = '$_GET[searchname2]'";
+							$savedata4 = "and c.data8 = '$_GET[searchname2]'";
 						} else {
 							$savedata4 = '';
 						}
@@ -269,46 +271,10 @@ if (empty($_GET["searchname2"])) {
 						// and a.member = '".$_SESSION["UserID3"]."'   
 						// ".$addcode.$addcode2.$addcode3."  
 						// order by a.pk asc    "; 
-						$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject 
-						where a.student_paper != '' 
-											$savedata1 $subject $savedata4 $secsearch $whereId
-											";
 
-						$query2 = mysqli_query($objCon, $sql2);
-						$total_record = mysqli_num_rows($query2);
-						// print_r($query2) ;
 
-						$total_page = ceil($total_record / $perpage);
+
 						?>
-						<?php if (ceil($total_record / $perpage) > 0) : ?>
-							<ul class="pagination">
-								<?php if ($page > 1) : ?>
-									<li class="prev"><a href="studentclass.php?page2=<?php echo $page - 1 ?>&CusID=<?php echo $_GET["CusID"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>">Prev</a></li>
-								<?php endif; ?>
-
-								<?php if ($page > 3) : ?>
-									<li class="start"><a href="studentclass.php?page2=1&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>">1</a></li>
-									<li class="dots">...</li>
-								<?php endif; ?>
-
-								<?php if ($page - 2 > 0) : ?><li class="page"><a href="studentclass.php?page2=<?php echo $page - 2 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
-								<?php if ($page - 1 > 0) : ?><li class="page"><a href="studentclass.php?page2=<?php echo $page - 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
-
-								<li class="currentpage"><a href="studentclass.php?page2=<?php echo $page ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page ?></a></li>
-
-								<?php if ($page + 1 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="studentclass.php?page2=<?php echo $page + 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
-								<?php if ($page + 2 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="studentclass.php?page2=<?php echo $page + 2 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
-
-								<?php if ($page < ceil($total_record / $perpage) - 2) : ?>
-									<li class="dots">...</li>
-									<li class="end"><a href="studentclass.php?page2=<?php echo ceil($total_record / $perpage) ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo ceil($total_record / $perpage) ?></a></li>
-								<?php endif; ?>
-
-								<?php if ($page < ceil($total_record / $perpage)) : ?>
-									<li class="next"><a href="studentclass.php?page2=<?php echo $page + 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>">Next</a></li>
-								<?php endif; ?>
-							</ul>
-						<?php endif; ?>
 
 					</div>
 
@@ -318,22 +284,23 @@ if (empty($_GET["searchname2"])) {
 							<table id="key_product" class=" table    tablemobile  " border="0">
 								<thead>
 									<tr>
-										<th width="3%" bgcolor="#A8DADC" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+										<th width="40%" bgcolor="#A8DADC" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 											<div align="center">
 												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา - ชื่อวิชา </font>
 											</div>
 										</th>
-										<th width="8%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
+										<th width="20%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 											<div align="center">
 												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ปีการศึกษา </font>
 											</div>
 										</th>
-										<th width="2%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
+
+										<th width="10%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 											<div align="center">
 												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> เทอม </font>
 											</div>
 										</th>
-										<th width="3%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
+										<th width="10%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
 											<div align="center">
 												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ข้อมูลการทำงาน </font>
 											</div>
@@ -363,7 +330,7 @@ if (empty($_GET["searchname2"])) {
 									// 	".$addcode.$addcode2.$addcode3."  
 									// 	order by a.pk asc   limit {$start} , {$perpage}   ";  
 									$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject where a.student_paper != '' 
-											 $subject $savedata4 $secsearch $whereId GROUP BY a.subject
+											 $savedata1 $subject $savedata4 $whereId GROUP BY a.subject
 											";
 									// echo $sql2;
 									$query2 = mysqli_query($con, $sql2);
@@ -434,12 +401,12 @@ if (empty($_GET["searchname2"])) {
 
 									?>
 										<tr style="background-color: <?php echo $bg; ?>; ">
+
 											<td style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $data1 . " " . $data2; ?> </font>
 												</div>
 											</td>
-
 											<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php
@@ -447,40 +414,13 @@ if (empty($_GET["searchname2"])) {
 												</div>
 											</td>
 
+
 											<td height="25px" style=" border-left: 0px solid #F2F2F2; ">
 												<div align="center">
 													<font size="3px" color="Black" style=" font-size: 13px; "> <?php
 																												echo  $objResult2["data8"]; ?> </font>
 												</div>
 											</td>
-
-
-											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
-												<div align="center">
-													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2["savedata4"]; ?> </font>
-												</div>
-											</td>
-											<td style=" border-left: 0px solid #F2F2F2; ">
-												<div align="center">
-													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $seco; ?> </font>
-												</div>
-											</td> -->
-
-
-											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
-												<div align="center">
-													<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $name_teacher; ?> </font>
-												</div>
-											</td> -->
-
-
-											<!-- <td style=" border-left: 0px solid #F2F2F2; ">
-												<div align="center">
-													<font size="3px" color="Black" style=" font-size: 13px; ">
-														<a data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>" style="cursor: pointer; "> ดูรายละเอียด </a>
-													</font>
-												</div>
-											</td> -->
 
 
 											<!-- modal small -->

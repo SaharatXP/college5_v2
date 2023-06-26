@@ -118,12 +118,12 @@ if (empty($_GET["searchname"])) {
 							<?php
 							// echo 'DATA=>'.$_SESSION["UserID2"];
 							$result = mysqli_query($objCon, "SELECT count(*) as total from student_paper 
-							where subject = $objResult[pk] and student = $_SESSION[UserID2]");
+							where subject = $objResult[pk] and student = $_SESSION[UserID2] and is_active = 1");
 							$data = mysqli_fetch_assoc($result);
 							$ttc = $data['total'];
 
 							$result_t = mysqli_query($objCon, "SELECT count(*) as total from student_paper 
-							where student = $_SESSION[UserID2]");
+							where student = $_SESSION[UserID2] and is_active = 1");
 							$data_t = mysqli_fetch_assoc($result_t);
 							$ttc_t = $data['total'];
 

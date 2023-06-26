@@ -154,41 +154,41 @@ if (empty($_GET["searchname2"])) {
 									</style>
 
 									<!-- <?php
-									$perpage = 20;
-									if (isset($_GET['page2'])) {
-										$page = $_GET['page2'];
-									} else {
-										$page = 1;
-									}
+											$perpage = 20;
+											if (isset($_GET['page2'])) {
+												$page = $_GET['page2'];
+											} else {
+												$page = 1;
+											}
 
-									if (empty($_GET['page2'])) {
-										$page = 1;
-									}
-									$start = ($page - 1) * $perpage;
+											if (empty($_GET['page2'])) {
+												$page = 1;
+											}
+											$start = ($page - 1) * $perpage;
 
 
 
-									$addcode = "";
-									if (empty($_GET["searchname"])) {
-									} else {
-										$addcode = " and ( b.data1 like '%" . $searchname . "%' or b.data2 like '%" . $searchname . "%' ) ";
-									}
-									$addcode2 = "";
-									if (empty($_GET["searchname2"])) {
-									} else {
-										$addcode2 = " and  a.savedata4 = '" . $searchname2 . "' ";
-									}
+											$addcode = "";
+											if (empty($_GET["searchname"])) {
+											} else {
+												$addcode = " and ( b.data1 like '%" . $searchname . "%' or b.data2 like '%" . $searchname . "%' ) ";
+											}
+											$addcode2 = "";
+											if (empty($_GET["searchname2"])) {
+											} else {
+												$addcode2 = " and  a.savedata4 = '" . $searchname2 . "' ";
+											}
 
-									$sql2 = " SELECT a.*, b.data1, b.data2 FROM work_time a 
+											$sql2 = " SELECT a.*, b.data1, b.data2 FROM work_time a 
 											Inner Join classdata b On a.subject = b.pk
 											where a.student_paper != '' 
 											and a.member = '" . $_SESSION["UserID3"] . "'   
 											" . $addcode . $addcode2 . "  
 											order by a.pk asc    ";
-									$query2 = mysqli_query($objCon, $sql2);
-									$total_record = mysqli_num_rows($query2);
-									$total_page = ceil($total_record / $perpage);
-									?>
+											$query2 = mysqli_query($objCon, $sql2);
+											$total_record = mysqli_num_rows($query2);
+											$total_page = ceil($total_record / $perpage);
+											?>
 									<?php if (ceil($total_record / $perpage) > 0) : ?>
 										<ul class="pagination">
 											<?php if ($page > 1) : ?>
@@ -278,15 +278,15 @@ if (empty($_GET["searchname2"])) {
 													$i = (($_GET["page2"] - 1) * 20) + 1;
 												}
 
-												$sql2 = "  SELECT a.*, b.* , b.pk as classpk, m.* FROM work_time a 
-											left Join classdata b On a.subject = b.pk
-											left join member m on m.pk = b.data11
+												$sql2 = "  SELECT a.*, b.* , b.pk as classpk, a.student_paper as stdpp, m.* FROM work_time as a 
+											left Join classdata as b On a.subject = b.pk
+											left join member as m on m.pk = b.data11
 											where a.student_paper != '' 
-											and a.member = '" . $_SESSION["UserID3"] . "'   
+											and a.member = " . $_SESSION["UserID3"] . "   
 											" . $addcode . $addcode2 . "  
-											group by b.pk
-											order by a.pk asc   limit {$start} , {$perpage}   ";
-
+											group by stdpp
+											order by stdpp asc   limit {$start} , {$perpage}   ";
+												// echo $sql2;
 												$query2 = mysqli_query($con, $sql2);
 												while ($objResult2 = mysqli_fetch_array($query2)) {
 													if ($bg == "#FFF") {
@@ -307,7 +307,7 @@ if (empty($_GET["searchname2"])) {
 												?>
 													<tr style="background-color: <?php echo $bg; ?>; ">
 
-														
+
 														<td style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
 																<font size="3px" color="Black" style=" font-size: 13px; ">[ <?php echo  $objResult2['data1'] ?> ] <?php echo  $objResult2['data2'] ?> </font>
@@ -320,16 +320,16 @@ if (empty($_GET["searchname2"])) {
 																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['name']; ?> </font>
 															</div>
 														</td>
-														
 
 
-														
+
+
 
 
 														<td style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
 																<font size="3px" color="Black" style=" font-size: 13px; ">
-																	<a data-toggle="modal" data-target="#smallmodal<?php echo $i; ?>" style="cursor: pointer; "> บันทึกการทำงาน คลิก </a>
+																	<a href="work_time.php?CusID=<?php echo $objResult2['stdpp'] ?>&page=" style="cursor: pointer; "> บันทึกการทำงาน คลิก </a>
 																</font>
 															</div>
 														</td>
@@ -364,7 +364,7 @@ if (empty($_GET["searchname2"])) {
 
 														<td align="center">
 															<div align="center">
-<!-- 
+																<!-- 
 																<a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del2&CusID=<?php echo $objResult2["student_paper"]; ?>&Idel=<?php echo $objResult2["pk"]; ?>';}">
 																	<button type="button" class="btn btn-sm btn-primary" style="background-color: #FD938F; border-radius: 5px;   border: 1px solid  #FD938F;   ">
 																		<font color="#000000" size="2px" class="serif1"> ลบ </font>

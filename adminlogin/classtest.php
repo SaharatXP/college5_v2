@@ -647,7 +647,7 @@ if (isset($_GET["Action"])) {
 									</div>
 									<div class="col-lg-1 ">
 										<div class="form-group"> <br>
-											<font color="black" size="3px" class="serif"> คาบเรียน  </font>
+											<font color="black" size="3px" class="serif"> คาบเรียน </font>
 											<select class="form-control" id="type" name="type" style=" border-radius: 10px; margin-top: 10px; ">
 												<option value="Lec">Lec</option>
 												<option value="Lab">Lab</option>
@@ -668,7 +668,7 @@ if (isset($_GET["Action"])) {
 
 										</div>
 									</div>
-									
+
 								</div>
 
 								<style>
@@ -819,7 +819,7 @@ if (isset($_GET["Action"])) {
 						<table class="table table-bordered">
 							<thead>
 								<tr>
-								<th width="10%" bgcolor="#A8DADC">
+									<th width="10%" bgcolor="#A8DADC">
 										<div align="center">
 											<font size="2px" color="black" color="black"> กลุ่มที่ </font>
 										</div>
@@ -839,7 +839,12 @@ if (isset($_GET["Action"])) {
 											<font size="2px" color="black"> เวลาสิ้นสุด </font>
 										</div>
 									</th>
-									<th width="10%" bgcolor="#A8DADC">
+									<th width="5%" bgcolor="#A8DADC">
+										<div align="center">
+											<font size="2px" color="black"> แก้ไข </font>
+										</div>
+									</th>
+									<th width="5%" bgcolor="#A8DADC">
 										<div align="center">
 											<font size="2px" color="black"> ลบ </font>
 										</div>
@@ -850,10 +855,10 @@ if (isset($_GET["Action"])) {
 								<!--- โหลดตาราง สอน  --->
 								<?php
 								$i = 1;
-								$sql = "SELECT dc.iddata,dc.pk, dc.data6 ,dd.name as day_name ,dts.name as time_start,dte.name as end_time FROM data_class as dc
+								$sql = "SELECT dc.iddata,dc.pk, dc.data6 ,dd.name as day_name ,dts.name as time_start, dtex.name as end_time FROM data_class as dc
 							left join dropday as dd ON dd.pk = dc.data1
 							left join droptime as dts ON dts.pk = dc.data2 
-							left join droptime as dte ON dte.pk = dc.data3 
+							left join droptime as dtex ON dtex.pk = dc.data3 
 							where  iddata = '" . $searchname . "' order by dc.data6 asc ";
 								$query = mysqli_query($con, $sql);
 								while ($objResult = mysqli_fetch_array($query)) {
@@ -864,11 +869,11 @@ if (isset($_GET["Action"])) {
 								?>
 									<tr onMouseover="this.style.backgroundColor='yellow';" onMouseout="this.style.backgroundColor='white';">
 										<td>
-										<div align="center">
+											<div align="center">
 												<font size="2px" color="Black"> <?php echo $namedata3 = $objResult["data6"]; ?></font>
-											</div>	
+											</div>
 										</td>
-									<td>
+										<td>
 											<div align="center">
 												<font size="2px" color="Black"> <?php echo $namedata1; ?></font>
 											</div>
@@ -880,17 +885,28 @@ if (isset($_GET["Action"])) {
 										</td>
 										<td>
 											<div align="center">
-												<font size="2px" color="Black"> <?php echo $namedata3; ?></font>
+												<font size="2px" color="Black"> <?php echo $objResult["end_time"]; ?></font>
+											</div>
+										</td>
+										<td>
+											<div align="center">
+
+												<a class="btn btn-warning" href="JavaScript:if(confirm(' กรุณายืนยันการแก้ไข ?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del&CusID=<?php echo $objResult["pk"]; ?>&classdata=<?php echo $searchname; ?>';}">
+													<font size="2px"> แก้ไข </font>
+												</a>
+
+
 											</div>
 										</td>
 
 
 										<td align="center">
+
 											<div align="center">
 
 												<a class="btn btn-danger" href="JavaScript:if(confirm(' กรุณายืนยันการลบ ?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del&CusID=<?php echo $objResult["pk"]; ?>&classdata=<?php echo $searchname; ?>';}">
 													<font size="2px"> ลบ </font>
-												</a> </a>
+												</a>
 
 
 											</div>

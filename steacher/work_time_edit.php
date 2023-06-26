@@ -59,6 +59,7 @@ $savedata4 = "";
 $savedata5 = "";
 $savedata6 = "";
 $savedata7 = "";
+$description = "";
 
 $sql2 = "SELECT * FROM work_time where pk = '" . $_GET["Idel"] . "' ";
 $query2 = mysqli_query($con, $sql2);
@@ -70,6 +71,7 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 	$savedata5 = $objResult2["savedata5"];
 	$savedata6 = $objResult2["savedata6"];
 	$savedata7 = $objResult2["savedata7"];
+	$description = $objResult2["description"];
 	$type =
 		$objResult2["type"];
 }
@@ -228,23 +230,17 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 													</div>
 												</div>
 
-												<div class="col-lg-12">
+												<!-- <div class="col-lg-12">
 													<font color="black" size="3px" class="serif"> ประเภทการปฎิบัติงาน</font>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type1" value="Lec" <?php echo ($type == 'Lec' ? ' checked=checked' : ''); ?>>
-														<label class="form-check-label" for="type1">
-															บรรยาย
-														</label>
+
 													</div>
 													<div class="form-check">
-														<input class="form-check-input" type="radio" name="type" id="type2" value="lab" <?php echo ($type == 'Lab' ? ' checked=checked' : ''); ?>>
-														<label class="form-check-label" for="type2">
-															ปฎิบัติงาน
-														</label>
+
 
 													</div>
 
-												</div>
+												</div> -->
 												<div class="col-lg-12 ">
 													<div class="form-group"> <br>
 														<font color="black" size="3px" class="serif"> กรอกชั่วโมง "เฉพาะ" ในช่องที่ปฎิบัติงาน </font>
@@ -252,13 +248,26 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 												</div>
 												<div class="col-lg-2 ">
 													<div class="form-group">
-														<font color="black" size="3px" class="serif"> บรรยาย (ชั่วโมง) </font>
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="type" id="type1" value="Lec" <?php echo ($type == 'Lec' ? ' checked=checked' : ''); ?>>
+															<label class="form-check-label" for="type1">
+																บรรยาย
+															</label>
+														</div>
+														<font color="black" size="3px" class="serif"> (ชั่วโมง) </font>
 														<input type="text" name="savedata5" id="savedata5" class="form-control " value="<?php echo $savedata5; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 													</div>
 												</div>
 												<div class="col-lg-2 ">
 													<div class="form-group">
-														<font color="black" size="3px" class="serif"> ปฎิบัติงาน (ชั่วโมง) </font>
+														<div class="form-check">
+															<input class="form-check-input" type="radio" name="type" id="type2" value="Lab" <?php echo ($type == 'Lab' ? ' checked=checked' : ''); ?>>
+
+															<label class="form-check-label" for="type2">
+																ปฎิบัติงาน
+															</label>
+														</div>
+														<font color="black" size="3px" class="serif"> (ชั่วโมง) </font>
 														<input type="text" name="savedata6" id="savedata6" class="form-control " value="<?php echo $savedata6; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 													</div>
 												</div>
@@ -267,6 +276,13 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 													<div class="form-group">
 														<font color="black" size="3px" class="serif"> งานที่ปฎิบัติ </font>
 														<textarea type="text" name="savedata7" id="savedata7" class="form-control " value="<?php echo $savedata7; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " rows="5"><?php echo $savedata7; ?></textarea>
+													</div>
+												</div>
+
+												<div class="col-lg-6 ">
+													<div class="form-group">
+														<font color="black" size="3px" class="serif"> หมายเหตุ </font>
+														<textarea type="text" name="description" id="description" class="form-control " value="<?php echo $description; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " rows="5"><?php echo $description; ?></textarea>
 													</div>
 												</div>
 
