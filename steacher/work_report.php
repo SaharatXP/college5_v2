@@ -95,7 +95,7 @@ if (empty($_GET["searchname2"])) {
 										}
 									</style>
 
-									<!-- <?php
+									<?php
 											$perpage = 20;
 											if (isset($_GET['page2'])) {
 												$page = $_GET['page2'];
@@ -131,36 +131,7 @@ if (empty($_GET["searchname2"])) {
 											$total_record = mysqli_num_rows($query2);
 											$total_page = ceil($total_record / $perpage);
 											?>
-									<?php if (ceil($total_record / $perpage) > 0) : ?>
-										<ul class="pagination">
-											<?php if ($page > 1) : ?>
-												<li class="prev"><a href="work_report.php?page2=<?php echo $page - 1 ?>&CusID=<?php echo $_GET["CusID"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>">Prev</a></li>
-											<?php endif; ?>
-
-											<?php if ($page > 3) : ?>
-												<li class="start"><a href="work_report.php?page2=1&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>">1</a></li>
-												<li class="dots">...</li>
-											<?php endif; ?>
-
-											<?php if ($page - 2 > 0) : ?><li class="page"><a href="work_report.php?page2=<?php echo $page - 2 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
-											<?php if ($page - 1 > 0) : ?><li class="page"><a href="work_report.php?page2=<?php echo $page - 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
-
-											<li class="currentpage"><a href="work_report.php?page2=<?php echo $page ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page ?></a></li>
-
-											<?php if ($page + 1 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="work_report.php?page2=<?php echo $page + 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
-											<?php if ($page + 2 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="work_report.php?page2=<?php echo $page + 2 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
-
-											<?php if ($page < ceil($total_record / $perpage) - 2) : ?>
-												<li class="dots">...</li>
-												<li class="end"><a href="work_report.php?page2=<?php echo ceil($total_record / $perpage) ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>"><?php echo ceil($total_record / $perpage) ?></a></li>
-											<?php endif; ?>
-
-											<?php if ($page < ceil($total_record / $perpage)) : ?>
-												<li class="next"><a href="work_report.php?page2=<?php echo $page + 1 ?>&tablload1=<?php echo $_GET["tablload1"]; ?>&searchcustomer=<?php echo $_GET["searchcustomer"]; ?>&searchname2=<?php echo $_GET["searchname2"]; ?>&searchname=<?php echo $_GET["searchname"]; ?>&CusID=<?php echo $_GET["CusID"]; ?>">Next</a></li>
-											<?php endif; ?>
-										</ul>
-									<?php endif; ?> -->
-
+									
 								</div>
 
 
