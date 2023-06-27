@@ -50,64 +50,6 @@ if (empty($_GET["searchname2"])) {
 							<div class="form-group">
 
 
-								<!--- Action =  ไปยังไฟล์ที่ทำการเช็ค  --->
-								<!-- <form role="form" name="frmMain" method="get" action="work_report.php" enctype="multipart/form-data">
-									<div class="row" style="margin-top: 10px; ">
-										<div class="col-lg-12">
-											<div class="col-lg-3 ">
-												<div class="form-group">
-													<font color="black" size="3px" class="serif"> วิชา </font>
-													<input type="text" name="searchname" id="searchname" class="form-control " value="<?php echo $searchname; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
-												</div>
-											</div>
-											<div class="col-lg-2 ">
-												<div class="form-group">
-													<font color="black" size="3px" class="serif"> โครงการ </font>
-													<select class="form-control" id="searchname2" name="searchname2" style=" border-radius: 10px;  ">
-														<?php if (empty($searchname2)) { ?>
-															<option value=""> โครงการ </option>
-														<?php } ?>
-														<?php
-														$sql = "SELECT * FROM drop_type where name = '" . $searchname2 . "'  order by pk asc  ";
-														$query = mysqli_query($objCon, $sql);
-														while ($objResult = mysqli_fetch_array($query)) {
-														?>
-															<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
-														<?php
-														}
-														?>
-														<?php
-														$sql = "SELECT * FROM drop_type where  name != '" . $searchname2 . "'  order by pk asc  ";
-														$query = mysqli_query($objCon, $sql);
-														while ($objResult = mysqli_fetch_array($query)) {
-														?>
-															<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
-														<?php
-														}
-														?>
-													</select> <br>
-												</div>
-											</div>
-											<div class="col-lg-3 ">
-												<div class="form-group">
-													<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>
-													<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 80px; border-color: white; ">
-														<font color="white" size="3px" class="serif"> ค้นหา </font>
-													</button>
-
-													<a href="work_report.php">
-														<button type="button" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 150px; border-color: white; ">
-															<font color="white" size="3px" class="serif"> แสดงบันทึกทั้งหมด </font>
-														</button>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form> -->
-
-
-
 								<div class="col-md-12" style="margin-top: 5px;">
 									<style>
 										.pagination {
@@ -227,20 +169,7 @@ if (empty($_GET["searchname2"])) {
 										<table id="key_product" class=" table    tablemobile  " border="0">
 											<thead>
 												<tr>
-													<!-- <th width="3%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; "  ><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; ">  วัน เดือน ปี    </font></div></th>    
-												<th width="8%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; ">  รหัสวิชา  </font></div></th>  
-												<th width="2%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> โครงการ  </font></div></th>    
-												<th width="2%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> กลุ่มที่  </font></div></th>   
-												<th width="6%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> อาจารย์ประจำวิชา  </font></div></th> 
-												<th width="3%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; ">  ข้อมูลการทำงาน   </font></div></th>    
-												<th width="3%" bgcolor="#BEC6CB" style="border: 0px solid #FFF; "><div align="center"> 
-												<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; ">   ลบ-แก้ไข   </font></div></th>   -->
+													
 													<th width="25%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา/ชื่อวิชา </font>
@@ -335,47 +264,10 @@ if (empty($_GET["searchname2"])) {
 														</td>
 
 
-														<!-- modal small -->
-														<!-- <div class="modal fade" id="smallmodal<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-															<div class="modal-dialog modal-md" role="document">
-																<div class="modal-content">
-																	<div class="modal-header">
-																		<h5 class="modal-title" id="smallmodalLabel"> ดูข้อมูล </h5>
-																		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																			<span aria-hidden="true">&times;</span>
-																		</button>
-																	</div>
-																	<div class="modal-body">
-																		<font size="3px" color="black">
-																			ชื่อวิชา : <?php echo $objResult2["data1"]; ?> :  <?php echo $objResult2["data2"]; ?><br>
-																			ประเภท :  <?php echo $objResult2["data10"]; ?><br>
-																			เทอม : <?php echo $objResult2["data8"]; ?><br>
-																			โครงการ (ปกติ/พิเศษ) : <?php echo $objResult2["savedata4"]; ?> <br>
-
-																		
-
-																		</font>
-																	</div>
-																</div>
-															</div>
-														</div> -->
-														<!-- end modal small -->
-
 
 														<td align="center">
 															<div align="center">
-																<!-- 
-																<a href="JavaScript:if(confirm('Confirm Delete?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del2&CusID=<?php echo $objResult2["student_paper"]; ?>&Idel=<?php echo $objResult2["pk"]; ?>';}">
-																	<button type="button" class="btn btn-sm btn-primary" style="background-color: #FD938F; border-radius: 5px;   border: 1px solid  #FD938F;   ">
-																		<font color="#000000" size="2px" class="serif1"> ลบ </font>
-																	</button>
-																</a> -->
-
-																<!-- <a href="work_time_edit2.php?CusID=<?php echo $objResult2["student_paper"]; ?>&Idel=<?php echo $objResult2["pk"]; ?>&page=2">
-																	<button type="button" class="btn btn-sm btn-primary" style="background-color: #FFD45F; border-radius: 5px;   border: 1px solid  #FFD45F;   ">
-																		<font color="#000000" size="2px" class="serif1"> เเก้ไข </font>
-																	</button>
-																</a> -->
+																
 
 																<font size="3px" color="Black" style=" font-size: 13px; "><a href="work_report_view.php?classdata=<?php echo $objResult2['classpk']; ?>"><b style="color: red;">ดูสรุปการทำงาน คลิก </b> </a></font>
 
