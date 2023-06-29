@@ -73,8 +73,11 @@ if (empty($_GET["searchname2"])) {
 												<option value=""> รหัสวิชา-ชื่อวิชา </option>
 											<?php } ?>
 											<?php
-											$sql = "SELECT * FROM classdata where pk = '" . $searchname4 . "'" . $whereIdOption  . "  order by pk asc  ";
-
+											if ($_SESSION["Status"] == 'A') {
+												$sql = "SELECT * FROM classdata order by pk asc  ";
+											} else {
+												$sql = "SELECT * FROM classdata where pk = '" . $searchname4 . "'" . $whereIdOption  . "  order by pk asc  ";
+											}
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
@@ -329,9 +332,15 @@ if (empty($_GET["searchname2"])) {
 
 									// 	".$addcode.$addcode2.$addcode3."  
 									// 	order by a.pk asc   limit {$start} , {$perpage}   ";  
-									$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject where a.student_paper != '' 
+									if ($_SESSION["Status"] == 'A') {
+										$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject where a.student_paper != '' 
+											 $savedata1 $subject $savedata4  GROUP BY a.subject
+											";
+									} else {
+										$sql2 = " SELECT * FROM work_time as a left join classdata as c on c.pk = a.subject where a.student_paper != '' 
 											 $savedata1 $subject $savedata4 $whereId GROUP BY a.subject
 											";
+									}
 									// echo $sql2;
 									$query2 = mysqli_query($con, $sql2);
 									$bg = "#FFF";
