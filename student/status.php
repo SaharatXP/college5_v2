@@ -26,12 +26,12 @@ include('header.php');
 											<font size="2px" color="white"> รหัสวิชา </font>
 										</div>
 									</th>
-									<th width="5%" bgcolor="#FFF">
+									<th width="20%" bgcolor="#FFF">
 										<div align="center">
 											<font size="2px" color="white"> ชื่อวิชา </font>
 										</div>
 									</th>
-									<th width="5%" bgcolor="#FFF">
+									<th width="7%" bgcolor="#FFF">
 										<div align="center">
 											<font size="2px" color="white"> ภาคการศึกษา </font>
 										</div>
@@ -41,12 +41,12 @@ include('header.php');
 											<font size="2px" color="white"> กลุ่มที่สมัคร </font>
 										</div>
 									</th>
-									<th width="8%" bgcolor="#FFF">
+									<th width="15%" bgcolor="#FFF">
 										<div align="center">
 											<font size="2px" color="white"> วันที่สมัคร </font>
 										</div>
 									</th>
-									<th width="5%" bgcolor="#FFF">
+									<th width="15%" bgcolor="#FFF">
 										<div align="center">
 											<font size="2px" color="white"> สถานะ </font>
 										</div>
@@ -157,11 +157,7 @@ include('header.php');
 							</td>
 
 
-							<td>
-								<div align="center">
-									<font size="3px" class="serif2"><?php echo DateThai($objResult["create_date"]) . " " . DateThai2($objResult["create_date"]); ?></font>
-								</div>
-							</td>
+
 
 							<td>
 								<div align="center">
