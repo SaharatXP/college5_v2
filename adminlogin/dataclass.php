@@ -1703,7 +1703,7 @@ if (isset($_GET["Action"])) {
 															</td>
 															<td>
 																<div>
-																	<input type="text" name="datachk3" id="datachk3" placeholder=" " class="form-control " style=" border-radius: 10px; " readonly>
+																	<input type="text" name="datachk3" id="datachk3" placeholder=" " class="form-control " value="<?php echo $datachk30 + $datachk4; ?>" style=" border-radius: 10px; " readonly>
 																</div>
 															</td>
 															<td>
