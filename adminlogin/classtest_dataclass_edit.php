@@ -64,6 +64,7 @@ $_SESSION["showclassdata"] = "";
                 ?>
                     <form method="post" action="classtest_dataclass_update.php" enctype="multipart/form-data">
 
+
                         <input type="text" value="<?php echo $_GET['id'] ?>" name="id" hidden>
                         <input type="text" value="<?php echo $_GET['classdata'] ?>" name="classdata" hidden>
 
