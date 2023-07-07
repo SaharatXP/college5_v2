@@ -112,7 +112,7 @@ while ($objResult = mysqli_fetch_array($query)) {
             <div class="x_panel" style="background-color: #FFFFFF; ">
                 <div class="col-lg-12">
                     <div class="col-12">
-                        <a style="color:red" href="dataclass.php?CusID=<?php echo $_GET['CusID'] ?>&page=1" class="btn btn-secoundary" onclick="return confirm('บันทึกและกลับ ?')" >
+                        <a style="color:red" href="dataclass.php?CusID=<?php echo $_GET['CusID'] ?>&page=1" class="btn btn-secoundary" onclick="return confirm('บันทึกและกลับ ?')">
                             < บันทึกและกลับ</a>
                     </div>
                     <div class="row">
@@ -141,10 +141,6 @@ while ($objResult = mysqli_fetch_array($query)) {
                                     </td width="20%">
                                     </td>
 
-
-
-
-
                                     <!-- <td rowspan="3" class="text-center"><a href="add_section.php" class="btn btn-outline-secondary ml-2"  >+</a></td> -->
 
                                     </tr>
@@ -165,10 +161,12 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td>
                                             <input disabled type="text" name="data15" id="data15" class="form-control " value="<?php echo $objResult_sec['data15']; ?>" autocomplete="off" style=" border-radius: 0px; ">
                                         </td>
-                                        <td rowspan="2">
+                                        <td rowspan="2" class="text-center">
+                                            <a class="btn btn-warning mx-3" href="./edit_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>"> แก้ไข</a>
+
                                             <a class="btn btn-danger mx-3" href="./delete_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>"> ลบ</a>
                                         </td>
-                                        
+
 
                                     </tr>
                                     <tr>
@@ -205,7 +203,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td width="25%" align="center">
                                             <font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอน </font>
                                         </td>
-                                        
+
 
 
                                     </tr>
@@ -237,9 +235,9 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td>
                                             <input required type="number" name="data15s" id="data15s" class="form-control " autocomplete="off" style=" border-radius: 0px; " min="0">
                                         </td>
-                                        
-                                        
-                                        
+
+
+
 
                                     </tr>
                                     <tr>
@@ -251,7 +249,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                                             <input required type="number" name="data16s" id="data16s" class="form-control " autocomplete="off" style=" border-radius: 0px; " min="0">
 
                                         </td>
-                                        
+
 
 
                                     </tr>

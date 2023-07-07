@@ -17,8 +17,8 @@ if (empty($_SESSION["UserID3"])) {
 	$daystart = date("d-m-Y", strtotime($date_income));
 	$dayend = date("Y-m-d", strtotime($date_income));
 
-
-	$strSQL = "INSERT INTO work_time 
+	if ($_POST['type'] == 'Lec') {
+		$strSQL = "INSERT INTO work_time 
 		( member, student_paper, subject, 
 		savedata1, savedata2, savedata3, savedata4,
 		savedata5, savedata6, savedata7, 
@@ -26,12 +26,29 @@ if (empty($_SESSION["UserID3"])) {
 		VALUES ( 
 		'" . $_SESSION["UserID3"] . "', '" . $_POST["CusID"] . "',  '" . $_POST["subject"] . "',     
 		'" . $_POST["savedata1"] . "', '" . $_POST["savedata2"] . "',  '" . $_POST["savedata3"] . "',     
-		'" . $_POST["savedata4"] . "', '" . $_POST["savedata5"] . "',  '" . $_POST["savedata6"] . "',     
+		'" . $_POST["savedata4"] . "', '" . $_POST["savedata5"] . "',  '" . 0 . "',     
 		'" . $_POST["savedata7"] . "', 
 		
 		'" . date('d-m-Y') . "', '" . date('Y-m-d') . "', '" . date('H:i') . "',  
 		'" . $daystart . "', '" . $dayend . "' , $_POST[section]  , '$_POST[type]' , '$_POST[description]'
 		)";
+	} else {
+		$strSQL = "INSERT INTO work_time 
+		( member, student_paper, subject, 
+		savedata1, savedata2, savedata3, savedata4,
+		savedata5, savedata6, savedata7, 
+		create_date, create_date2, create_time, newdate, newdate2  ,section, type, description) 
+		VALUES ( 
+		'" . $_SESSION["UserID3"] . "', '" . $_POST["CusID"] . "',  '" . $_POST["subject"] . "',     
+		'" . $_POST["savedata1"] . "', '" . $_POST["savedata2"] . "',  '" . $_POST["savedata3"] . "',     
+		'" . $_POST["savedata4"] . "', '" . 0 . "',  '" . $_POST["savedata5"] . "',     
+		'" . $_POST["savedata7"] . "', 
+		
+		'" . date('d-m-Y') . "', '" . date('Y-m-d') . "', '" . date('H:i') . "',  
+		'" . $daystart . "', '" . $dayend . "' , $_POST[section]  , '$_POST[type]' , '$_POST[description]'
+		)";
+	}
+
 
 	if ($objCon->query($strSQL) === TRUE) {
 

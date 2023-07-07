@@ -891,7 +891,7 @@ if (isset($_GET["Action"])) {
 										<td>
 											<div align="center">
 
-												<a class="btn btn-warning" href="JavaScript:if(confirm(' กรุณายืนยันการแก้ไข ?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del&CusID=<?php echo $objResult["pk"]; ?>&classdata=<?php echo $searchname; ?>';}">
+												<a class="btn btn-warning" href="classtest_dataclass_edit.php?id=<?php echo $objResult["pk"]; ?>&classdata=<?php echo $_GET['classdata'] ?>">
 													<font size="2px"> แก้ไข </font>
 												</a>
 

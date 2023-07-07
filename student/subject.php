@@ -177,7 +177,7 @@ if (empty($_GET["searchname"])) {
 									<font size="2px"> <?php echo $objResult["data14"]; ?> </font>
 								</b> </div>
 							<div class="col-lg-8" align="right"> <b>
-									<font size="2px"> ปิดสมัครวันที่ <?php echo DateThai($objResult["enddate"]) . " " . Datethai2($objResult["enddate"]); ?> </font>
+									<font size="2px"> ปิดสมัครวันที่ <?php echo Datethai2($objResult["enddate"]); ?> </font>
 								</b> </div>
 						</div>
 

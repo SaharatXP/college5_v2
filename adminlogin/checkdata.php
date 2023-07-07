@@ -98,7 +98,7 @@ if (empty($_GET["data10"])) {
 												<option value=""> ระดับการศึกษา </option>
 											<?php } ?>
 											<?php
-											$sql = "SELECT * FROM drop_subject where  name = '" . $searchname2 . "'  order by pk asc  ";
+											$sql = "SELECT * FROM drop_subject where name = '" . $searchname2 . "'  order by pk asc  ";
 											$query = mysqli_query($objCon, $sql);
 											while ($objResult = mysqli_fetch_array($query)) {
 											?>
@@ -247,7 +247,7 @@ if (empty($_GET["data10"])) {
 								$sql = "SELECT *, a.pk, a.subject, a.status FROM student_paper a 
 							Inner Join member b
 							On a.student = b.pk
-							where b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
+							where a.is_active != 0 and b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
 							
 							order by a.pk desc ";
 

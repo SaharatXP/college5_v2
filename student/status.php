@@ -186,7 +186,7 @@ include('header.php');
 								</div>
 							</td>
 
-							<?php if ($objResult["is_active"] != 0) { ?>
+							<?php if ($objResult["is_active"] != 0 || $objResult['stats'] != 0) { ?>
 								<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการยกเลิก ?')">ยกเลิก</a></td>
 							<?php } ?>
 

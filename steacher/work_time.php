@@ -73,9 +73,6 @@ if (isset($_GET["Action"])) {
 ?>
 
 
-
-
-
 <div id="wrapper" class="container">
 	<h1 id="page-title"> บันทึกการทำงาน </h1>
 	<div class="row">
@@ -86,9 +83,12 @@ if (isset($_GET["Action"])) {
 
 
 
+
 					<div class="row">
+
 						<div class="col-lg-12 ">
 							<div class="form-group">
+
 
 								<form role="form" name="frmMain" method="post" action="save_work_time.php" enctype="multipart/form-data">
 									<input type="hidden" id="CusID" name="CusID" value="<?php echo $_GET["CusID"]; ?>">
@@ -158,9 +158,7 @@ if (isset($_GET["Action"])) {
 
 
 
-												<div class="col-lg-12 ">
-													<hr>
-												</div>
+
 
 												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
@@ -242,7 +240,7 @@ if (isset($_GET["Action"])) {
 														<font color="black" size="3px" class="serif"> กรอกชั่วโมง "เฉพาะ" ในช่องที่ปฎิบัติงาน </font>
 													</div>
 												</div>
-												<div class="col-lg-2 ">
+												<div class="col-lg-2 mb-3">
 													<div class="form-group">
 														<div class="form-check">
 															<input class="form-check-input" type="radio" name="type" id="type1" value="Lec">
@@ -250,8 +248,8 @@ if (isset($_GET["Action"])) {
 																บรรยาย
 															</label>
 														</div>
-														<font color="black" size="3px" class="serif"> บรรยาย (ชั่วโมง) </font>
-														<input type="text" name="savedata5" id="savedata5" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
+														<!-- <font color="black" size="3px" class="serif"> บรรยาย (ชั่วโมง) </font> -->
+														<input type="text" name="savedata5" id="savedata5" class="form-control mb-3" value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px;" placeholder="จำนวนชั่วโมงปฏิบัติงาน">
 													</div>
 												</div>
 												<div class="col-lg-2 ">
@@ -262,8 +260,8 @@ if (isset($_GET["Action"])) {
 																ปฎิบัติการ
 															</label>
 														</div>
-														<font color="black" size="3px" class="serif"> ปฎิบัติการ (ชั่วโมง) </font>
-														<input type="text" name="savedata6" id="savedata6" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
+														<!-- <font color="black" size="3px" class="serif"> ปฎิบัติการ (ชั่วโมง) </font> -->
+														<!-- <input type="text" name="savedata6" id="savedata6" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; "> -->
 													</div>
 												</div>
 												<div class="col-lg-12 "> </div>
@@ -299,10 +297,19 @@ if (isset($_GET["Action"])) {
 												</div>
 
 								</form>
+								<!-- <iframe src="./table_schedule.php?page=&classdata=24" width="100%" height="750" overflow-x: scroll; overflow-y: scroll;>
+									<p>Your browser does not support iframes.</p>
+								</iframe> -->
+
 
 
 								<div class="col-lg-12 ">
 									<hr>
+									<!-- <?php
+											$_GET['iddata'] = $searchname;
+
+
+											include("table_schedule.php"); ?> -->
 								</div>
 
 
@@ -439,7 +446,7 @@ if (isset($_GET["Action"])) {
 													</th>
 													<th width="6%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  ">
 														<div align="center">
-															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> อาจารย์ประจำวิชา </font>
+															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> งานที่ปฎิบัติ </font>
 														</div>
 													</th>
 													<th width="3%" bgcolor="#BEC6CB" style="border: 0px solid #FFF;  border-right: 1px solid #FFF;  ">
@@ -544,7 +551,7 @@ if (isset($_GET["Action"])) {
 																<font size="3px" color="Black" style=" font-size: 13px; "> <?php
 																															echo  DateThai2($objResult2["newdate"]); ?> </font>
 															</div>
-														</td>
+												</td>
 
 														<td style=" border-left: 0px solid #F2F2F2; ">
 															<div align="center">
@@ -564,8 +571,8 @@ if (isset($_GET["Action"])) {
 
 
 														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $name_teacher; ?> </font>
+															<div align="left">
+																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2["savedata7"]; ?> </font>
 															</div>
 														</td>
 
@@ -660,18 +667,18 @@ if (isset($_GET["Action"])) {
 									</div>
 								</div>
 
-
-
-
-
 							</div>
 						</div>
 					</div>
 
 
+
 				</div>
 			</div>
 		</div>
+
+
+
 
 
 
