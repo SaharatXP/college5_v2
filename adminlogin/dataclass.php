@@ -1440,7 +1440,7 @@ if (isset($_GET["Action"])) {
 
 
 													<tr>
-														<td colspan="3" class="text-center"><a href="./add_sec.php?CusID=<?php echo $_GET['CusID'] ?>" type="submit" class="btn btn-outline-success ml-2 mt-2" name="addsec">เพิ่ม-ลบ ข้อมูลกลุ่ม</a></td>
+														<td colspan="3" class="text-center"><a href="./add_sec.php?CusID=<?php echo $_GET['CusID'] ?>" type="submit" class="btn btn-outline-success ml-2 mt-2" name="addsec">เพิ่ม-ลบ แก้ไข ข้อมูลกลุ่ม</a></td>
 													</tr>
 
 
