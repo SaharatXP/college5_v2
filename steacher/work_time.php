@@ -161,7 +161,22 @@ if (isset($_GET["Action"])) {
 														<!-- <font color="black" size="3px" class="serif"> วันเดือนปี </font>
 														<input type="date" name="savedata1" id="savedata1" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " required> -->
 													</div>
-												</div>			
+												</div>		
+												
+												
+												<?php $_GET['iddata'] = $searchname;  ?>
+
+												<?php
+												if (isset($_GET['sec'])) { ?>
+													<iframe src="../adminlogin/classtest2.php?classdata=<?php echo $_GET["CusID"] . '&sec=' . $_GET['sec'] ?>" style="border: 0; width: 100%; height: 550px; overflow-x: scroll; overflow-y: scroll;"> </iframe>
+
+												<?php
+												} else { ?>
+													<iframe src="../adminlogin/classtest2.php?classdata=<?php echo $_GET["CusID"]  ?>" style="border: 0; width: 100%; height: 550px; overflow-x: scroll; overflow-y: scroll;"> </iframe>
+
+												<?php
+												}
+												?>
 
 												<div class="col-lg-3 ">
 													<div class="form-group"> <br>
