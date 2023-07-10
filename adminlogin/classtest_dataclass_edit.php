@@ -186,7 +186,7 @@ $_SESSION["showclassdata"] = "";
                                     <div class="downtopup2 mb-3"> </div>
                                     <br><br>
                                     <button type="submit" class="btn btn-primary form-control" style="background-color: #4e6cef; border-radius: 5px; width: 110px; border-color: white; ">
-                                        <font color="white" size="3px" class="serif"> แก้ไข </font>
+                                        <font color="white" size="3px" class="serif"> บันทึก </font>
                                     </button>
 
 
