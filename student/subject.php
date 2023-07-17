@@ -86,6 +86,8 @@ if (empty($_GET["searchname"])) {
 
 			// echo $sql;
 
+			// echo $sql;
+
 			$query = mysqli_query($con, $sql);
 			while ($objResult = mysqli_fetch_array($query)) {
 

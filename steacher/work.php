@@ -30,6 +30,56 @@ include('header.php');
 
 							</div>
 						</div>
+						<div class="row">
+							<form role="form" method="get" action="work.php" enctype="multipart/form-data">
+
+								<div class="col-md-12">
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> เทอม </font>
+											<select class="form-control" id="term" name="term" style=" border-radius: 10px;  ">
+
+												<option value=""> เลือกเทอม </option>
+
+												<?php
+												$sql = "SELECT * FROM drop_term where name = '" . $searchname2 . "'  order by pk asc  ";
+												$query = mysqli_query($objCon, $sql);
+												while ($objResult = mysqli_fetch_array($query)) {
+												?>
+													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+												<?php
+												}
+												?>
+												<?php
+												$sql = "SELECT * FROM drop_term where  name != '" . $searchname2 . "'  order by pk asc  ";
+												$query = mysqli_query($objCon, $sql);
+												while ($objResult = mysqli_fetch_array($query)) {
+												?>
+													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+												<?php
+												}
+												?>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
+											<input type="text" name="year" id="year" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
+										</div>
+									</div>
+
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>
+											<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 80px; border-color: white; ">
+												<font color="white" size="3px" class="serif"> ค้นหา </font>
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 
 
 						<div class="col-lg-12" align="left">
@@ -71,10 +121,25 @@ include('header.php');
 									</thead>
 									<?php
 									$i = 1;
+									if (!isset($_GET['term']) || $_GET['term'] == '') {
+										$term = '';
+									} else {
+										$term = 'and classdata.data8 = "' . $_GET['term'] . '"';
+									}
 
-									$sql = "SELECT * FROM student_paper where student != '' and student = '" . $_SESSION["UserID3"] . "'  
-				and status  = '1'
-				order by pk desc ";
+									if (!isset($_GET['year']) || $_GET['year'] == '') {
+										$y = '';
+									} else {
+										$y = 'and classdata.data7 = "' . $_GET['year'] . '"';
+									}
+
+									// 					$sql = "SELECT * FROM student_paper where student != '' and student = '" . $_SESSION["UserID3"] . "'  
+									// and status  = '1'
+									// order by pk desc ";
+
+									$sql = "SELECT student_paper.* FROM student_paper 
+					left join classdata on student_paper.subject = classdata.pk
+					where student_paper.student != '' and student_paper.student = '" . $_SESSION["UserID3"] . "' $term $y  and student_paper.status  = '1' order by classdata.pk desc ";
 									$query = mysqli_query($con, $sql);
 									while ($objResult = mysqli_fetch_array($query)) {
 										$secg = substr($objResult["section_group"], 0, -1);
@@ -159,8 +224,8 @@ include('header.php');
 											</td>
 											<td>
 												<div align="center">
-												<font size="3px" class="serif2"><?php echo $data7; ?></font>
-												
+													<font size="3px" class="serif2"><?php echo $data7; ?></font>
+
 													<!-- <font size="3px" class="serif2"><?php echo DateThai($objResult["create_date"]) . " " . DateThai2($objResult["create_date"]); ?></font> -->
 												</div>
 											</td>
@@ -168,8 +233,8 @@ include('header.php');
 											<td>
 												<div align="center">
 													<font size="3px" class="serif2">
-														<a href="work_time.php?CusID=<?php echo $objResult["pk"]; ?>&page=" >
-														 <font color="#7FFF00" size="3px" class="serif1"> (คลิก) </font>
+														<a href="work_time.php?CusID=<?php echo $objResult["pk"]; ?>&page=">
+															<font color="#7FFF00" size="3px" class="serif1"> (คลิก) </font>
 															<font color="#FF0000" size="3px" class="serif1">เพื่อบันทึกเวลาทำงาน </font>
 														</a>
 													</font>

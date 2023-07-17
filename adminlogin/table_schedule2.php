@@ -1,5 +1,10 @@
 <?php
 $searchname = $_GET["iddata"];
+// if (empty($_GET["CusID"])) {
+// } else {
+//     $searchname = $_GET["CusID"];
+//     $_GET["classdata"] = $_GET["CusID"];
+// }
 ?>
 <style type="text/css">
     div.table-responsive::-webkit-scrollbar,
@@ -192,7 +197,7 @@ function timeblock($time, $sc_numCol, $sc_timeStep)
 <?php
 
 $data_schedule = array();
-if (isset($_GET['sec']) ) {
+if (isset($_GET['sec'])) {
     echo 'ค้นหากลุ่มการเรียน : ' . $_GET['sec'];
     $sec = "and dc.data6 = '$_GET[sec]'";
     // echo "<script type='text/javascript'>
@@ -202,8 +207,7 @@ if (isset($_GET['sec']) ) {
     //     }, 1000);
     //   });
     //   </script>";
-    }
-else {
+} else {
     echo 'ค้นหากลุ่มการเรียน : ทั้งหมด';
     $sec = '';
 }
@@ -224,7 +228,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
 			left join dropday as dd ON dd.pk = dc.data1
 			left join droptime as dts ON dts.pk = dc.data2 
 			left join droptime as dte ON dte.pk = dc.data3 
-			where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+			where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -253,7 +257,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "'  order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "'  order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -281,7 +285,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -309,7 +313,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -337,7 +341,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -365,7 +369,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);
@@ -394,7 +398,7 @@ for ($i_day = 0; $i_day < $num_dayShow; $i_day++) {
         left join dropday as dd ON dd.pk = dc.data1
         left join droptime as dts ON dts.pk = dc.data2 
         left join droptime as dte ON dte.pk = dc.data3 
-        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_SESSION["showclassdata"] . "' order by pk desc ";
+        where  dd.pk = '$day_id' $sec and dc.iddata = '" . $_GET["classdata"] . "' order by pk desc ";
         $query = mysqli_query($con, $sql);
         while ($objResult = mysqli_fetch_array($query)) {
             $time_start = str_replace(".", ":", $objResult["time_start"]);

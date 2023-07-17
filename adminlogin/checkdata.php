@@ -247,7 +247,7 @@ if (empty($_GET["data10"])) {
 								$sql = "SELECT *, a.pk, a.subject, a.status FROM student_paper a 
 							Inner Join member b
 							On a.student = b.pk
-							where a.is_active != 0 and b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
+							where a.is_active != 0 and a.status != 3 and b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
 							
 							order by a.pk desc ";
 
