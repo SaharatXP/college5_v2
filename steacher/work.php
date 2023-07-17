@@ -181,7 +181,7 @@ include('header.php');
 										}
 
 
-										/// โหลดข้อมูลชื่อ อาจารย์   
+										  
 										$nameteacher = "";
 										$sql2 = "SELECT * FROM member where status = 'AJ' and pk = '" . $data11 . "'  order by pk asc  ";
 										$query2 = mysqli_query($objCon, $sql2);

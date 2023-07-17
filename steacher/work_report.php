@@ -133,7 +133,57 @@ if (empty($_GET["searchname2"])) {
 											?>
 									
 								</div>
+										
+								<div class="row">
+							<form role="form" method="get" action="work_report.php" enctype="multipart/form-data">
 
+								<div class="col-md-12">
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> เทอม </font>
+											<select class="form-control" id="term" name="term" style=" border-radius: 10px;  ">
+
+												<option value=""> เลือกเทอม </option>
+
+												<?php
+												$sql = "SELECT * FROM drop_term where name = '" . $searchname2 . "'  order by pk asc  ";
+												$query = mysqli_query($objCon, $sql);
+												while ($objResult = mysqli_fetch_array($query)) {
+												?>
+													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+												<?php
+												}
+												?>
+												<?php
+												$sql = "SELECT * FROM drop_term where  name != '" . $searchname2 . "'  order by pk asc  ";
+												$query = mysqli_query($objCon, $sql);
+												while ($objResult = mysqli_fetch_array($query)) {
+												?>
+													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+												<?php
+												}
+												?>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
+											<input type="text" name="year" id="year" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
+										</div>
+									</div>
+
+									<div class="col-lg-2 ">
+										<div class="form-group">
+											<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>
+											<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 80px; border-color: white; ">
+												<font color="white" size="3px" class="serif"> ค้นหา </font>
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
 
 								<div class="col-lg-12" align="left" style="margin-top: 15px; ">
 									<div class="table-responsive">
@@ -141,22 +191,32 @@ if (empty($_GET["searchname2"])) {
 											<thead>
 												<tr>
 													
-													<th width="25%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา/ชื่อวิชา </font>
 														</div>
 													</th>
-													<th width="25%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> อาจารย์ประจำวิชา </font>
 														</div>
 													</th>
-													<th width="25%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+													<th width="10%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+														<div align="center">
+															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ภาคการศึกษา </font>
+														</div>
+													</th>
+													<th width="10%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+														<div align="center">
+															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ปีการศึกษา </font>
+														</div>
+													</th>
+													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ข้อมูลการทำงาน </font>
 														</div>
 													</th>
-													<th width="25%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> สรุปการทำงาน </font>
 														</div>
@@ -222,8 +282,17 @@ if (empty($_GET["searchname2"])) {
 														</td>
 
 
+														<td style=" border-left: 0px solid #F2F2F2; ">
+															<div align="center">
+																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data8']; ?> </font>
+															</div>
+														</td>
 
-
+														<td style=" border-left: 0px solid #F2F2F2; ">
+															<div align="center">
+																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data7']; ?> </font>
+															</div>
+														</td>
 
 
 														<td style=" border-left: 0px solid #F2F2F2; ">
