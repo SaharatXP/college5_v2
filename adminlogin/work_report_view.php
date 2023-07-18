@@ -115,7 +115,7 @@ if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
                                                 <button type="submit" class="btn btn-outline-success">ค้นหา</button>
                                             </div>
                                         </form>
-                                        <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" />
+                                        <!-- <input type="button" onclick="printDiv('printableArea')" value="พิมพ์" /> -->
 
                                         <div class="form-group " id="printableArea">
 

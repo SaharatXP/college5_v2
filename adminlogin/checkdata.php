@@ -192,6 +192,11 @@ if (empty($_GET["data10"])) {
 									</th>
 									<th width="10%" bgcolor="#A8DADC">
 										<div align="center">
+											<font size="2px" color="black"> ระดับการศึกษา </font>
+										</div>
+									</th>
+									<th width="10%" bgcolor="#A8DADC">
+										<div align="center">
 											<font size="2px" color="black"> วิชาที่สมัคร </font>
 										</div>
 									</th>
@@ -241,7 +246,7 @@ if (empty($_GET["data10"])) {
 								if (empty($_SESSION["subject"])) {
 									$subject = '';
 								} else {
-									$subject = "and b.subject = '$_SESSION[subject]'";
+									$subject = "$_SESSION[subject]";
 								}
 
 								$sql = "SELECT *, a.pk, a.subject, a.status FROM student_paper a 
@@ -291,6 +296,11 @@ if (empty($_GET["data10"])) {
 										<td>
 											<div align="center">
 												<font size="2px" color="Black"> <?php echo $namedata; ?></font>
+											</div>
+										</td>
+										<td>
+											<div align="center">
+												<font size="2px" color="Black"> <?php echo $subject; ?></font>
 											</div>
 										</td>
 										<td>

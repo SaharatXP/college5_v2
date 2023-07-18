@@ -276,36 +276,18 @@ while ($objResult = mysqli_fetch_array($query)) {
 										</div>
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> ชื่อวิชา </font>
+												<font color="black" size="3px" class="serif"> ชื่อวิชาภาษาไทย </font>
 												<input type="text" name="data2" id="data2" class="form-control " value="<?php echo $data2; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " readonly disabled>
 											</div>
 										</div>
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> ชื่อวิชาภาษาอังกฏษ </font>
+												<font color="black" size="3px" class="serif"> ชื่อวิชาภาษาอังกฤษ </font>
 												<input type="text" name="data3" id="data3" class="form-control " value="<?php echo $data3; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " readonly disabled>
 											</div>
 										</div>
 
-										<div class="col-lg-3 ">
-											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> หน่วยกิตต่ำสุด </font>
-												<input type="text" name="data4" id="data4" class="form-control " value="<?php echo $data4; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" readonly disabled>
-											</div>
-										</div>
-										<div class="col-lg-3 ">
-
-											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> หน่วยกิตสูงสุด </font>
-												<input type="text" name="data5" id="data5" class="form-control " value="<?php echo $data5; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" readonly disabled>
-											</div>
-										</div>
-										<div class="col-lg-3 ">
-											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> หน่วยกิตทั้งหมด </font>
-												<input type="text" name="data6" id="data6" class="form-control " value="<?php echo $data6; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" readonly disabled>
-											</div>
-										</div>
+										
 										<div class="col-lg-12 "> </div>
 
 
@@ -342,6 +324,13 @@ while ($objResult = mysqli_fetch_array($query)) {
 											</div>
 										</div>
 
+										<div class="col-lg-3 ">
+											<div class="form-group"> <br>
+												<font color="black" size="3px" class="serif"> เกรดที่นักศึกษาทำได้ </font>
+												<input type="text" value="<?php echo $grade_p_name ?>" class="form-control" style=" border-radius: 10px; margin-top: 10px; " disabled>
+
+											</div>
+										</div> 
 
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
@@ -377,13 +366,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 												</select>
 											</div>
 										</div>
-										<div class="col-lg-3 ">
-											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> เกรดที่นักศึกษาทำได้ </font>
-												<input type="text" value="<?php echo $grade_p_name ?>" class="form-control" style=" border-radius: 10px; margin-top: 10px; " disabled>
-
-											</div>
-										</div>
+										
 									</div>
 
 									<div class="row">
@@ -493,404 +476,6 @@ while ($objResult = mysqli_fetch_array($query)) {
 										</div>
 									</div>
 
-									<!---------- ป.โท-เอก----------------------------------------->
-									<!-------------- ป.โท-เอก----------------------------------------->
-									<!-------------- ป.โท-เอก----------------------------------------->
-									<!-- 
-									<?php if (empty($_SESSION["subject"]) || $_SESSION["subject"] == 'ปริญญาโท-เอก ') { ?>
-									<div class="h2"> เฉพาะผู้ช่วยอาจารย์ระดับปริญญาโท-เอก </div>
-									<div class="row" style="margin-top: 10px;">
-										<style>
-											input.larger {
-												width: 17px;
-												height: 17px;
-												vertical-align: middle;
-												margin-top: -3px;
-											}
-										</style>
-										<div class="col-lg-5">
-											<table width="100%" border="0">
-
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> ช่วยสอน </font>
-																<input type="checkbox" name="chk3" id="chk3" value="ช่วยสอน" <?php if ($chk30 == "ช่วยสอน") {
-																																	echo "checked";
-																																} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="datachk30" id="datachk30" placeholder=" " value="<?php echo $datachk30; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-														</div>
-													</td>
-													<td colspan="1">
-														<div>
-															<input type="text" name="datachk31" id="datachk31" placeholder="  " value="<?php echo $datachk31; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-												</tr>
-
-
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> ช่วยเตรียมการสอน </font>
-																<input type="checkbox" name="chk4" id="chk4" value="ช่วยเตรียมการสอน" <?php if ($chk4 == "ช่วยเตรียมการสอน") {
-																																			echo "checked";
-																																		} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="datachk4" id="datachk4" placeholder="   " value="<?php echo $datachk4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-														</div>
-													</td>
-													<td colspan="1">
-														<div>
-															<input type="text" name="datachk41" id="datachk41" placeholder="   " value="<?php echo $datachk41; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-												</tr>
-
-											</table>
-										</div>
-										<div class="col-lg-5">
-											<table width="100%" border="0">
-
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> ตรวจแบบทดสอบ </font>
-																<input type="checkbox" name="chk5" id="chk5" value="ตรวจแบบทดสอบ " <?php if ($chk5 == "ตรวจแบบทดสอบ ") {
-																																		echo "checked";
-																																	} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="datachk5" id="datachk5" placeholder="   " value="<?php echo $datachk5; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-														</div>
-													</td>
-													<td colspan="1">
-														<div>
-															<input type="text" name="datachk51" id="datachk51" placeholder="   " value="<?php echo $datachk51; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> อื่นๆระบุ </font>
-																<input type="checkbox" name="chk6" id="chk6" value="อื่นๆระบุ" <?php if ($chk6 == "อื่นๆระบุ") {
-																																	echo "checked";
-																																} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="datachk6" id="datachk6" placeholder=" " value="<?php echo $datachk6; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<font size="3px" color="black"> &nbsp; กิจกรรมที่ปฎิบัติ </font>
-
-														</div>
-													</td>
-													<td colspan="1">
-														<div>
-															<input type="text" name="datachk61" id="datachk61" placeholder="   " value="<?php echo $datachk61; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-												</tr>
-											</table>
-										</div>
-
-
-
-
-										<div class="col-lg-6" style="margin-top: 10px; margin-bottom: 10px; ">
-											<table width="100%" border="0">
-												<tr>
-													<td width="40%">
-														<div>
-															<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="datachk3" id="datachk3" placeholder=" " value="<?php echo number_format(0 + $datachk30 + $datachk4 + $datachk5 + $datachk6); ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3">
-														<div>
-															<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
-														</div>
-													</td>
-												</tr>
-
-											</table>
-										</div>
-									</div>
-									<?php } ?> -->
-
-									<!-- ------------------------------------------------------------------------- -->
-									<!-- -------------------------------- ป.ตรี ----------------------------------- -->
-									<!-- ------------------------------------------------------------------------- -->
-
-
-									<!-- <?php if (empty($_SESSION["subject"]) || $_SESSION["subject"] == 'ปริญญาตรี') { ?>																							
-									<div class="h2"> เฉพาะผู้ช่วยอาจารย์ระดับปริญญาตรี </div> </label><br>
-									<div class="row" style="margin-top: 5px;">
-										<style>
-											input.larger {
-												width: 17px;
-												height: 17px;
-												vertical-align: middle;
-												margin-top: -3px;
-											}
-										</style>
-										<div class="col-lg-5">
-											<table width="100%" border="0">
-												<tr>
-													<td colspan="3">
-														<div>
-															<font size="3px" color="black"> ชั่วโมงบรรยาย </font> </label>
-														</div>
-													</td>
-													<td>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> ช่วยตรวจงาน </font>
-																<input type="checkbox" name="a1" value="ช่วยตรวจงาน" <?php if ($a1 == "ช่วยตรวจงาน") {
-																															echo "checked";
-																														} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="b1" placeholder="   " value="<?php echo $b1; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-
-
-
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> เช็คชื่อ / ใบงาน </font>
-																<input type="checkbox" name="a2" value="เช็คชื่อ / เก็บใบงาน" <?php if ($a2 == "เช็คชื่อ / เก็บใบงาน") {
-																																	echo "checked";
-																																} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="b2" id="b2" placeholder="   " value="<?php echo $b2; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> อื่นๆ </font>
-																<input type="checkbox" name="a3" value="อื่นๆ" <?php if ($a3 == "อื่นๆ") {
-																													echo "checked";
-																												} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="b3" placeholder="   " value="<?php echo $b3; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-
-											</table>
-										</div>
-										<div class="col-lg-5">
-											<table width="100%" border="0">
-												<tr>
-													<td colspan="3">
-														<div>
-															<font size="3px" color="black"> ชั่วโมงปฎิบัติการ </font> </label>
-														</div>
-													</td>
-													<td>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div>
-
-															<label class="container2" style="margin-top: 10px;">
-																<font color="black" size="3px" class="serif"> จำนวนชั่วโมง </font>
-																<input type="checkbox" name="a4" value="จำนวนชั่วโมง" <?php if ($a4 == "จำนวนชั่วโมง") {
-																															echo "checked";
-																														} ?>>
-																<span class="checkmark"></span>
-															</label>
-
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="b4" placeholder=" " value="<?php echo $b4; ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-
-											</table>
-										</div>
-										<div class="col-lg-6" style="margin-top: 10px; margin-bottom: 10px; ">
-											<table width="100%" border="0">
-												<tr>
-													<td width="40%">
-														<div>
-															<font size="3px" color="black"> &nbsp; รวมชั่วโมงการทํางานของผู้ช่วยสอน </font>
-														</div>
-													</td>
-													<td>
-														<div>
-															<input type="text" name="a5" placeholder="   " value="<?php echo number_format(0 + $b1 + $b2 + $b3 + $b4); ?>" class="form-control " autocomplete="off" style=" border-radius: 10px; ">
-														</div>
-													</td>
-													<td>
-														<div>
-															<font size="3px" color="black"> &nbsp;&nbsp; ชั่วโมง/ต่อสัปดาห์ </font>
-														</div>
-													</td>
-												</tr>
-												<tr>
-													<td colspan="3">
-														<div>
-															<font size="3px" color="black"> &nbsp; (ภาระงานของผู้ช่วยสอนรวมไม่น้อยกว่า 10 ชั่วโมง แต่ไม่เกิน 12 ชั่วโมง/สัปดาห์) </font>
-														</div>
-													</td>
-												</tr>
-											</table>
-										</div>
-									</div>
-									<?php } ?> -->
-
 									<div class="row">
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
@@ -936,29 +521,6 @@ while ($objResult = mysqli_fetch_array($query)) {
 										</div>
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> เจ้าหน้าที่ตรวจสอบ </font>
-												<select class="form-control" id="create_by" name="create_by" style=" border-radius: 10px; margin-top: 10px; " disabled>
-													<?php
-													$sql = "SELECT * FROM member where  pk = '" . $create_by . "'  order by pk asc  ";
-													$query = mysqli_query($objCon, $sql);
-													while ($objResult = mysqli_fetch_array($query)) {
-													?>
-														<option value="<?php echo $objResult["pk"]; ?>"><?php echo $objResult["name"]; ?></option>
-													<?php
-													}
-													?>
-													
-												</select>
-											</div>
-										</div>
-										<div class="col-lg-3 ">
-											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> หมายเหตุ </font>
-												<input type="text" name="note_data" id="note_data" class="form-control " value="<?php echo $note_data; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
-											</div>
-										</div>
-										<div class="col-lg-3 ">
-											<div class="form-group"> <br>
 												<font color="black" size="3px" class="serif"> เปลี่ยนสถานะ ผู้ใช้งานเว็บไซต์ </font>
 
 												<select class="form-control" id="note_data2" name="note_data2" style=" border-radius: 10px; margin-top: 10px; ">
@@ -985,6 +547,31 @@ while ($objResult = mysqli_fetch_array($query)) {
 
 											</div>
 										</div>
+
+										<div class="col-lg-3 ">
+											<div class="form-group"> <br>
+												<font color="black" size="3px" class="serif"> หมายเหตุ </font>
+												<input type="text" name="note_data" id="note_data" class="form-control " value="<?php echo $note_data; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
+											</div>
+										</div>
+										
+										<div class="col-lg-3 ">
+											<div class="form-group"> <br>
+												<font color="black" size="3px" class="serif"> เจ้าหน้าที่ตรวจสอบ </font>
+												<select class="form-control" id="create_by" name="create_by" style=" border-radius: 10px; margin-top: 10px; " disabled>
+													<?php
+													$sql = "SELECT * FROM member where  pk = '" . $create_by . "'  order by pk asc  ";
+													$query = mysqli_query($objCon, $sql);
+													while ($objResult = mysqli_fetch_array($query)) {
+													?>
+														<option value="<?php echo $objResult["pk"]; ?>"><?php echo $objResult["name"]; ?></option>
+													<?php
+													}
+													?>
+													
+												</select>
+											</div>
+										</div>
 									</div>
 
 
@@ -1000,9 +587,11 @@ while ($objResult = mysqli_fetch_array($query)) {
 										<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 5px; width: 110px; border-color: white; ">
 											<font color="white" size="3px" class="serif"> เพิ่มข้อมูล </font>
 										</button>
+
+										<a href="checkdata.php"
 										<button type="reset" class="btn btn-danger" style="background-color: #FFFFFF; border-radius: 5px; width: 100px; border-color: white; border: 1px solid #A9C7FF; ">
 											<font color="black" size="3px" class="serif"> ยกเลิก </font>
-										</button>
+										</button> </a>
 									</div>
 								</div>
 							</div>

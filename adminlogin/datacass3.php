@@ -937,7 +937,7 @@ if (empty($_GET["searchname"])) {
 												<font color="white" size="3px" class="serif"> เพิ่มข้อมูล </font>
 											</button>
 
-											<a href="dataclass.php">
+											<a href="dataclass2.php">
 												<button type="button" class="btn btn-danger" style="background-color: #FFFFFF; border-radius: 5px; width: 100px; border-color: white; border: 1px solid #A9C7FF; ">
 													<font color="black" size="3px" class="serif"> ยกเลิก </font>
 												</button> </a>

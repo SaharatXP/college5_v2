@@ -117,22 +117,22 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 								<table id="key_product" class=" table    tablemobile  " border="0">
 									<thead>
 										<tr>
-											<th width="3%" bgcolor="#A8DADC" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+											<th width="25%" bgcolor="#A8DADC" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 												<div align="center">
 													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ชื่อ-นามสกุล ผู้ช่วยอาจารย์ </font>
 												</div>
 											</th>
-											<th width="8%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
+											<th width="25%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 												<div align="center">
 													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสนักศีกษา </font>
 												</div>
 											</th>
-											<th width="2%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
+											<th width="25%" bgcolor="#A8DADC" style="border: 0px solid #FFF;  border-right: 1px solid #FFF; ">
 												<div align="center">
 													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ระดับปริญญา </font>
 												</div>
 											</th>
-											<th width="3%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
+											<th width="25%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
 												<div align="center">
 													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ข้อมูลการทำงาน </font>
 												</div>
@@ -247,7 +247,7 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 												<td align="center">
 													<div align="center">
 
-														<a href="work_repoer_view.php?memberId=<?php echo $objResult2['memberPk']; ?>&classdata=<?php echo
+														<a href="work_report_view.php?memberId=<?php echo $objResult2['memberPk']; ?>&classdata=<?php echo
 																																				$_GET['Idel'];  ?>&page=2">
 															<button type="button" class="btn btn-sm btn-primary" style="background-color: #FFD45F; border-radius: 5px;   border: 1px solid  #FFD45F;   ">
 																<font color="#000000" size="2px" class="serif1"> ดูข้อมูล คลิก </font>
