@@ -55,7 +55,7 @@ if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
 
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <!-- page content -->
-<div class="right_col" role="main" style="background-color: #F5FBFD; ">
+<div class="right_col" role="main" style="background-color: #FFFFFF; ">
     <a href="./studentclass.php?searchname3=2023-05-06&data10=&searchname2=">
         < กลับ</a>
             <div class="page-title">
@@ -320,6 +320,9 @@ if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
                                                                                 </td>
                                                                                 <td>
                                                                                     <?php echo $objResultDt['savedata7'] ?>
+                                                                                    <?php if ($objResultDt['description'] != null) { ?>
+                                                                                        <b style="color: red;"> ( หมายเหตุ ) <?php echo $objResultDt['description']; ?></b>
+                                                                                    <?php } ?>
                                                                                 </td>
 
 

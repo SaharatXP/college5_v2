@@ -96,101 +96,101 @@ if (empty($_GET["searchname2"])) {
 									</style>
 
 									<?php
-											$perpage = 20;
-											if (isset($_GET['page2'])) {
-												$page = $_GET['page2'];
-											} else {
-												$page = 1;
-											}
+									$perpage = 20;
+									if (isset($_GET['page2'])) {
+										$page = $_GET['page2'];
+									} else {
+										$page = 1;
+									}
 
-											if (empty($_GET['page2'])) {
-												$page = 1;
-											}
-											$start = ($page - 1) * $perpage;
+									if (empty($_GET['page2'])) {
+										$page = 1;
+									}
+									$start = ($page - 1) * $perpage;
 
 
 
-											$addcode = "";
-											if (empty($_GET["searchname"])) {
-											} else {
-												$addcode = " and ( b.data1 like '%" . $searchname . "%' or b.data2 like '%" . $searchname . "%' ) ";
-											}
-											$addcode2 = "";
-											if (empty($_GET["searchname2"])) {
-											} else {
-												$addcode2 = " and  a.savedata4 = '" . $searchname2 . "' ";
-											}
+									$addcode = "";
+									if (empty($_GET["searchname"])) {
+									} else {
+										$addcode = " and ( b.data1 like '%" . $searchname . "%' or b.data2 like '%" . $searchname . "%' ) ";
+									}
+									$addcode2 = "";
+									if (empty($_GET["searchname2"])) {
+									} else {
+										$addcode2 = " and  a.savedata4 = '" . $searchname2 . "' ";
+									}
 
-											$sql2 = " SELECT a.*, b.data1, b.data2 FROM work_time a 
+									$sql2 = " SELECT a.*, b.data1, b.data2 FROM work_time a 
 											Inner Join classdata b On a.subject = b.pk
 											where a.student_paper != '' 
 											and a.member = '" . $_SESSION["UserID3"] . "'   
 											" . $addcode . $addcode2 . "  
 											order by a.pk asc    ";
-											$query2 = mysqli_query($objCon, $sql2);
-											$total_record = mysqli_num_rows($query2);
-											$total_page = ceil($total_record / $perpage);
-											?>
-									
+									$query2 = mysqli_query($objCon, $sql2);
+									$total_record = mysqli_num_rows($query2);
+									$total_page = ceil($total_record / $perpage);
+									?>
+
 								</div>
-										
+
 								<div class="row">
-							<form role="form" method="get" action="work_report.php" enctype="multipart/form-data">
+									<form role="form" method="get" action="work_report.php" enctype="multipart/form-data">
 
-								<div class="col-md-12">
-									<div class="col-lg-2 ">
-										<div class="form-group">
-											<font color="black" size="3px" class="serif"> เทอม </font>
-											<select class="form-control" id="term" name="term" style=" border-radius: 10px;  ">
+										<div class="col-md-12">
+											<div class="col-lg-2 ">
+												<div class="form-group">
+													<font color="black" size="3px" class="serif"> เทอม </font>
+													<select class="form-control" id="term" name="term" style=" border-radius: 10px;  ">
 
-												<option value=""> เลือกเทอม </option>
+														<option value=""> เลือกเทอม </option>
 
-												<?php
-												$sql = "SELECT * FROM drop_term where name = '" . $searchname2 . "'  order by pk asc  ";
-												$query = mysqli_query($objCon, $sql);
-												while ($objResult = mysqli_fetch_array($query)) {
-												?>
-													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
-												<?php
-												}
-												?>
-												<?php
-												$sql = "SELECT * FROM drop_term where  name != '" . $searchname2 . "'  order by pk asc  ";
-												$query = mysqli_query($objCon, $sql);
-												while ($objResult = mysqli_fetch_array($query)) {
-												?>
-													<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
-												<?php
-												}
-												?>
-											</select>
+														<?php
+														$sql = "SELECT * FROM drop_term where name = '" . $searchname2 . "'  order by pk asc  ";
+														$query = mysqli_query($objCon, $sql);
+														while ($objResult = mysqli_fetch_array($query)) {
+														?>
+															<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+														<?php
+														}
+														?>
+														<?php
+														$sql = "SELECT * FROM drop_term where  name != '" . $searchname2 . "'  order by pk asc  ";
+														$query = mysqli_query($objCon, $sql);
+														while ($objResult = mysqli_fetch_array($query)) {
+														?>
+															<option value="<?php echo $objResult["name"]; ?>"><?php echo $objResult["name"]; ?></option>
+														<?php
+														}
+														?>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-2 ">
+												<div class="form-group">
+													<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
+													<input type="text" name="year" id="year" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
+												</div>
+											</div>
+
+											<div class="col-lg-2 ">
+												<div class="form-group">
+													<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>
+													<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 80px; border-color: white; ">
+														<font color="white" size="3px" class="serif"> ค้นหา </font>
+													</button>
+												</div>
+											</div>
 										</div>
-									</div>
-									<div class="col-lg-2 ">
-										<div class="form-group">
-											<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
-											<input type="text" name="year" id="year" class="form-control " value="<?php echo $daystart_load1; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
-										</div>
-									</div>
-
-									<div class="col-lg-2 ">
-										<div class="form-group">
-											<font color="black" size="3px" class="serif"> &nbsp;&nbsp; <br> </font>
-											<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 80px; border-color: white; ">
-												<font color="white" size="3px" class="serif"> ค้นหา </font>
-											</button>
-										</div>
-									</div>
+									</form>
 								</div>
-							</form>
-						</div>
 
 								<div class="col-lg-12" align="left" style="margin-top: 15px; ">
 									<div class="table-responsive">
 										<table id="key_product" class=" table    tablemobile  " border="0">
 											<thead>
 												<tr>
-													
+
 													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
 														<div align="center">
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> รหัสวิชา/ชื่อวิชา </font>
@@ -238,7 +238,7 @@ if (empty($_GET["searchname2"])) {
 													$i = (($_GET["page2"] - 1) * 20) + 1;
 												}
 
-												$sql2 = "  SELECT a.*, b.* , b.pk as classpk, a.student_paper as stdpp, m.* FROM work_time as a 
+												$sql2 = "  SELECT a.*, b.* , b.pk as classpk, a.student_paper as stdpp, m.*  FROM work_time as a 
 											left Join classdata as b On a.subject = b.pk
 											left join member as m on m.pk = b.data11
 											where a.student_paper != '' 
@@ -246,7 +246,9 @@ if (empty($_GET["searchname2"])) {
 											" . $addcode . $addcode2 . "  
 											group by stdpp
 											order by stdpp asc   limit {$start} , {$perpage}   ";
+
 												// echo $sql2;
+
 												$query2 = mysqli_query($con, $sql2);
 												while ($objResult2 = mysqli_fetch_array($query2)) {
 													if ($bg == "#FFF") {
@@ -254,70 +256,76 @@ if (empty($_GET["searchname2"])) {
 													} else {
 														$bg = "#FFF";
 													}
-
 													$subject_save = $objResult2["subject"];
+													$sqlcount = 'select count(pk) as totalx from student_paper where pk =' . $objResult2["stdpp"];
+													$query_count = mysqli_query($objCon, $sqlcount);
+													// echo $sqlcount;
+													while ($objResult_count = mysqli_fetch_array($query_count)) {
+														// echo $objResult_count['totalx'];
+														if ($objResult_count['totalx'] > 0) {
 
-
-													$name_teacher = " - ";
-													$sql = "SELECT * FROM member where status = 'AJ' and pk = '" . $data11 . "'  order by pk asc  ";
-													$query = mysqli_query($objCon, $sql);
-													while ($objResult = mysqli_fetch_array($query)) {
-														$name_teacher = $objResult["name"];
-													}
+															$name_teacher = " - ";
+															$sql = "SELECT * FROM member where status = 'AJ' and pk = '" . $data11 . "'  order by pk asc  ";
+															$query = mysqli_query($objCon, $sql);
+															while ($objResult = mysqli_fetch_array($query)) {
+																$name_teacher = $objResult["name"];
+															}
 												?>
-													<tr style="background-color: <?php echo $bg; ?>; ">
+															<tr style="background-color: <?php echo $bg; ?>; ">
 
 
-														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; ">[ <?php echo  $objResult2['data1'] ?> ] <?php echo  $objResult2['data2'] ?> </font>
-															</div>
-														</td>
+																<td style=" border-left: 0px solid #F2F2F2; ">
+																	<div align="center">
+																		<font size="3px" color="Black" style=" font-size: 13px; ">[ <?php echo  $objResult2['data1'] ?> ] <?php echo  $objResult2['data2'] ?> </font>
+																	</div>
+																</td>
 
 
-														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['name']; ?> </font>
-															</div>
-														</td>
+																<td style=" border-left: 0px solid #F2F2F2; ">
+																	<div align="center">
+																		<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['name']; ?> </font>
+																	</div>
+																</td>
 
 
-														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data8']; ?> </font>
-															</div>
-														</td>
+																<td style=" border-left: 0px solid #F2F2F2; ">
+																	<div align="center">
+																		<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data8']; ?> </font>
+																	</div>
+																</td>
 
-														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data7']; ?> </font>
-															</div>
-														</td>
-
-
-														<td style=" border-left: 0px solid #F2F2F2; ">
-															<div align="center">
-																<font size="3px" color="Black" style=" font-size: 13px; ">
-																	<a href="work_time.php?CusID=<?php echo $objResult2['stdpp'] ?>&page=" style="cursor: pointer; "> บันทึกการทำงาน คลิก </a>
-																</font>
-															</div>
-														</td>
+																<td style=" border-left: 0px solid #F2F2F2; ">
+																	<div align="center">
+																		<font size="3px" color="Black" style=" font-size: 13px; "> <?php echo $objResult2['data7']; ?> </font>
+																	</div>
+																</td>
 
 
+																<td style=" border-left: 0px solid #F2F2F2; ">
+																	<div align="center">
+																		<font size="3px" color="Black" style=" font-size: 13px; ">
+																			<a href="work_time.php?CusID=<?php echo $objResult2['stdpp'] ?>&page=" style="cursor: pointer; "> บันทึกการทำงาน คลิก </a>
+																		</font>
+																	</div>
+																</td>
 
-														<td align="center">
-															<div align="center">
-																
-
-																<font size="3px" color="Black" style=" font-size: 13px; "><a href="work_report_view.php?classdata=<?php echo $objResult2['classpk']; ?>"><b style="color: red;">ดูสรุปการทำงาน คลิก </b> </a></font>
 
 
-															</div>
-														</td>
+																<td align="center">
+																	<div align="center">
 
-													</tr>
+
+																		<font size="3px" color="Black" style=" font-size: 13px; "><a href="work_report_view.php?classdata=<?php echo $objResult2['classpk']; ?>"><b style="color: red;">ดูสรุปการทำงาน คลิก </b> </a></font>
+
+
+																	</div>
+																</td>
+
+															</tr>
 												<?php
-													$i++;
+															$i++;
+														}
+													}
 												}
 												?>
 											</tbody>

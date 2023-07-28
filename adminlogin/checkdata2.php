@@ -287,7 +287,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 											</div>
 										</div>
 
-										
+
 										<div class="col-lg-12 "> </div>
 
 
@@ -330,7 +330,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 												<input type="text" value="<?php echo $grade_p_name ?>" class="form-control" style=" border-radius: 10px; margin-top: 10px; " disabled>
 
 											</div>
-										</div> 
+										</div>
 
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
@@ -366,7 +366,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 												</select>
 											</div>
 										</div>
-										
+
 									</div>
 
 									<div class="row">
@@ -390,12 +390,12 @@ while ($objResult = mysqli_fetch_array($query)) {
 
 									<div class="row">
 										<div class="col-lg-6 " style="margin-top: 10px; margin-bottom: 10px; ">
-										<font color="black" size="3px" class="serif" > <code> Section ที่สมัครเข้ามา </code></font>
+											<font color="black" size="3px" class="serif"> <code> Section ที่สมัครเข้ามา </code></font>
 
 
 											<table width="100%" border="1">
 
-												
+
 												<?php
 												$sql_sec = "SELECT * FROM classdata_section
 												LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
@@ -417,7 +417,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 													<td width="25%" align="center">
 														<font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอน </font>
 													</td>
-													
+
 
 
 
@@ -442,7 +442,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 														<td>
 															<input disabled type="text" name="data15" id="data15" class="form-control " value="<?php echo $objResult_sec['data15']; ?>" autocomplete="off" style=" border-radius: 0px; ">
 														</td>
-														
+
 
 													</tr>
 													<tr>
@@ -465,7 +465,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 
 
 
-												
+
 
 
 
@@ -554,7 +554,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 												<input type="text" name="note_data" id="note_data" class="form-control " value="<?php echo $note_data; ?>" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; ">
 											</div>
 										</div>
-										
+
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
 												<font color="black" size="3px" class="serif"> เจ้าหน้าที่ตรวจสอบ </font>
@@ -568,7 +568,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 													<?php
 													}
 													?>
-													
+
 												</select>
 											</div>
 										</div>
@@ -588,10 +588,10 @@ while ($objResult = mysqli_fetch_array($query)) {
 											<font color="white" size="3px" class="serif"> เพิ่มข้อมูล </font>
 										</button>
 
-										<a href="checkdata.php"
-										<button type="reset" class="btn btn-danger" style="background-color: #FFFFFF; border-radius: 5px; width: 100px; border-color: white; border: 1px solid #A9C7FF; ">
+										<a href="checkdata.php" <button type="reset" class="btn btn-danger" style="background-color: #FFFFFF; border-radius: 5px; width: 100px; border-color: white; border: 1px solid #A9C7FF; ">
 											<font color="black" size="3px" class="serif"> ยกเลิก </font>
-										</button> </a>
+											</button>
+										</a>
 									</div>
 								</div>
 							</div>

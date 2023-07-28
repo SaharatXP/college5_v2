@@ -78,7 +78,7 @@ include("../db_config.php");
 
 <?php
 
-$sql = "SELECT * FROM classdata Where  pk = '" . $_GET["CusID"] . "' ";
+$sql = "SELECT * FROM classdata Where  pk = '" . $_GET["CusID"] . "'  ";
 $query = mysqli_query($objCon, $sql);
 while ($objResult = mysqli_fetch_array($query)) {
     $data1 = $objResult["data1"];
@@ -121,7 +121,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                                 <?php
                                 $sql_sec = "SELECT * FROM classdata_section
                                 LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
-                                 where classdata_pk = $_GET[CusID] ";
+                                 where classdata_pk = $_GET[CusID] order by data14";
                                 $query_sec = mysqli_query($objCon, $sql_sec);
                                 while ($objResult_sec = mysqli_fetch_array($query_sec)) {
                                 ?>
@@ -164,7 +164,7 @@ while ($objResult = mysqli_fetch_array($query)) {
                                         <td rowspan="2" class="text-center">
                                             <a class="btn btn-warning mx-3" href="./edit_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>"> แก้ไข</a>
 
-                                            <a class="btn btn-danger mx-3" href="./delete_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>"> ลบ</a>
+                                            <a class="btn btn-danger mx-3" href="./delete_sec.php?classdata_section_id=<?php echo $objResult_sec['classdata_section_id'] ?>&CusID=<?php echo $_GET['CusID'] ?>" onclick="return confirm('ยืนยันการลบ ?')"> ลบ</a>
                                         </td>
 
 

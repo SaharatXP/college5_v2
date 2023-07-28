@@ -120,7 +120,7 @@ if (empty($_GET["data10"])) {
 								</div>
 								<div class="col-lg-2 ">
 									<div class="form-group">
-										<font color="black" size="3px" class="serif"> รหัสนักศึกษา </font>
+										<font color="black" size="3px" class="serif"> ปีการศึกษา </font>
 										<input type="text" name="searchname" id="searchname" class="form-control " value="<?php echo $searchname; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
 									</div>
 								</div>
@@ -166,6 +166,9 @@ if (empty($_GET["data10"])) {
 										</a>
 
 									</div>
+								</div>
+								<div class="col-md-12">
+									<a class="btn btn-primary" href="checkdata_group.php">จัดการสถานะแบบกลุ่ม</a>
 								</div>
 							</div>
 						</div>
@@ -249,13 +252,15 @@ if (empty($_GET["data10"])) {
 									$subject = "$_SESSION[subject]";
 								}
 
-								$sql = "SELECT *, a.pk, a.subject, a.status FROM student_paper a 
+								$sql = "SELECT *, a.pk, a.subject, a.status, c.pk as classpk FROM student_paper a 
 							Inner Join member b
 							On a.student = b.pk
-							where a.is_active != 0 and a.status != 3 and b.codestudent like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode2 . $addcode3 . "
+							left join classdata as c on c.pk = a.subject
+							where a.is_active != 0 and a.status != 3 and c.data7 like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode3 . "
 							
 							order by a.pk desc ";
 
+								// echo $sql;
 								// and b.subject = '$_SESSION[subject]'
 								$query = mysqli_query($con, $sql);
 								while ($objResult = mysqli_fetch_array($query)) {
