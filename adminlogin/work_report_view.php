@@ -49,6 +49,11 @@ if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
             top: 0;
         }
     }
+
+    thead {
+        background-color: rgb(15, 119, 190);
+        color: white;
+    }
 </style>
 
 
