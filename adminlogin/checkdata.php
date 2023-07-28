@@ -365,6 +365,8 @@ if (empty($_GET["data10"])) {
 									while ($objResult4 = mysqli_fetch_array($query4)) {
 										$namedata = $objResult4["name"];
 										$namedatacodestudent = $objResult4["codestudent"];
+										$subject =
+											$objResult4["subject"];
 									}
 									$namedatasubject  = "";
 									$sql4 = "SELECT * FROM classdata  where pk = '" . $objResult["subject"] . "' ";

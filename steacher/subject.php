@@ -152,6 +152,7 @@ if (empty($_GET["searchname"])) {
 							<div class="col-lg-12" style="margin-top: 10px; margin-bottom: 5px; display: none; ">
 								<a href="../img/<?php echo $objResult["datafile"]; ?>" class="btn btn-primary btn-minwidth" style="width: 100%;" download> ดาวน์โหลดฟอร์มสมัครผู้ช่วยสอน </a>
 							</div>
+
 							<!-- <?php if ($objResult["chk1"] == $studentsubject) { ?> 
 				<div class="col-lg-12"  style="margin-top: 10px; margin-bottom: 5px;  "  >
 				   <a href="view_subjectdetail.php?CusID=<?php echo $objResult["pk"]; ?>"class="btn btn-primary btn-minwidth" style="width: 100%;"   > รายละเอียด </a> 
