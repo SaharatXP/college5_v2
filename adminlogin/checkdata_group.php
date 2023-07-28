@@ -219,7 +219,12 @@ if (empty($_GET["data10"])) {
 							}
 						</style>
 						<?php
+						// $page = !isset($_GET['page']) ? 1 : $_GET['page'];
+						$page = !isset($_GET['page2']) ? 1 : $_GET['page2'];
+
+						// $page = 1;
 						$perpage = 20;
+						$start = ($page - 1) * $perpage;
 
 						$sql2 =  "SELECT *, a.pk, a.subject, a.status, c.pk as classpk FROM student_paper a 
 							Inner Join member b
@@ -359,7 +364,7 @@ if (empty($_GET["data10"])) {
 							left join classdata as c on c.pk = a.subject
 							where a.is_active != 0 and a.status != 3 and c.data7 like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode3 . "
 							
-							order by a.pk desc ";
+							order by a.pk desc limit {$start} , {$perpage}  ";
 
 										// echo $sql;
 										// and b.subject = '$_SESSION[subject]'
