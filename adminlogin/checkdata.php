@@ -173,6 +173,99 @@ if (empty($_GET["data10"])) {
 							</div>
 						</div>
 					</form>
+					<div class="col-md-12" style="margin-top: 10px;">
+						<style>
+							.pagination {
+								list-style-type: none;
+								display: inline-flex;
+								justify-content: space-between;
+								box-sizing: border-box;
+							}
+
+							.pagination li {
+								box-sizing: border-box;
+								padding-right: 10px;
+							}
+
+							.pagination li a {
+								box-sizing: border-box;
+								background-color: #e2e6e6;
+								padding: 8px;
+								text-decoration: none;
+								font-size: 12px;
+								font-weight: bold;
+								color: #616872;
+								border-radius: 4px;
+							}
+
+							.pagination li a:hover {
+								background-color: #d4dada;
+							}
+
+							.pagination .next a,
+							.pagination .prev a {
+								text-transform: uppercase;
+								font-size: 12px;
+							}
+
+							.pagination .currentpage a {
+								background-color: #518acb;
+								color: #fff;
+							}
+
+							.pagination .currentpage a:hover {
+								background-color: #518acb;
+							}
+						</style>
+						<?php
+						$perpage = 20;
+
+						$sql2 =  "SELECT *, a.pk, a.subject, a.status, c.pk as classpk FROM student_paper a 
+							Inner Join member b
+							On a.student = b.pk
+							left join classdata as c on c.pk = a.subject
+							where a.is_active != 0 and a.status != 3 and c.data7 like '%" . (!$searchname ? '' : $searchname) . "%'   " . $addcode . $addcode3 . "
+							
+							order by a.pk desc ";
+
+
+						$query2 = mysqli_query($objCon, $sql2);
+						$total_record = mysqli_num_rows($query2);
+						$total_page = ceil($total_record / $perpage);
+						?>
+
+
+						<?php if (ceil($total_record / $perpage) > 0) : ?>
+							<ul class="pagination">
+								<?php if ($page > 1) : ?>
+									<li class="prev"><a href="checkdata.php?page2=<?php echo $page - 1 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>">Prev</a></li>
+								<?php endif; ?>
+
+								<?php if ($page > 3) : ?>
+									<li class="start"><a href="checkdata.php?page2=1&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>">1</a></li>
+									<li class="dots">...</li>
+								<?php endif; ?>
+
+								<?php if ($page - 2 > 0) : ?><li class="page"><a href="checkdata.php?page2=<?php echo $page - 2 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
+								<?php if ($page - 1 > 0) : ?><li class="page"><a href="checkdata.php?page2=<?php echo $page - 1 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
+
+								<li class="currentpage"><a href="checkdata.php?page2=<?php echo $page ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo $page ?></a></li>
+
+								<?php if ($page + 1 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="checkdata.php?page2=<?php echo $page + 1 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
+								<?php if ($page + 2 < ceil($total_record / $perpage) + 1) : ?><li class="page"><a href="checkdata.php?page2=<?php echo $page + 2 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
+
+								<?php if ($page < ceil($total_record / $perpage) - 2) : ?>
+									<li class="dots">...</li>
+									<li class="end"><a href="checkdata.php?page2=<?php echo ceil($total_record / $perpage) ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>"><?php echo ceil($total_record / $perpage) ?></a></li>
+								<?php endif; ?>
+
+								<?php if ($page < ceil($total_record / $perpage)) : ?>
+									<li class="next"><a href="checkdata.php?page2=<?php echo $page + 1 ?>&major=<?php echo $major; ?>&searchname=<?php echo $searchname; ?>&search_start=<?php echo $search_start; ?>&come_in=<?php echo $come_in; ?>&come_down=<?php echo $come_down; ?>">Next</a></li>
+								<?php endif; ?>
+							</ul>
+						<?php endif; ?>
+
+					</div>
 
 					<div class="table-responsive">
 						<table class="table table-bordered">
