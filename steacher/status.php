@@ -5,7 +5,7 @@ include('header.php');
 ?>
 
 <div id="wrapper" class="container">
-	<h1 id="page-title"> ตรวจสอบสถานะของการสมัครเป็นผู้ช่วยอาจารย์ </h1>
+	<h1 id="page-title"> ตรวจสอบสถานะของการสมัครรายวิชา </h1>
 	<div class="row">
 
 		<div class="row">
