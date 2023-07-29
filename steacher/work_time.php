@@ -290,7 +290,7 @@ if (isset($_GET["Action"])) {
 
 												<div class="col-lg-6 ">
 													<div class="form-group">
-														<font color="black" size="3px" class="serif"> หมายเหตุ </font>
+														<font color="black" size="3px" class="serif"> หมายเหตุ (ถ้ามี) </font>
 														<textarea type="text" name="description" id="description" class="form-control " value="" autocomplete="off" style=" border-radius: 10px; margin-top: 10px; " rows="5"></textarea>
 													</div>
 												</div>

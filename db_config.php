@@ -10,18 +10,18 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 
 
-
-// $serverName = "localhost";
-// $userName = "teachera_ssistant"; //root //teachera_ssistant
-// $userPassword = "12345678";
-// $dbName = "teachera_ssistant"; //ablbotco_college //teachera_ssistant
+//! Poom
+$serverName = "localhost";
+$userName = "root"; 
+$userPassword = "12345678";
+$dbName = "college5"; 
 
 
 //! for dev
-$serverName = "localhost";
-$userName = "root"; //root //teachera_ssistant
-$userPassword = "root";
-$dbName = "college5"; //ablbotco_college //teachera_ssistant
+// $serverName = "localhost";
+// $userName = "root"; //root //teachera_ssistant
+// $userPassword = "root";
+// $dbName = "college5"; //ablbotco_college //teachera_ssistant
 
 $objCon = mysqli_connect($serverName, $userName, $userPassword, $dbName);
 $con = mysqli_connect($serverName, $userName, $userPassword, $dbName);

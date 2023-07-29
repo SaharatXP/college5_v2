@@ -326,7 +326,7 @@ if (isset($_GET['monthx']) && !empty($_GET["monthx"])) {
                                                                                 <td>
                                                                                     <?php echo $objResultDt['savedata7'] ?>
                                                                                     <?php if ($objResultDt['description'] != null) { ?>
-                                                                                        <b style="color: red;"> ( หมายเหตุ ) <?php echo $objResultDt['description']; ?></b>
+                                                                                        <b style="color: red;"><br> ( หมายเหตุ ) <?php echo $objResultDt['description']; ?></b>
                                                                                     <?php } ?>
                                                                                 </td>
 
