@@ -150,7 +150,7 @@ include('header.php');
 
 					$sql = "SELECT * FROM student_paper 
 					left join classdata on student_paper.subject = classdata.pk
-					where student_paper.student != '' and student_paper.student = '" . $_SESSION["UserID3"] . "' $term $y $status order by classdata.pk desc ";
+					where student_paper.student != '' and student_paper.student = '" . $_SESSION["UserID2"] . "' $term $y $status order by classdata.pk desc ";
 					$query = mysqli_query($con, $sql);
 					while ($objResult = mysqli_fetch_array($query)) {
 						$secg = $objResult["section_group"];

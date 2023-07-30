@@ -82,9 +82,11 @@ if (empty($_GET["searchname"])) {
 			} else {
 				$addcoe = " and data8 ='" . $_GET["drop_term"] . "' ";
 			}
-			$sql = "SELECT * ,COUNT(data7) as countx FROM classdata  where data7 like '%" . $searchname . "%' and (chk1 = '" . $studentsubject . "'  or   chk2 = '" . $studentsubject . "') " . $addcoe . " GROUP BY data7 order by pk desc ";
+			// $sql = "SELECT *  FROM classdata  where data7 like '%" . $searchname . "%' and (chk1 = '" . $studentsubject . "'  or  chk2 = '" . $studentsubject . "') " . $addcoe . "  order by pk desc ";
+			$sql = "SELECT * FROM classdata  where data7 like '%" . $searchname . "%'  and (chk1 = '" . $studentsubject . "'  or   chk2 = '" . $studentsubject . "') " . $addcoe . " order by pk desc ";
 
-			// echo $sql;
+
+			echo $sql;
 
 			// echo $sql;
 
@@ -159,7 +161,7 @@ if (empty($_GET["searchname"])) {
 							}
 
 							?>
-							
+
 
 							<!-- <?php if ($objResult["chk1"] == $studentsubject) { ?> 
 				<div class="col-lg-12"  style="margin-top: 10px; margin-bottom: 5px;  "  >
