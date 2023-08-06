@@ -159,7 +159,7 @@ include('header.php');
 
 					<div class="col-md-6">
 						<div class="form-group">
-							  <font color = '#000' size = '3px' >  อัพโหลดสำเนาบัตรประชาขชน  : </label> <!--- เก็บที่อยู่--->
+							  <font color = '#000' size = '3px' >  สำเนาบัตรประชาขชน  : </label> <!--- เก็บที่อยู่--->
 							 <?php
 								if(!empty($img2)){
 								$show_img2 = "../img/".$img2;
@@ -176,7 +176,7 @@ include('header.php');
 
 					<div class="col-md-6">
 						<div class="form-group">
-							  <font color = '#000' size = '3px' >  อัพโหลดสำเนาทะเบียนบ้าน  : </font> <!--- เก็บที่อยู่--->
+							  <font color = '#000' size = '3px' >  สำเนาทะเบียนบ้าน  : </font> <!--- เก็บที่อยู่--->
 							 <?php
 								if(!empty($img3)){
 								$show_img2 = "../img/".$img3;
@@ -194,7 +194,7 @@ include('header.php');
 
 					<div class="col-md-6">
 						<div class="form-group">
-							  <font color = '#000' size = '3px' >  อัพโหลดสมุดบัญชีธนาคาร  : </font> <!--- เก็บที่อยู่--->
+							  <font color = '#000' size = '3px' >  สมุดบัญชีธนาคาร  : </font> <!--- เก็บที่อยู่--->
 							 <?php
 								if(!empty($img4)){
 								$show_img2 = "../img/".$img4;
