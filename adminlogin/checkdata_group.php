@@ -500,6 +500,7 @@ if (empty($_GET["data10"])) {
 												}
 												?>
 											</select>
+											<font color="red" size="3px" class="serif">[ หากอนุมัติ จะเปลี่ยนสถานะผู้ใช้งาน<br> <font color="green" size="3px" class="serif">จากนักศึกษาเป็นผู้ช่วยอาจารย์</font> โดยอัตโนมัติ ]</font>
 										</div>
 									</div>
 									<div class="col-lg-3 ">

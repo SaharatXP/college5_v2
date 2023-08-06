@@ -141,7 +141,7 @@ if (isset($_GET["Action"])) {
 										<div class="row">
 											<div class="col-lg-4 "><br>
 												<div class="form-group">
-													<font color="black" size="3px" class="serif"> อัพไฟล์ Execel </font>
+													<font color="black" size="3px" class="serif"> อัพไฟล์ Execel *** กรุณาแปลงเป็น CSV </font>
 													<input type="file" name="filUpload" id="filUpload" class="form-control " value="<?php echo $searchname; ?>" autocomplete="off" style=" border-radius: 10px; "> <br>
 												</div>
 											</div>
@@ -151,16 +151,7 @@ if (isset($_GET["Action"])) {
 													<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 10px; width: 130px; border-color: white; ">
 														<font color="white" size="3px" class="serif"> อัพโหลดไฟล์ </font>
 													</button>
-
-
-
-
-													<a href="profile2.php?searchname=all">
-														<button type="button" class="btn btn-primary" style="background-color: #006400; border-radius: 10px; width: 180px; border-color: white; ">
-															<font color="white" size="3px" class="serif"> แสดงรายชื่อทั้งหมด </font>
-														</button>
-													</a>
-
+										
 													<a href="profile.php?searchname=">
 														<button type="button" class="btn btn-primary" style="background-color: #006400; border-radius: 10px; width: 150px; border-color: white; ">
 															<font color="white" size="3px" class="serif"> ตรวจสอบรายชื่อ </font>
@@ -204,6 +195,11 @@ if (isset($_GET["Action"])) {
 											<font color="white" size="3px" class="serif"> ค้นหา </font>
 										</button>
 
+										<a href="profile2.php?searchname=all">
+														<button type="button" class="btn btn-primary" style="background-color: #006400; border-radius: 10px; width: 180px; border-color: white; ">
+															<font color="white" size="3px" class="serif"> แสดงรายชื่อทั้งหมด </font>
+														</button>
+													</a>
 
 										<a class="btn btn-sm btn-danger" href="JavaScript:if(confirm(' กรุณายืนยันการลบ ?')==true){window.location='<?php echo $_SERVER["PHP_SELF"]; ?>?Action=Del';}" style="background-color: #FF0000; border-radius: 10px; width: 110px; border-color: white; ">
 											<font color="white" size="3px" class="serif"> ล้างข้อมูล </font>

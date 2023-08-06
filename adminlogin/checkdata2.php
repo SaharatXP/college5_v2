@@ -462,15 +462,6 @@ while ($objResult = mysqli_fetch_array($query)) {
 
 												?>
 
-
-
-
-
-
-
-
-
-
 											</table>
 
 										</div>
@@ -496,7 +487,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 										</div>
 										<div class="col-lg-3 ">
 											<div class="form-group"> <br>
-												<font color="black" size="3px" class="serif"> สถานะ </font>
+												<font color="black" size="3px" class="serif"> สถานะ </font><br>
 												<select class="form-control" id="status" name="status" style=" border-radius: 10px; margin-top: 10px; ">
 													<?php
 													$sql = "SELECT * FROM drop_status where  status = '" . $status . "'  order by pk asc  ";
@@ -517,6 +508,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 													}
 													?>
 												</select>
+												<font color="red" size="3px" class="serif">[ หากอนุมัติ จะเปลี่ยนสถานะผู้ใช้งาน<br> <font color="green" size="3px" class="serif">จากนักศึกษาเป็นผู้ช่วยอาจารย์</font> โดยอัตโนมัติ ]</font>
 											</div>
 										</div>
 										<div class="col-lg-3 ">

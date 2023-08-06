@@ -122,7 +122,7 @@ include('header.php');
                <div class=" col-lg-12 " style="background-color: #A9C7FF;   margin-top: 20px;  " align="left" >
                 <font color="#000000" size="4px" class="serif2"  >
                   <div style="margin-top: 10px;" > 
-                     <b> ตรวจสอบข้อมูลนักศึกษาและผู้ช่วย   &nbsp; </b> 
+                     <b> ตรวจสอบข้อมูลนักศึกษา   &nbsp; </b> 
                   </div>
                 </font> 
                </div> 
@@ -325,7 +325,9 @@ include('header.php');
 						<font size="2px" color="black"> รหัสนักศึกษา </font></div></th>   
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
 						<font size="2px" color="black"> ชื่อ-นามสกุล </font></div></th> 
-						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
+						<th width="10%" bgcolor="#A8DADC"><div align="center">
+						<font size="2px" color="black"> ระดับการศึกษา </font></div></th> 
+						<th width="10%" bgcolor="#A8DADC"><div align="center">  
 						<font size="2px" color="black"> Username </font></div></th> 
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
 						<font size="2px" color="black"> ข้อมูลส่วนตัว </font></div></th>   
@@ -391,7 +393,8 @@ include('header.php');
 						<tr onMouseover="this.style.backgroundColor='yellow';" onMouseout="this.style.backgroundColor='white';">   
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $i;?></font></div></td>   
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["codestudent"];?></font></div></td>   
-						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["name"];?></font></div></td>   
+						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["name"];?></font></div></td>
+						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["subject"];?></font></div></td>      
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["username"];?></font></div></td>    
 						
 						<td><div align="center"><font size="2px" color="Black">  

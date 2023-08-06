@@ -122,7 +122,7 @@ include('header.php');
                <div class=" col-lg-12 " style="background-color: #A9C7FF;   margin-top: 20px;  " align="left" >
                 <font color="#000000" size="4px" class="serif2"  >
                   <div style="margin-top: 10px;" > 
-                     <b> ตรวจสอบข้อมูลนักศึกษาและผู้ช่วย   &nbsp; </b> 
+                     <b> ตรวจสอบข้อมูลผู้ช่วยอาจารย์  &nbsp; </b> 
                   </div>
                 </font> 
                </div> 
@@ -364,9 +364,9 @@ include('header.php');
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
 						<font size="2px" color="black"> รหัสนักศึกษา </font></div></th>   
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
-						<font size="2px" color="black"> ชื่อผู้ช่วยสอน </font></div></th> 
+						<font size="2px" color="black"> ชื่อผู้ช่วยอาจารย์ </font></div></th> 
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
-						<font size="2px" color="black"> ชื่อวิชา </font></div></th> 
+						<font size="2px" color="black"> ระดับการศึกษา </font></div></th> 
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
 						<font size="2px" color="black"> โครงการ </font></div></th> 
 						<th width="10%" bgcolor="#A8DADC"><div align="center"> 
@@ -444,7 +444,7 @@ include('header.php');
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $i;?></font></div></td>   
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["codestudent"];?></font></div></td>   
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["name"];?></font></div></td>   
-						<td><div align="center"><font size="2px" color="Black">  </font></div></td>    
+						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["subject"];?></font></div></td>   
 						<td><div align="center"><font size="2px" color="Black"> <?php echo $objResult["major2"];?></font></div></td>    
 						
 						

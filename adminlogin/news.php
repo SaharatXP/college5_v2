@@ -134,7 +134,7 @@ include('header.php');
 					<div class="col-lg-12 ">
 					<div class="form-group"> <br> 
 					<font color="black" size="3px" class="serif">  ประกาศโดย  </font>   
-					<select class="form-control  myselect" id="createby" name="createby"    required   >   
+					<select class="form-control  myselect" id="createby" name="createby"    required   disabled>   
 							 <?php  
 							   $sql2 = "SELECT * FROM member WHERE status = 'AJ' OR status = 'A' order by status asc "; 
 							   $query2 = mysqli_query($objCon,$sql2);
