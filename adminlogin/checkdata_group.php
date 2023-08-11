@@ -500,7 +500,9 @@ if (empty($_GET["data10"])) {
 												}
 												?>
 											</select>
-											<font color="red" size="3px" class="serif">[ หากอนุมัติ จะเปลี่ยนสถานะผู้ใช้งาน<br> <font color="green" size="3px" class="serif">จากนักศึกษาเป็นผู้ช่วยอาจารย์</font> โดยอัตโนมัติ ]</font>
+											<font color="red" size="3px" class="serif">[ หากอนุมัติ จะเปลี่ยนสถานะผู้ใช้งาน<br>
+												<font color="green" size="3px" class="serif">จากนักศึกษาเป็นผู้ช่วยอาจารย์</font> โดยอัตโนมัติ ]
+											</font>
 										</div>
 									</div>
 									<div class="col-lg-3 ">
@@ -583,7 +585,26 @@ if (empty($_GET["data10"])) {
 		</div>
 	</div>
 
+	<script>
+		$(function() {
+			//Triggering change event handler on element #stato
+			$('#status').change(function() {
+				var value = $(this).val(); //Getting selected value from #stato
+				if (value != "1") {
+					$('#note_data2').prop('disabled', false); //If value is empty then disable another field
+				} else {
+					$('#note_data2').prop('disabled', true); //Else enable another field
+					selectElement('note_data2', 'SAJ');
 
+				}
+			});
+		});
+
+		function selectElement(id, valueToSelect) {
+			let element = document.getElementById(id);
+			element.value = valueToSelect;
+		}
+	</script>
 
 
 	<?php

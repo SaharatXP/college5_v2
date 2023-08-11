@@ -86,7 +86,7 @@ if (empty($_GET["searchname"])) {
 			$sql = "SELECT * FROM classdata  where data7 like '%" . $searchname . "%'  and (chk1 = '" . $studentsubject . "'  or   chk2 = '" . $studentsubject . "') " . $addcoe . " order by pk desc ";
 
 
-			echo $sql;
+			// echo $sql;
 
 			// echo $sql;
 

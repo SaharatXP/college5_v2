@@ -148,7 +148,7 @@ include('header.php');
 					}
 					$i = 1;
 
-					$sql = "SELECT * FROM student_paper 
+					$sql = "SELECT student_paper.pk as stdpp ,student_paper.* FROM student_paper 
 					left join classdata on student_paper.subject = classdata.pk
 					where student_paper.student != '' and student_paper.student = '" . $_SESSION["UserID2"] . "' $term $y $status order by classdata.pk desc ";
 					$query = mysqli_query($con, $sql);
@@ -270,7 +270,7 @@ include('header.php');
 							<?php
 							if ($objResult['status'] == "0") {
 								if ($objResult["is_active"] != 0) { ?>
-									<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['pk']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการยกเลิก ?')">ยกเลิก</a></td>
+									<td class="text-center"><a href="./del_student_paper.php?id=<?php echo $objResult['stdpp']; ?>" class="btn btn-danger mx-3" onclick="return confirm('ยืนยันการยกเลิก ?')">ยกเลิก</a></td>
 							<?php } else {
 									echo "<td></td>";
 								}
