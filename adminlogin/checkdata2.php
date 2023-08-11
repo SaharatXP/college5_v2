@@ -208,7 +208,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 				<?php if (empty($_GET["page"])) { ?>
 
 					<!--- Action =  ไปยังไฟล์ที่ทำการเช็ค  --->
-					<form role="form" name="frmMain" method="post" action="save_checkdata2_update.php" enctype="multipart/form-data">
+					<form role="form" name="frmMain" method="post" action="save_checkdata2_update.php" enctype="multipart/form-data" onsubmit="return confirm('ยืนยันการบันทึกข้อมูล ?')">
 						<input type="hidden" id="idupdate" name="idupdate" value="<?php echo $_GET["CusID"]; ?>">
 						<input type="hidden" id="staff_up" name="staff_up" value="<?php echo $student; ?>">
 
@@ -579,7 +579,7 @@ while ($objResult = mysqli_fetch_array($query)) {
 								<div class="form-group">
 									<div align="left">
 										<button type="submit" class="btn btn-primary" style="background-color: #A9C7FF; border-radius: 5px; width: 110px; border-color: white; ">
-											<font color="white" size="3px" class="serif"> เพิ่มข้อมูล </font>
+											<font color="white" size="3px" class="serif"> บันทึก </font>
 										</button>
 
 										<a href="checkdata.php" <button type="reset" class="btn btn-danger" style="background-color: #FFFFFF; border-radius: 5px; width: 100px; border-color: white; border: 1px solid #A9C7FF; ">
