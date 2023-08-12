@@ -37,7 +37,7 @@ function DateThai2($strDate)
 	$strSeconds = date("s", strtotime($strDate));
 	$strMonthCut = array("", "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
 	$strMonthThai = $strMonthCut[$strMonth];
-	return "$strMonthThai $strYear";
+	return "$strDay $strMonthThai $strYear";
 }
 function DateThai3($strDate)
 {

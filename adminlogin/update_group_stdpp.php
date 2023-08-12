@@ -1,4 +1,9 @@
 <?php
+if ($_POST["status"]  == "1") {
+    $status = 'SAJ';
+} else {
+    $status = $_POST["note_data2"];
+}
 foreach ($_POST['group_pp'] as $d) {
     // echo $d;
 
@@ -9,7 +14,7 @@ foreach ($_POST['group_pp'] as $d) {
     				status = '" . $_POST["status"] . "', 
     				create_by = '" . $_POST["create_by"] . "', 
     				note_data = '" . $_POST["note_data"] . "', 
-    				note_data2 = '" . $_POST["note_data2"] . "'  ";
+    				note_data2 = '" .  $status . "'  ";
     $strSQL .= " WHERE pk = '" . $d . "' ";
 
     $objQuery = mysqli_query($objCon, $strSQL);
@@ -20,7 +25,7 @@ foreach ($_POST['group_pp'] as $d) {
     foreach ($Qstd as $q) {
         echo $q['student'];
 
-        $strSQL = "Update member Set status = '" . $_POST["note_data2"] . "'  ";
+        $strSQL = "Update member Set status = '" .  $status  . "'  ";
         $strSQL .= " WHERE pk = '" . $q['student'] . "' ";
 
         $objQuery = mysqli_query($objCon, $strSQL);

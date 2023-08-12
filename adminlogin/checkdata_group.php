@@ -511,7 +511,7 @@ if (empty($_GET["data10"])) {
 
 											<select class="form-control" id="note_data2" name="note_data2" style=" border-radius: 10px; margin-top: 10px; ">
 												<?php
-												$sql = "SELECT * FROM drop_status2 where  status = '" . $m_status . "'  order by pk asc  ";
+												$sql = "SELECT * FROM drop_status2 where  status = '" . $m_status . "' and pk != 2  order by pk asc  ";
 												$query = mysqli_query($objCon, $sql);
 												while ($objResult = mysqli_fetch_array($query)) {
 												?>
@@ -520,7 +520,7 @@ if (empty($_GET["data10"])) {
 												}
 												?>
 												<?php
-												$sql = "SELECT * FROM drop_status2 where  status != '" . $m_status . "'  order by pk asc  ";
+												$sql = "SELECT * FROM drop_status2 where  status != '" . $m_status . "' and pk != 2  order by pk asc  ";
 												$query = mysqli_query($objCon, $sql);
 												while ($objResult = mysqli_fetch_array($query)) {
 												?>
