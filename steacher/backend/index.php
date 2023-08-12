@@ -9,7 +9,7 @@ session_start();
 					$_SESSION["Fullname"] = $_SESSION["Fullname3"];
 						
 					/// echo("<script>alert('Login Sucess  !!')</script>");
-					echo("<script>window.location = '../../adminlogin/dataclass.php';</script>"); 
+					echo("<script>window.location = '../../adminlogin/dataclass2.php';</script>"); 
 					 
 						 
 ?>

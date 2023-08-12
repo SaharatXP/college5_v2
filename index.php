@@ -35,13 +35,13 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
                 <div class="text-right">
                     <a href="#" class="forget-password-link">Forget password ?</a>
                 </div>
             </div>
-        </div>
+        </div> -->
          
         <div class="row"> 
             
