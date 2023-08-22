@@ -12,9 +12,9 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 //! Poom
 $serverName = "localhost";
-$userName = "root"; 
-$userPassword = "12345678";
-$dbName = "college5"; 
+$userName = "root";
+$userPassword = "root";
+$dbName = "college5";
 
 
 //! for dev

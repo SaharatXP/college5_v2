@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.1",
+        "ext-gd": "*",
+        "dompdf/dompdf": "^2.0",
+        "tecnickcom/tcpdf": "^6.6"
+    }
+}

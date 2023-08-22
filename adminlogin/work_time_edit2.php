@@ -137,6 +137,11 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> ข้อมูลการทำงาน </font>
 												</div>
 											</th>
+											<th width="25%" bgcolor="#A8DADC" style="border: 0px solid #FFF; ">
+												<div align="center">
+													<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> พิมพ์ </font>
+												</div>
+											</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -251,6 +256,18 @@ while ($objResult2 = mysqli_fetch_array($query2)) {
 																																				$_GET['Idel'];  ?>&page=2">
 															<button type="button" class="btn btn-sm btn-primary" style="background-color: #FFD45F; border-radius: 5px;   border: 1px solid  #FFD45F;   ">
 																<font color="#000000" size="2px" class="serif1"> ดูข้อมูล คลิก </font>
+															</button>
+														</a>
+
+													</div>
+												</td>
+												<td align="center">
+													<div align="center">
+
+														<a href="print_t.php?memberId=<?php echo $objResult2['memberPk']; ?>&classdata=<?php echo
+																																		$_GET['Idel'];  ?>&page=2">
+															<button type="button" class="btn btn-sm btn-primary" style="background-color: green; color:#F2F2F2; border-radius: 5px;   border: 1px solid  #FFD45F;   ">
+																<font color="#FFFF" size="2px" class="serif1"> พิมพ์ คลิก </font>
 															</button>
 														</a>
 

@@ -221,6 +221,11 @@ if (empty($_GET["searchname2"])) {
 															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> สรุปการทำงาน </font>
 														</div>
 													</th>
+													<th width="20%" bgcolor="#BEC6CB" height="35px;" style="border: 0px solid #FFF; border-right: 1px solid #FFF; ">
+														<div align="center">
+															<font size="3px" class="serif2" color="#FFF" style=" font-size: 13px; "> พิมพ์ </font>
+														</div>
+													</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -316,6 +321,15 @@ if (empty($_GET["searchname2"])) {
 
 
 																		<font size="3px" color="Black" style=" font-size: 13px; "><a href="work_report_view.php?classdata=<?php echo $objResult2['classpk']; ?>"><b style="color: red;">ดูสรุปการทำงาน คลิก </b> </a></font>
+
+
+																	</div>
+																</td>
+																<td align="center">
+																	<div align="center">
+
+
+																		<font size="3px" color="green" style=" font-size: 13px; "><a href="print_t.php?classdata=<?php echo $objResult2['classpk']; ?>"><b style="color: green;">พิมพ์ คลิก</b> </a></font>
 
 
 																	</div>
