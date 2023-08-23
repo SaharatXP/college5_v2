@@ -15,7 +15,24 @@ $query = mysqli_query($con, $sql);
 $master = $query->fetch_assoc();
 // create new PDF document
 // $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-
+function chkTerm2($str)
+{
+    if ($str == 'เทอมปลาย') {
+        $res1 = '( / ) เทอมปลาย';
+    } else {
+        $res1 = '( &nbsp;  ) เทอมปลาย';
+    }
+    return $res1;
+};
+function chkTerm1($str)
+{
+    if ($str == 'เทอมต้น') {
+        $res2 = '( / ) เทอมต้น';
+    } else {
+        $res2 = '( &nbsp;  ) เทอมต้น';
+    }
+    return $res2;
+};
 $pdf = new TCPDF('P', 'cm', 'A4', true, 'UTF-8', false);
 
 $pdf->setPrintFooter(false);
@@ -39,6 +56,18 @@ foreach ($type as $t) {
     $default_row_height = 0.6;
     $pdf->AddPage();
     $pdf->SetFont($fontb, '', 16);
+    $sql2 = "SELECT a.*, b.* , m.*  , COUNT(a.pk) as total FROM work_time a 
+											left Join classdata b On a.subject = b.pk
+											left join member m on m.pk = b.data11
+											where a.student_paper != ''
+											and a.member = $_SESSION[UserID3]
+                                            and b.pk = $_GET[classdata]
+                                            and a.savedata4 = '$t'
+                                            group by a.savedata1
+											order by a.pk asc ";
+    $query2 = mysqli_query($con, $sql2);
+    // $masterd = $query2->fetch_assoc();
+    $index = 1;
     // $pdf->cell(0, $default_row_height, 'แบบใบเบิกค่าตอบแทนผู้ช่วยสอนและผู้ช่วยปฏิบัติงาน', 0, 1, 'C');
     $head = '
 <table  >
@@ -106,18 +135,7 @@ foreach ($type as $t) {
 </thead>
 <tbody>
 ';
-    $sql2 = "SELECT a.*, b.* , m.*  , COUNT(a.pk) as total FROM work_time a 
-											left Join classdata b On a.subject = b.pk
-											left join member m on m.pk = b.data11
-											where a.student_paper != ''
-											and a.member = $_SESSION[UserID3]
-                                            and b.pk = $_GET[classdata]
-                                            and a.savedata4 = '$t'
-                                            group by a.savedata1
-											order by a.pk asc ";
-    $query2 = mysqli_query($con, $sql2);
-    // $masterd = $query2->fetch_assoc();
-    $index = 1;
+
     foreach ($query2 as $dx) {
         $tbl .= '
         <tr>
@@ -237,7 +255,7 @@ foreach ($type as $t) {
     $t1 = 0;
     $t2 = 0;
     $index = 1;
-}
+};
 
 
 
@@ -248,23 +266,3 @@ foreach ($type as $t) {
 // This method has several options, check the source code documentation for more information.
 $pdf->Output('ตารางเรียนและตารางปฏิบัติงาน.pdf', 'I');
 $pdf->Close();
-
-
-function chkTerm2($str)
-{
-    if ($str == 'เทอมปลาย') {
-        $res1 = '( / ) เทอมปลาย';
-    } else {
-        $res1 = '( &nbsp;  ) เทอมปลาย';
-    }
-    return $res1;
-};
-function chkTerm1($str)
-{
-    if ($str == 'เทอมต้น') {
-        $res2 = '( / ) เทอมต้น';
-    } else {
-        $res2 = '( &nbsp;  ) เทอมต้น';
-    }
-    return $res2;
-};
