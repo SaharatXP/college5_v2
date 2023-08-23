@@ -241,6 +241,7 @@ foreach ($type as $t) {
 
 
 
+
 // ---------------------------------------------------------
 
 // Close and output PDF document
@@ -248,14 +249,7 @@ foreach ($type as $t) {
 $pdf->Output('ตารางเรียนและตารางปฏิบัติงาน.pdf', 'I');
 $pdf->Close();
 
-function getUdata($id)
-{
-    include('../db_config.php');
-    $sqlu = "SELECT * FROM member where pk = $id";
-    $queryu = mysqli_query($con, $sqlu);
-    $masteru = $queryu->fetch_assoc();
-    return $masteru['name'];
-}
+
 function chkTerm2($str)
 {
     if ($str == 'เทอมปลาย') {
@@ -264,7 +258,7 @@ function chkTerm2($str)
         $res1 = '( &nbsp;  ) เทอมปลาย';
     }
     return $res1;
-}
+};
 function chkTerm1($str)
 {
     if ($str == 'เทอมต้น') {
@@ -273,4 +267,4 @@ function chkTerm1($str)
         $res2 = '( &nbsp;  ) เทอมต้น';
     }
     return $res2;
-}
+};
