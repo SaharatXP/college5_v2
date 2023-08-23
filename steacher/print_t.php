@@ -115,26 +115,25 @@ foreach ($type as $t) {
 
 
     $tbl .= '
-<table border="1" align="center" >
-<thead>
-    <tr class="text-center">
-        <th class="text-center" rowspan="2" width="5%">ลำดับที่</th>
-        <th class="text-center" rowspan="2" width="20%">ชื่อ สกุล</th>
-        <th class="text-center" rowspan="2" width="5%">ระดับ</th>
-        <th class="text-center"  colspan="3" width="30%">ระยะเวลาที่สอน</th>
-        <th class="text-center"  colspan="2" width="20%">จำนวนชั่วโมงที่สอน</th>
-        <th class="text-center" rowspan="2" width="20%">หมายเหตุ</th>
-    </tr>
-    <tr>
-        <th class="text-center"> ว/ด/ป </th>
-        <th class="text-center"> รหัสวิชา </th>
-        <th class="text-center"> เวลาสอน </th>
-        <th class="text-center"> บรรยาย </th>
-        <th class="text-center"> ปฏิบัติการ </th>
-    </tr>
-</thead>
-<tbody>
-';
+        <table border="1" align="center" >
+        <thead>
+            <tr class="text-center">
+                <th class="text-center" rowspan="2" width="5%">ลำดับที่</th>
+                <th class="text-center" rowspan="2" width="20%">ชื่อ สกุล</th>
+                <th class="text-center" rowspan="2" width="5%">ระดับ</th>
+                <th class="text-center"  colspan="3" width="30%">ระยะเวลาที่สอน</th>
+                <th class="text-center"  colspan="2" width="20%">จำนวนชั่วโมงที่สอน</th>
+                <th class="text-center" rowspan="2" width="20%">หมายเหตุ</th>
+            </tr>
+            <tr>
+                <th class="text-center"> ว/ด/ป </th>
+                <th class="text-center"> รหัสวิชา </th>
+                <th class="text-center"> เวลาสอน </th>
+                <th class="text-center"> บรรยาย </th>
+                <th class="text-center"> ปฏิบัติการ </th>
+            </tr>
+        </thead>
+        <tbody>';
 
     foreach ($query2 as $dx) {
         $tbl .= '
@@ -266,3 +265,4 @@ foreach ($type as $t) {
 // This method has several options, check the source code documentation for more information.
 $pdf->Output('ตารางเรียนและตารางปฏิบัติงาน.pdf', 'I');
 $pdf->Close();
+?>
