@@ -74,9 +74,10 @@ if (empty($_GET["searchname"])) {
             <div class="row">
                 <div class="col-md-12">
                     <?php
-                    $result_count_total = mysqli_query($objCon, "SELECT count(*) as total from student_paper where student = $_SESSION[UserID3] and is_active = 1 group by subject"); //เขียน query เพื่อนับจำนวนที่สมัครไปแล้ว
+                    $result_count_total = mysqli_query($objCon, "SELECT count(subject) as total from student_paper where student = $_SESSION[UserID3] and is_active = 1 and status = 0 "); //เขียน query เพื่อนับจำนวนที่สมัครไปแล้ว
                     $data_count_total = mysqli_fetch_assoc($result_count_total);
                     $tt_count_total = $data_count_total['total'];
+                    // echo $result_count_total;
 
                     // if else เชื่อเช็คค่าที่เรา query ออกมาให้แสดงผล
                     if ($tt_count_total < 3) {
@@ -92,9 +93,9 @@ if (empty($_GET["searchname"])) {
         </div>
         <div class="col-md-12">
             <?php
-            $result_count_total = mysqli_query($objCon, "SELECT count(*) as total from student_paper where student = $_SESSION[UserID3] and is_active = 1 group by subject");
-            $data_count_total = mysqli_fetch_assoc($result_count_total);
-            $tt_count_total = $data_count_total['total'];
+            // $result_count_total = mysqli_query($objCon, "SELECT count(subject) as total from student_paper where student = $_SESSION[UserID3] and is_active = 1 and status = 0 group by subject");
+            // $data_count_total = mysqli_fetch_assoc($result_count_total);
+            // $tt_count_total = $data_count_total['total'];
             // echo  'สมัครไปแล้วทั้งหมด -> ' . $tt_count_total;
 
             $i = 1;
@@ -183,9 +184,9 @@ if (empty($_GET["searchname"])) {
                                     <br>
                                 </a>
                             <?php
-                            } else if ($ttc > 0 || $data_count_total > 2) { //if else เพื่อ เช็ตปุ่มไม่ให้กดสมัคร ถ้าวิชาที่สมัครไปแล้ว มากกว่า 3 ให้ disable ปุ่ม
+                            } else if ($ttc > 0 || $tt_count_total >= 3) { //if else เพื่อ เช็ตปุ่มไม่ให้กดสมัคร ถ้าวิชาที่สมัครไปแล้ว มากกว่า 3 ให้ disable ปุ่ม
                             ?>
-                                <b style="color:red;">คุณสมัครวิชานี้ไปแล้ว <br> หากต้องการสมัครใหม่
+                                <b style="color:red;">คุณสมัครวิชานี้ไปแล้ว <?php echo ($tt_count_total >= 3 ? "หรีือ สมัครครบ 3 วิชา" : "") ?> <br> หากต้องการสมัครใหม่
                                     ให้ยกเลิกใบสมัครก่อน</b><br>
                             <?php } else { ?>
                                 <?php if ($objResult["chk1"] == $studentsubject) { ?>

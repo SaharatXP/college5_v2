@@ -254,22 +254,22 @@ if (empty($_GET["CusID"])) {
 
 
 														<table width="100%" border="1">
-														<tr></tr>
-																	<td width="10%" align="center">
-																		<font color="black" size="3px" class="serif"> เลือก </font>
-																	</td>
-																	<td width="10%" align="center">
-																		<font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
-																	</td>
-																	<td width="25%" align="center">
-																		<font color="black" size="3px" class="serif"> โครงการ </font>
-																	</td>
-																	<td width="25%" align="center">
-																		<font color="black" size="3px" class="serif"> ระดับ </font>
-																	</td>
-																	<td width="10%" align="center">
-																		<font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอนที่เปิดรับ </font>
-																	</td>
+															<tr></tr>
+															<td width="10%" align="center">
+																<font color="black" size="3px" class="serif"> เลือก </font>
+															</td>
+															<td width="10%" align="center">
+																<font color="black" size="3px" class="serif"> กลุ่มปฎิบัติงาน </font>
+															</td>
+															<td width="25%" align="center">
+																<font color="black" size="3px" class="serif"> โครงการ </font>
+															</td>
+															<td width="25%" align="center">
+																<font color="black" size="3px" class="serif"> ระดับ </font>
+															</td>
+															<td width="10%" align="center">
+																<font color="black" size="3px" class="serif"> จำนวนผู้ช่วยสอนที่เปิดรับ </font>
+															</td>
 
 
 															<?php
@@ -280,14 +280,14 @@ if (empty($_GET["CusID"])) {
 															$query_sec = mysqli_query($objCon, $sql_sec);
 
 
-															if (mysqli_num_rows($query_sec) > 1) {
+															if (mysqli_num_rows($query_sec) >= 1) {
 
 
 
 																while ($objResult_sec = mysqli_fetch_array($query_sec)) {
 															?>
-																	
-																	
+
+
 
 
 
@@ -324,8 +324,8 @@ if (empty($_GET["CusID"])) {
 
 																		</td>
 																		<td class="text-center">
-																		<a href="<?php echo './view_subject.php?CusID=' . $_GET['CusID'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
-																	</td>
+																			<a href="<?php echo './view_subject.php?CusID=' . $_GET['CusID'] . '&sec=' . $objResult_sec['data14']; ?>" class="btn btn-outline-success ml-2">ดูเวลา</a>
+																		</td>
 
 																	</tr>
 																<?php
@@ -380,7 +380,7 @@ if (empty($_GET["CusID"])) {
 																echo "<br><b style='color:red'>ยังไม่มีกลุ่มวิชา</b>";
 															}
 															?>
-															
+
 
 
 

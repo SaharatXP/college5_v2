@@ -314,7 +314,8 @@ if (empty($_GET["CusID"])) {
 															LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
 															 where classdata_pk =  $_GET[CusID]";
 														$query_sec = mysqli_query($objCon, $sql_sec);
-														if (mysqli_num_rows($query_sec) > 1) {
+														// echo $sql_sec;
+														if (mysqli_num_rows($query_sec) >= 1) {
 
 
 															while ($objResult_sec = mysqli_fetch_array($query_sec)) {

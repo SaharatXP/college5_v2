@@ -394,7 +394,7 @@ if (empty($_GET["CusID"])) {
 																	<?php
 																	$sql_sec = "SELECT * FROM classdata_section where classdata_pk = $_GET[CusID]";
 																	$query_sec = mysqli_query($objCon, $sql_sec);
-																	if (mysqli_num_rows($query_sec) > 1) {
+																	if (mysqli_num_rows($query_sec) >= 1) {
 
 
 																		while ($objResult_sec = mysqli_fetch_array($query_sec)) {

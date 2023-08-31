@@ -324,7 +324,7 @@ if (empty($_GET["CusID"])) {
 															LEFT JOIN section_type on section_type.section_type_id = classdata_section.section_type_id
 															 where classdata_pk =  $_GET[CusID]";
 															$query_sec = mysqli_query($objCon, $sql_sec);
-															if (mysqli_num_rows($query_sec) > 1) {
+															if (mysqli_num_rows($query_sec) >= 1) {
 
 
 																while ($objResult_sec = mysqli_fetch_array($query_sec)) {
@@ -354,8 +354,8 @@ if (empty($_GET["CusID"])) {
 																	</tr>
 																	<tr>
 																		<td rowspan="2">
-																			&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control mb-3" name="sections[]" value="<?php echo $objResult_sec['classdata_section_id'] ?>"  />
-																			
+																			&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control mb-3" name="sections[]" value="<?php echo $objResult_sec['classdata_section_id'] ?>" />
+
 																		</td>
 																		<td rowspan="2">
 																			<input disabled type="text" name="data14" id="data14" class="form-control " value="<?php echo $objResult_sec['data14']; ?>" placeholder=" กลุ่มที่ " autocomplete="off" style=" border-radius: 0px; ">
